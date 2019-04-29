@@ -1,0 +1,2 @@
+export ROLLBAR_POST_TOKEN=aaaabbbbccccddddeeeeffff00001111
+yarn package-mac
