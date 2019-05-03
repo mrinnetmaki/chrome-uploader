@@ -40,7 +40,7 @@ module.exports = {
   API_URL: process.env.API_URL || 'https://test.nightscout.fi/tpapi',
   UPLOAD_URL: process.env.UPLOAD_URL || 'https://test.nightscout.fi/tpupload',
   DATA_URL: process.env.DATA_URL || 'https://test.nightscout.fi/tpdata',
-  BLIP_URL: process.env.BLIP_URL || 'https://test.nightscout.fi/',
+  BLIP_URL: process.env.BLIP_URL || 'http://sensotrend.fi/dashboard/',
   DEFAULT_TIMEZONE: process.env.DEFAULT_TIMEZONE || 'America/Los_Angeles',
   DEFAULT_CARELINK_DAYS: process.env.DEFAULT_CARELINK_DAYS || '180'
 };
