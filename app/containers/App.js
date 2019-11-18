@@ -70,10 +70,10 @@ const serverdata = {
     BLIP_URL: 'http://localhost:1300/'
   },
   Development: {
-    API_URL: 'https://test.nightscout.fi/tpapi',
-    UPLOAD_URL: 'https://test.nightscout.fi/tpupload',
-    DATA_URL: 'https://test.nightscout.fi/tpdata',
-    BLIP_URL: 'https://test.nightscout.fi/'
+    API_URL: 'https://dev.nightscout.fi/tpapi',
+    UPLOAD_URL: 'https://dev.nightscout.fi/tpupload',
+    DATA_URL: 'https://dev.nightscout.fi/tpdata',
+    BLIP_URL: 'https://dev.nightscout.fi/'
   },
   Staging: {
     API_URL: 'https://test.nightscout.fi/tpapi',
@@ -88,10 +88,10 @@ const serverdata = {
     BLIP_URL: 'https://test.nightscout.fi/'
   },
   Production: {
-    API_URL: 'https://test.nightscout.fi/tpapi',
-    UPLOAD_URL: 'https://test.nightscout.fi/tpupload',
-    DATA_URL: 'https://test.nightscout.fi/tpdata',
-    BLIP_URL: 'https://test.nightscout.fi/'
+    API_URL: 'https://connect.nightscout.fi/tpapi',
+    UPLOAD_URL: 'https://connect.nightscout.fi/tpupload',
+    DATA_URL: 'https://connect.nightscout.fi/tpdata',
+    BLIP_URL: 'https://connect.nightscout.fi/'
   }
 };
 
