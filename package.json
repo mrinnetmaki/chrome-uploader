@@ -1,5 +1,5 @@
 {
-  "name": "tidepool-uploader",
+  "name": "sensotrend-uploader",
   "version": "2.22.2-sensotrend",
   "description": "Sensotrend Uploader",
   "private": true,
@@ -81,7 +81,7 @@
   "browserslist": "electron 3.1",
   "build": {
     "productName": "Sensotrend Uploader",
-    "appId": "org.tidepool.TidepoolUploader",
+    "appId": "org.sensotrend.SensotrendUploader",
     "directories": {
       "buildResources": "resources",
       "output": "release"
