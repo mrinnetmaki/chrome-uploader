@@ -62,6 +62,41 @@ import AdHocModal from '../components/AdHocModal';
 
 import styles from '../../styles/components/App.module.less';
 
+/*
+const serverdata = {
+  Local: {
+    API_URL: 'http://localhost:1300/tpapi',
+    UPLOAD_URL: 'http://localhost:1300/tpupload',
+    DATA_URL: 'http://localhost:1300/tpdata',
+    BLIP_URL: 'http://localhost:1300/'
+  },
+  Development: {
+    API_URL: 'https://dev.nightscout.fi/tpapi',
+    UPLOAD_URL: 'https://dev.nightscout.fi/tpupload',
+    DATA_URL: 'https://dev.nightscout.fi/tpdata',
+    BLIP_URL: 'https://dev.nightscout.fi/'
+  },
+  Staging: {
+    API_URL: 'https://test.nightscout.fi/tpapi',
+    UPLOAD_URL: 'https://test.nightscout.fi/tpupload',
+    DATA_URL: 'https://test.nightscout.fi/tpdata',
+    BLIP_URL: 'https://test.nightscout.fi/'
+  },
+  Integration: {
+    API_URL: 'https://test.nightscout.fi/tpapi',
+    UPLOAD_URL: 'https://test.nightscout.fi/tpupload',
+    DATA_URL: 'https://test.nightscout.fi/tpdata',
+    BLIP_URL: 'https://test.nightscout.fi/'
+  },
+  Production: {
+    API_URL: 'https://connect.nightscout.fi/tpapi',
+    UPLOAD_URL: 'https://connect.nightscout.fi/tpupload',
+    DATA_URL: 'https://connect.nightscout.fi/tpdata',
+    BLIP_URL: 'https://connect.nightscout.fi/'
+  }
+};
+*/
+
 const serverdata = {
   Local: {
     API_URL: 'http://localhost:8009',

@@ -1,12 +1,12 @@
 {
-  "name": "tidepool-uploader",
-  "version": "2.22.2",
-  "description": "Tidepool Project Universal Uploader",
+  "name": "sensotrend-uploader",
+  "version": "2.22.2-sensotrend",
+  "description": "Sensotrend Uploader",
   "private": true,
   "main": "main.js",
-  "author": "Kent Quirk",
+  "author": "Mikael Rinnetmäki",
   "license": "BSD-2-Clause",
-  "repository": "tidepool-org/uploader",
+  "repository": "Sensotrend/uploader",
   "scripts": {
     "av-whitelist": "node ./scripts/whitelisting/av-submit.js",
     "build-docs": "./scripts/update-gh-pages.sh",
@@ -80,8 +80,8 @@
   },
   "browserslist": "electron 3.1",
   "build": {
-    "productName": "Tidepool Uploader",
-    "appId": "org.tidepool.TidepoolUploader",
+    "productName": "Sensotrend Uploader",
+    "appId": "org.sensotrend.SensotrendUploader",
     "directories": {
       "buildResources": "resources",
       "output": "release"
@@ -178,7 +178,7 @@
     "babel-core": "6.26.3",
     "babel-eslint": "10.0.3",
     "babel-loader": "7.1.5",
-    "babel-plugin-add-module-exports": "1.0.0",
+    "babel-plugin-add-module-exports": "1.0.2",
     "babel-plugin-dev-expression": "0.2.2",
     "babel-plugin-module-resolver": "3.2.0",
     "babel-plugin-rewire": "1.2.0",
