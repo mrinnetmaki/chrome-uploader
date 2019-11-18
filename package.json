@@ -1,12 +1,12 @@
 {
-  "name": "tidepool-uploader",
-  "version": "2.14.0-sensotrend",
-  "description": "Tidepool Project Universal Uploader",
+  "name": "sensotrend-uploader",
+  "version": "2.14.1-sensotrend",
+  "description": "Sensotrend Uploader",
   "private": true,
   "main": "main.js",
-  "author": "Kent Quirk",
+  "author": "Mikael Rinnetmäki",
   "license": "BSD-2-Clause",
-  "repository": "tidepool-org/chrome-uploader",
+  "repository": "Sensotrend/sensotrend-uploader",
   "scripts": {
     "av-whitelist": "node ./scripts/whitelisting/av-submit.js",
     "build-docs": "./scripts/update-gh-pages.sh",
@@ -78,7 +78,7 @@
   "browserslist": "electron 3.1",
   "build": {
     "productName": "Sensotrend Uploader",
-    "appId": "org.tidepool.TidepoolUploader",
+    "appId": "org.sensotrend.SensotrendUploader",
     "directories": {
       "buildResources": "resources",
       "output": "release"
