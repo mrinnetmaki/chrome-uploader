@@ -1,12 +1,12 @@
 {
-  "name": "tidepool-uploader",
-  "productName": "tidepool-uploader",
-  "version": "2.22.2",
-  "description": "Tidepool Project Universal Uploader",
-  "main": "./main.js",
+  "name": "sensotrend-uploader",
+  "productName": "sensotrend-uploader",
+  "version": "2.23.1-sensotrend",
+  "description": "Sensotrend Uploader",
+  "main": "./main.prod.js",
   "author": {
-    "name": "Tidepool Project",
-    "email": "gerrit@tidepool.org"
+    "name": "Sensotrend Oy",
+    "email": "info@sensotrend.com"
   },
   "license": "BSD-2-Clause",
   "dependencies": {

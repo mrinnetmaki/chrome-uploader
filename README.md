@@ -1,4 +1,5 @@
-# Tidepool Uploader
+# Sensotrend Uploader
+Installable uploader software, based on Tidepool's open source implementation
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/tidepool-org/uploader.svg)](https://greenkeeper.io/)
 
@@ -211,3 +212,4 @@ This project uses a [two package.json structure](https://github.com/electron-use
 1. If the module is native to a platform or otherwise should be included with the published package (i.e. bcrypt, openbci), it should be listed under `dependencies` in `./app/package.json`.
 2. If a module is `import`ed by another module, include it in `dependencies` in `./package.json`.   See [this ESLint rule](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md).
 3. Otherwise, modules used for building, testing and debugging should be included in `devDependencies` in `./package.json`.
+>>>>>>> st/rebrand
