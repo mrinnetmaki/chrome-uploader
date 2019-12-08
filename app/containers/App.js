@@ -23,6 +23,7 @@ import { bindActionCreators } from 'redux';
 import { remote } from 'electron';
 import * as metrics from '../constants/metrics';
 import { Route, Switch } from 'react-router-dom';
+import dns from 'dns';
 
 const { Menu } = remote;
 
@@ -42,7 +43,6 @@ import * as actionSources from '../constants/actionSources';
 import { pages, urls, pagesMap } from '../constants/otherConstants';
 import { checkVersion } from '../utils/drivers';
 import debugMode from '../utils/debugMode';
-import uploadDataPeriod from '../utils/uploadDataPeriod';
 
 import MainPage from './MainPage';
 import Login from '../components/Login';
@@ -62,7 +62,42 @@ import AdHocModal from '../components/AdHocModal';
 
 import styles from '../../styles/components/App.module.less';
 
-const serverdataTD = {
+/*
+const serverdata = {
+  Local: {
+    API_URL: 'http://localhost:1300/tpapi',
+    UPLOAD_URL: 'http://localhost:1300/tpupload',
+    DATA_URL: 'http://localhost:1300/tpdata',
+    BLIP_URL: 'http://localhost:1300/'
+  },
+  Development: {
+    API_URL: 'https://dev.nightscout.fi/tpapi',
+    UPLOAD_URL: 'https://dev.nightscout.fi/tpupload',
+    DATA_URL: 'https://dev.nightscout.fi/tpdata',
+    BLIP_URL: 'https://dev.nightscout.fi/'
+  },
+  Staging: {
+    API_URL: 'https://test.nightscout.fi/tpapi',
+    UPLOAD_URL: 'https://test.nightscout.fi/tpupload',
+    DATA_URL: 'https://test.nightscout.fi/tpdata',
+    BLIP_URL: 'https://test.nightscout.fi/'
+  },
+  Integration: {
+    API_URL: 'https://test.nightscout.fi/tpapi',
+    UPLOAD_URL: 'https://test.nightscout.fi/tpupload',
+    DATA_URL: 'https://test.nightscout.fi/tpdata',
+    BLIP_URL: 'https://test.nightscout.fi/'
+  },
+  Production: {
+    API_URL: 'https://connect.nightscout.fi/tpapi',
+    UPLOAD_URL: 'https://connect.nightscout.fi/tpupload',
+    DATA_URL: 'https://connect.nightscout.fi/tpdata',
+    BLIP_URL: 'https://connect.nightscout.fi/'
+  }
+};
+*/
+
+const serverdata = {
   Local: {
     API_URL: 'http://localhost:8009',
     UPLOAD_URL: 'http://localhost:9122',
@@ -95,39 +130,6 @@ const serverdataTD = {
   }
 };
 
-const serverdata = {
-  Local: {
-    API_URL: 'http://localhost:1300/tpapi',
-    UPLOAD_URL: 'http://localhost:1300/tpupload',
-    DATA_URL: 'http://localhost:1300/tpdata',
-    BLIP_URL: 'http://localhost:1300/'
-  },
-  Development: {
-    API_URL: 'https://test.nightscout.fi/tpapi',
-    UPLOAD_URL: 'https://test.nightscout.fi/tpupload',
-    DATA_URL: 'https://test.nightscout.fi/tpdata',
-    BLIP_URL: 'https://test.nightscout.fi/'
-  },
-  Staging: {
-    API_URL: 'https://test.nightscout.fi/tpapi',
-    UPLOAD_URL: 'https://test.nightscout.fi/tpupload',
-    DATA_URL: 'https://test.nightscout.fi/tpdata',
-    BLIP_URL: 'https://test.nightscout.fi/'
-  },
-  Integration: {
-    API_URL: 'https://test.nightscout.fi/tpapi',
-    UPLOAD_URL: 'https://test.nightscout.fi/tpupload',
-    DATA_URL: 'https://test.nightscout.fi/tpdata',
-    BLIP_URL: 'https://test.nightscout.fi/'
-  },
-  Production: {
-    API_URL: 'https://test.nightscout.fi/tpapi',
-    UPLOAD_URL: 'https://test.nightscout.fi/tpupload',
-    DATA_URL: 'https://test.nightscout.fi/tpdata',
-    BLIP_URL: 'https://test.nightscout.fi/'
-  }
-};
-
 export class App extends Component {
   static propTypes = {
     route: PropTypes.shape({
@@ -156,6 +158,19 @@ export class App extends Component {
       log: this.log
     });
 
+    dns.resolveSrv('environments-srv.tidepool.org', (err, servers) => {
+      for (let server of servers) {
+        const protocol = server.name === 'localhost' ? 'http://' : 'https://';
+        const url = protocol + server.name + ':' + server.port;
+        serverdata[server.name] = {
+          API_URL: url,
+          UPLOAD_URL: url,
+          DATA_URL: url + '/dataservices',
+          BLIP_URL: url,
+        };
+      }
+    });
+
     window.addEventListener('contextmenu', this.handleContextMenu, false);
   }
 
@@ -165,11 +180,6 @@ export class App extends Component {
     serverinfo.environment = info.label;
     this.props.api.setHosts(serverinfo);
     this.setState({server: info.label});
-  };
-
-  setDataPeriod = info => {
-    console.log('fetch device data for', info.label);
-    uploadDataPeriod.setPeriod(info.id);
   };
 
   render() {
@@ -212,68 +222,18 @@ export class App extends Component {
       });
     }
     if (this.props.location.pathname === pagesMap.LOGIN) {
+      const submenus = [];
+      for (let server of _.keys(serverdata)) {
+        submenus.push({
+          label: server,
+          click: this.setServer,
+          type: 'radio',
+          checked: this.state.server === server
+        });
+      }
       template.push({
         label: 'Change server',
-        submenu: [
-          {
-            label: 'Local',
-            click: this.setServer,
-            type: 'radio',
-            checked: this.state.server === 'Local'
-          },
-          {
-            label: 'Development',
-            click: this.setServer,
-            type: 'radio',
-            checked: this.state.server === 'Development'
-          },
-          {
-            label: 'Staging',
-            click: this.setServer,
-            type: 'radio',
-            checked: this.state.server === 'Staging'
-          },
-          {
-            label: 'Integration',
-            click: this.setServer,
-            type: 'radio',
-            checked: this.state.server === 'Integration'
-          },
-          {
-            label: 'Production',
-            click: this.setServer,
-            type: 'radio',
-            checked: this.state.server === 'Production'
-          }
-        ]
-      });
-      template.push({
-        label: 'Upload Data',
-        submenu: [
-          {
-            label: 'Everything',
-            id: uploadDataPeriod.PERIODS.ALL,
-            click: this.setDataPeriod,
-            type: 'radio',
-            checked: uploadDataPeriod.period === uploadDataPeriod.PERIODS.ALL
-          },
-          {
-            label: 'New since last upload',
-            id: uploadDataPeriod.PERIODS.DELTA,
-            click: this.setDataPeriod,
-            type: 'radio',
-            checked: uploadDataPeriod.period === uploadDataPeriod.PERIODS.DELTA
-          },
-          {
-            label: 'Last 4 weeks',
-            id: uploadDataPeriod.PERIODS.FOUR_WEEKS,
-            visible: debugMode.isDebug,
-            click: this.setDataPeriod,
-            type: 'radio',
-            checked: uploadDataPeriod.period ===
-              uploadDataPeriod.PERIODS.FOUR_WEEKS
-          }
-        ]
+        submenu: submenus,
       });
       template.push({
         label: 'Toggle Debug Mode',

@@ -1,6 +1,8 @@
 import mm723Image from '../../images/MM723_CNL_combo@2x.jpg';
 import mm600Image from '../../images/MM600_CNL_combo@2x.jpg';
 
+import os from 'os';
+
 const devices = {
   accuchekusb: {
     instructions: 'Plug in meter with micro-USB cable',
@@ -17,6 +19,13 @@ const devices = {
     // for the device selection list
     selectName: 'Medtronic (CareLink import)',
     source: {type: 'carelink'},
+    enabled: {mac: true, win: true, linux: true}
+  },
+  caresensble: {
+    instructions: 'Once paired, hold in right arrow until "BT Send" appears on the screen',
+    name: 'CareSens N Premier',
+    key: 'caresensble',
+    source: {type: 'device', driverId: 'BluetoothLE'},
     enabled: {mac: true, win: true, linux: true}
   },
   medtronic: {
@@ -49,10 +58,10 @@ const devices = {
     enabled: {mac: true, win: true, linux: true}
   },
   omnipod: {
-    instructions: 'Plug in PDM with mini-USB and choose .ibf file from PDM',
+    instructions: os.platform() === 'win32' ? 'Plug in PDM with USB cable and choose .ibf file from PDM' : 'Plug in PDM with USB cable',
     key: 'omnipod',
     name: 'Insulet OmniPod',
-    source: {type: 'block', driverId: 'InsuletOmniPod', extension: '.ibf'},
+    source: {type: os.platform() === 'win32' ? 'block' : 'device', driverId: 'InsuletOmniPod', extension: '.ibf'},
     enabled: {mac: true, win: true, linux: true}
   },
   dexcom: {
@@ -60,7 +69,7 @@ const devices = {
     key: 'dexcom',
     name: 'Dexcom',
     source: {type: 'device', driverId: 'Dexcom'},
-    enabled: {mac: true, win: true}
+    enabled: {mac: true, win: true, linux: true}
   },
   precisionxtra: {
     instructions: 'Plug in meter with cable',

@@ -641,6 +641,8 @@ describe('Asynchronous Actions', () => {
     it('should dispatch VERSION_CHECK_REQUEST, VERSION_CHECK_FAILURE, UPLOAD_ABORTED', () => {
       const requiredVersion = '0.99.0';
       const currentVersion = '0.50.0';
+      const time = '2016-01-01T12:05:00.123Z';
+      const deviceKey = 'a_pump';
       __Rewire__('services', {
         api: {
           upload: {
@@ -676,7 +678,7 @@ describe('Asynchronous Actions', () => {
         semver: currentVersion
       });
       const store = mockStore({});
-      store.dispatch(asyncActions.doUpload());
+      store.dispatch(asyncActions.doUpload(deviceKey, {}, time));
       const actions = store.getActions();
       expect(actions[1].payload).to.deep.include({message:(new UnsupportedError(currentVersion, requiredVersion)).message});
       expectedActions[1].payload = actions[1].payload;
@@ -691,6 +693,8 @@ describe('Asynchronous Actions', () => {
       const initialState = {
         working: {uploading: true}
       };
+      const deviceKey = 'a_pump';
+      const time = '2016-01-01T12:05:00.123Z';
       __Rewire__('services', {
         api: {
           upload: {
@@ -718,7 +722,7 @@ describe('Asynchronous Actions', () => {
         semver: '0.100.0'
       });
       const store = mockStore(initialState);
-      store.dispatch(asyncActions.doUpload());
+      store.dispatch(asyncActions.doUpload(deviceKey,{}, time));
       const actions = store.getActions();
       expect(actions[2].payload).to.deep.include({message:errorText.E_UPLOAD_IN_PROGRESS});
       expectedActions[2].payload = actions[2].payload;
@@ -1177,7 +1181,7 @@ describe('Asynchronous Actions', () => {
         },
         device: {
           detect: (foo, bar, cb) => cb(null, {}),
-          upload: (foo, bar, cb) => cb(null, [1,2,3,4,5])
+          upload: (foo, bar, cb) => cb(null, { post_records: [1,2,3,4,5], deviceModel: 'acme' })
         }
       });
       const expectedActions = [
@@ -1206,13 +1210,14 @@ describe('Asynchronous Actions', () => {
         },
         {
           type: actionTypes.UPLOAD_SUCCESS,
-          payload: { userId, deviceKey, utc: time, data: [1,2,3,4,5] },
+          payload: { userId, deviceKey, utc: time, data: { deviceModel: 'acme', post_records: [1,2,3,4,5] } },
           meta: {
             source: actionSources[actionTypes.UPLOAD_SUCCESS],
             metric: {
               eventName: 'Upload Successful',
               properties: {
                 type: targetDevice.source.type,
+                deviceModel: 'acme',
                 source: targetDevice.source.driverId,
                 started: time,
                 finished: time,
@@ -1626,7 +1631,7 @@ describe('Asynchronous Actions', () => {
           }
         },
         carelink: {
-          upload: (foo, bar, cb) => cb(null, [1,2,3,4])
+          upload: (foo, bar, cb) => cb(null, { post_records: [1,2,3,4] })
         }
       });
       const expectedActions = [
@@ -1664,13 +1669,14 @@ describe('Asynchronous Actions', () => {
         },
         {
           type: actionTypes.UPLOAD_SUCCESS,
-          payload: { userId, deviceKey, utc: time, data: [1,2,3,4] },
+          payload: { userId, deviceKey, utc: time, data: { post_records: [1,2,3,4] } },
           meta: {
             source: actionSources[actionTypes.UPLOAD_SUCCESS],
             metric: {
               eventName: 'Upload Successful',
               properties: {
                 type: targetDevice.source.type,
+                deviceModel: undefined,
                 source: 'CareLink',
                 started: time,
                 finished: time,
