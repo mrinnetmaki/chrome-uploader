@@ -208,12 +208,8 @@
     "aws-sdk": "2.472.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.3",
-<<<<<<< HEAD
-    "babel-loader": "7.1.5",
-=======
     "babel-jest": "24.9.0",
     "babel-loader": "8.0.6",
->>>>>>> c2b62ec26854cdd24cd4b272563b79a7e7c97c5c
     "babel-plugin-add-module-exports": "1.0.2",
     "babel-plugin-dev-expression": "0.2.2",
     "babel-plugin-module-resolver": "3.2.0",
