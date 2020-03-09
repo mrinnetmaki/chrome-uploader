@@ -92,6 +92,12 @@ const serverdata = {
     UPLOAD_URL: 'https://connect.nightscout.fi/tpupload',
     DATA_URL: 'https://connect.nightscout.fi/tpdata',
     BLIP_URL: 'https://connect.nightscout.fi/'
+  },
+  Poolprax: {
+    API_URL: 'https://poolprax.sensotrend.fi/tpapi',
+    UPLOAD_URL: 'https://poolprax.sensotrend.fi/tpupload',
+    DATA_URL: 'https://poolprax.sensotrend.fi/tpdata',
+    BLIP_URL: 'https://www.sensotrend.fi/dashboard-new/'
   }
 };
 
