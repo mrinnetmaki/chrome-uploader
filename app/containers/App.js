@@ -92,6 +92,12 @@ const serverdata = {
     UPLOAD_URL: 'https://connect.nightscout.fi/tpupload',
     DATA_URL: 'https://connect.nightscout.fi/tpdata',
     BLIP_URL: 'https://connect.nightscout.fi/'
+  },
+  Poolprax: {
+    API_URL: 'https://poolprax.sensotrend.fi/tpapi',
+    UPLOAD_URL: 'https://poolprax.sensotrend.fi/tpupload',
+    DATA_URL: 'https://poolprax.sensotrend.fi/tpdata',
+    BLIP_URL: 'https://www.sensotrend.fi/dashboard-new/'
   }
 };
 
@@ -123,6 +129,7 @@ export class App extends Component {
       log: this.log
     });
 
+    /*
     dns.resolveSrv('environments-srv.tidepool.org', (err, servers) => {
       for (let server of servers) {
         const protocol = server.name === 'localhost' ? 'http://' : 'https://';
@@ -135,6 +142,7 @@ export class App extends Component {
         };
       }
     });
+    */
 
     window.addEventListener('contextmenu', this.handleContextMenu, false);
   }
