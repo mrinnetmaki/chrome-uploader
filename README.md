@@ -70,10 +70,6 @@ To run the tests in this repository as they are run on CircleCI and Appveyor use
 ```bash
 $ yarn test
 ```
-or
-```bash
-$ yarn test
-```
 
 ## Linting & Code Style
 
@@ -169,16 +165,13 @@ All `.module.less` files will be use css-modules.
 To package apps for the local platform:
 
 ```bash
-$ npm run package
-```
-```bash
 $ yarn package
 ```
 
 To package apps with options:
 
 ```bash
-$ npm run package -- --[option]
+$ yarn package -- --[option]
 ```
 
 To package the app on your local machine, you need to set the `ROLLBAR_POST_TOKEN` environment variable to send telemetry data to Rollbar. You can get one for free from https://rollbar.com
@@ -212,4 +205,3 @@ This project uses a [two package.json structure](https://github.com/electron-use
 1. If the module is native to a platform or otherwise should be included with the published package (i.e. bcrypt, openbci), it should be listed under `dependencies` in `./app/package.json`.
 2. If a module is `import`ed by another module, include it in `dependencies` in `./package.json`.   See [this ESLint rule](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md).
 3. Otherwise, modules used for building, testing and debugging should be included in `devDependencies` in `./package.json`.
->>>>>>> st/rebrand
