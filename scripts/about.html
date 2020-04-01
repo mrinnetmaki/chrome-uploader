@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <title>About ${description}</title>
+    <link rel="stylesheet" href="./dist/style.css" />
+    <style type="text/css">
+        body, #main {
+            background: #fff;
+            user-select: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            font-family: "Basis", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 19px
+        }
+
+        h3, h4 {
+            margin-block-start: 0.2em;
+            margin-block-end: 0.2em;
+        }
+
+        .alert {
+            color: #f44;
+        }
+
+        #license pre {
+            display: none;
+            font-size: smaller;
+        }
+
+        #license.top pre {
+            display: block;
+        }
+
+        #license {
+            margin-top: 1em;
+        }
+
+        #license.top {
+            position: absolute;
+            margin-top: 0;
+            top: 0;
+            width: 95%;
+            height: 95%;
+            background: #fff;
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .imgText {
+            display: flex;
+            align-items: center;
+        }
+
+        .imgText img {
+            margin: 1em;
+        }
+
+        .inline {
+            display: inline-block;
+        }
+
+        img.mark {
+            max-width: 32px;
+            max-height: 32px;
+        }
+        .copyrights {
+            font-size: 12px;
+            line-height: 17px;
+            color: #555;
+        }
+    </style>
+    <script type="application/javascript"><!--
+    function toggleLicense() {
+        const license = document.querySelector("#license");
+        const main = document.querySelector("#main");
+        if (license.classList.contains("top")) {
+            license.classList.remove("top");
+            license.querySelector("button").textContent = "Show license";
+            license.setAttribute("aria-hidden", "true");
+            main.setAttribute("aria-hidden", "false");
+        } else {
+            license.classList.add("top");
+            license.querySelector("button").textContent = "Hide license";
+            license.setAttribute("aria-hidden", "false");
+            main.setAttribute("aria-hidden", "true");
+        }
+    }
+    //--></script>
+</head>
+<body>
+<div id="main" aria-hidden="false">
+    <img id="app-icon" alt="Application icon" height="200" src="resources/icon.png">
+
+    <h2>${description}</h2>
+    <h3>${name} ${version}</h3>
+    <h4>Based on <a href="https://github.com/tidepool-org/uploader">Tidepool Universal Uploader</a></h4>
+    <div class="imgText">
+        <img alt="CE" class="mark" src="resources/ce.svg"/>
+        <span class="inline">
+    <span class="alert">
+    This demo version does not meet all regulatory requirements.<br/>
+    Not for clinical use.
+    </span>
+    </span>
+    </div>
+    <div class="imgText">
+        <img alt="Manufacturer" class="mark" src="resources/manufacturer.svg"/><div class="inline">Sensotrend Oy<br/>
+        <address><a href="mailto:support@sensotrend.com">support@sensotrend.com</a></address></div>
+    </div>
+    <div class="copyrights">${:copyrights}
+<br/>Distributed under ${license}</div>
+</div>
+<div id="license" aria-hidden="true">
+    <button type="button" onclick="toggleLicense();">Show license</button>
+    <pre>${:licenseFile}</pre>
+</div>
+</body>
+</html>
