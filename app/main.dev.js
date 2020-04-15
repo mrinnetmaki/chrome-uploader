@@ -183,9 +183,9 @@ operating system, as soon as possible.`,
 
   if (process.platform === 'darwin') {
     template = [{
-      label: 'Tidepool Uploader',
+      label: 'Sensotrend Uploader',
       submenu: [{
-        label: 'About Tidepool Uploader',
+        label: 'About Sensotrend Uploader',
         click() {
           aboutDialog();
         }
@@ -198,7 +198,7 @@ operating system, as soon as possible.`,
       }, {
         type: 'separator'
       }, {
-        label: 'Hide Tidepool Uploader',
+        label: 'Hide Sensotrend Uploader',
         accelerator: 'Command+H',
         selector: 'hide:'
       }, {
