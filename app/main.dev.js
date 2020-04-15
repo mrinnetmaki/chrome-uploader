@@ -169,7 +169,9 @@ app.on('ready', async () => {
       label: 'Tidepool Uploader',
       submenu: [{
         label: 'About Tidepool Uploader',
-        selector: 'orderFrontStandardAboutPanel:'
+        click() {
+          aboutDialog();
+        }
       }, {
         label: 'Check for Updates',
         click() {
@@ -429,11 +431,17 @@ function aboutDialog() {
     minWidth: 400,
     minHeight: 400,
     useContentSize: true,
+    center: true,
     titleBarStyle: 'hidden-inset',
     icon: `file://${__dirname}/resources/icon.png`,
     webPreferences: {
         nodeIntegration: true,
     },
+    parent: mainWindow,
+    skipTaskbar: true,
+    // devTools: false,
+    // modal: true,
+    show: false
   });
 
   aboutWindow.loadURL(`file://${__dirname}/about.html`).catch((reason) => {
