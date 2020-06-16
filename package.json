@@ -15,6 +15,8 @@
     "test-all": "npm run lint && npm run test && npm run build",
     "lint": "eslint --cache --format=node_modules/eslint-formatter-pretty .",
     "lint-fix": "npm run lint -- --fix",
+    "build-about": "node scripts/make-about.js",
+    "prebuild-main": "yarn build-about",
     "build-main": "yarn build-main-quiet --progress --profile --colors",
     "build-main-quiet": "cross-env NODE_ENV=production webpack --config webpack.config.main.prod.babel.js",
     "build-renderer": "yarn build-renderer-quiet --progress --profile --colors",
@@ -23,6 +25,7 @@
     "build-quiet": "concurrently \"yarn build-main-quiet\" \"yarn build-renderer-quiet\"",
     "start": "cross-env NODE_ENV=production electron ./app/main.prod.js",
     "postinstall": "concurrently \"electron-builder install-app-deps\" \"node node_modules/fbjs-scripts/node/check-dev-engines.js package.json\"",
+    "predev": "yarn build-about",
     "dev": "cross-env START_HOT=1 yarn start-renderer-dev",
     "start-renderer-dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.renderer.dev.babel.js",
     "start-main-dev": "cross-env HOT=1 NODE_ENV=development electron -r @babel/register ./app/main.dev.js",
@@ -118,7 +121,9 @@
     "files": [
       "dist/",
       "node_modules/",
+      "resources/",
       "app.html",
+      "about.html",
       "main.prod.js",
       "main.prod.js.map",
       "package.json"
