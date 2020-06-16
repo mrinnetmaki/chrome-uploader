@@ -6,7 +6,7 @@
   "main": "main.prod.js",
   "author": "Mikael Rinnetmäki",
   "license": "BSD-2-Clause",
-  "repository": "Sensotrend/uploader",
+  "repository": "Sensotrend/sensotrend-uploader",
   "scripts": {
     "av-whitelist": "node ./scripts/whitelisting/av-submit.js",
     "build-docs": "./scripts/update-gh-pages.sh",
@@ -65,13 +65,8 @@
     "plist": "3.0.1",
     "prop-types": "15.7.2",
     "react": "16.4.0",
-<<<<<<< HEAD
-    "react-dom": "^16.12.0",
-    "react-hot-loader": "4.12.17",
-=======
     "react-dom": "16.4.0",
     "react-hot-loader": "4.12.21",
->>>>>>> a1c398fd62b09639f2002f5a224f543db7d3177b
     "react-redux": "5.0.7",
     "react-router-dom": "4.3.1",
     "react-router-redux": "5.0.0-alpha.9",
