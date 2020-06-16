@@ -407,11 +407,6 @@ operating system, as soon as possible.`,
         click() {
           shell.openExternal('https://developer.tidepool.org/privacy-policy/');
         }
-      }, {
-        label: 'About Sensotrend Uploader',
-        click() {
-          aboutDialog();
-        }
       }]
     }];
     menu = Menu.buildFromTemplate(template);
@@ -419,44 +414,6 @@ operating system, as soon as possible.`,
     mainWindow.setMenu(menu);
   }
 });
-
-let aboutWindow = null;
-function aboutDialog() {
-  if (aboutWindow !== null) {
-    aboutWindow.show();
-    return;
-  }
-
-  aboutWindow = new BrowserWindow({
-    width: 600,
-    height: 600,
-    minWidth: 400,
-    minHeight: 400,
-    useContentSize: true,
-    titleBarStyle: 'hidden-inset',
-    icon: `file://${__dirname}/resources/icon.png`,
-    webPreferences: {
-        nodeIntegration: true,
-    },
-  });
-
-  aboutWindow.loadURL(`file://${__dirname}/about.html`).catch((reason) => {
-    console.log(reason);
-  });
-  aboutWindow.once('ready-to-show', () => {
-    aboutWindow.show();
-  });
-  aboutWindow.once('closed', () => {
-    aboutWindow = null;
-  });
-  aboutWindow.webContents.on('will-navigate', (e, url) => {
-    e.preventDefault();
-    shell.openExternal(url).catch((reason) => {
-      console.log('Could not open external: ' + reason);
-    });
-  });
-  aboutWindow.setMenu(null);
-}
 
 function checkUpdates(){
   // in production NODE_ENV we check for updates, but not if NODE_ENV is 'development'
