@@ -1,7 +1,7 @@
 # Sensotrend Uploader
 Installable uploader software, based on Tidepool's open source implementation
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/tidepool-org/uploader.svg)](https://greenkeeper.io/)
+
 
 [![CircleCI](https://circleci.com/gh/tidepool-org/uploader/tree/master.svg?style=shield)](https://circleci.com/gh/tidepool-org/uploader/tree/master)
 [![Build status](https://ci.appveyor.com/api/projects/status/jj71uykxm27s3mla/branch/master?svg=true)](https://ci.appveyor.com/project/krystophv/uploader/branch/master)
@@ -25,7 +25,7 @@ This README is focused on just the details of getting the uploader running local
 ## How to set it up
 
 1. Clone this repository.
-1. Make sure you have node v8.x installed. If you are managing node installations with [`nvm`](https://github.com/creationix/nvm 'GitHub: nvm'), which we **highly recommend**, you can just do `nvm use` when navigating to this repository to switch to the correct version of node. (In this repository, the correct version of node will always be the version of node packaged by the version of Electron that we are using and specified in the `.nvmrc` file.)
+1. Make sure you have node v12.x installed. If you are managing node installations with [`nvm`](https://github.com/creationix/nvm 'GitHub: nvm'), which we **highly recommend**, you can just do `nvm use` when navigating to this repository to switch to the correct version of node. (In this repository, the correct version of node will always be the version of node packaged by the version of Electron that we are using and specified in the `.nvmrc` file.)
 1. Run `npm install` or, preferably, `yarn`
 1. Set the config for the environment you want to target (see [Config](#config) below)
 1. Run the following command:
@@ -67,10 +67,6 @@ All debug options are turned *off* by default in `config/local.sh`.
 
 To run the tests in this repository as they are run on CircleCI and Appveyor use:
 
-```bash
-$ yarn test
-```
-or
 ```bash
 $ yarn test
 ```
@@ -169,16 +165,13 @@ All `.module.less` files will be use css-modules.
 To package apps for the local platform:
 
 ```bash
-$ npm run package
-```
-```bash
 $ yarn package
 ```
 
 To package apps with options:
 
 ```bash
-$ npm run package -- --[option]
+$ yarn package -- --[option]
 ```
 
 To package the app on your local machine, you need to set the `ROLLBAR_POST_TOKEN` environment variable to send telemetry data to Rollbar. You can get one for free from https://rollbar.com
@@ -212,4 +205,3 @@ This project uses a [two package.json structure](https://github.com/electron-use
 1. If the module is native to a platform or otherwise should be included with the published package (i.e. bcrypt, openbci), it should be listed under `dependencies` in `./app/package.json`.
 2. If a module is `import`ed by another module, include it in `dependencies` in `./package.json`.   See [this ESLint rule](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md).
 3. Otherwise, modules used for building, testing and debugging should be included in `devDependencies` in `./package.json`.
->>>>>>> st/rebrand
