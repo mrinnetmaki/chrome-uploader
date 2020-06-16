@@ -93,25 +93,19 @@ const serverdata = {
     DATA_URL: 'https://connect.sensotrend.fi/tpdata',
     BLIP_URL: 'https://connect.sensotrend.fi/'
   },
-  NSDevelopment: {
+  ['Nightscout.fi Staging (dev)']: {
     API_URL: 'https://dev.nightscout.fi/tpapi',
     UPLOAD_URL: 'https://dev.nightscout.fi/tpupload',
     DATA_URL: 'https://dev.nightscout.fi/tpdata',
     BLIP_URL: 'https://dev.nightscout.fi/'
   },
-  NSStaging: {
+  ['Nightscout.fi Integration (test)']: {
     API_URL: 'https://test.nightscout.fi/tpapi',
     UPLOAD_URL: 'https://test.nightscout.fi/tpupload',
     DATA_URL: 'https://test.nightscout.fi/tpdata',
     BLIP_URL: 'https://test.nightscout.fi/'
   },
-  NSIntegration: {
-    API_URL: 'https://test.nightscout.fi/tpapi',
-    UPLOAD_URL: 'https://test.nightscout.fi/tpupload',
-    DATA_URL: 'https://test.nightscout.fi/tpdata',
-    BLIP_URL: 'https://test.nightscout.fi/'
-  },
-  NSProduction: {
+  ['Nightscout.fi Production']: {
     API_URL: 'https://connect.nightscout.fi/tpapi',
     UPLOAD_URL: 'https://connect.nightscout.fi/tpupload',
     DATA_URL: 'https://connect.nightscout.fi/tpdata',
