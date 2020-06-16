@@ -113,10 +113,6 @@ const serverdata = {
   }
 };
 
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
 export class App extends Component {
   static propTypes = {
     route: PropTypes.shape({
@@ -171,18 +167,7 @@ export class App extends Component {
           }
         });
       } else {
-        this.log('Got Tidepool servers', servers);
-        const tidepoolNamedServers = servers.map(s => ({
-          ...s,
-          name: `Tidepool ${
-            s.name
-            .replace('.tidepool.org', '')
-            .split('.')
-            .map(capitalizeFirstLetter)
-            .join(' ')
-          }`,
-        }));
-        addServers(tidepoolNamedServers);
+        addServers(servers);
       }
     });
 
