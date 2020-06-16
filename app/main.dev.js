@@ -85,7 +85,7 @@ function addDataPeriodGlobalListener(menu) {
 };
 
 app.on('ready', async () => {
-  await installExtensions();
+  // await installExtensions();
   const resizable = (process.env.NODE_ENV === 'development');
 
   mainWindow = new BrowserWindow({
@@ -329,11 +329,8 @@ operating system, as soon as possible.`,
     template = [{
       label: '&File',
       submenu: [{
-        label: '&Open',
-        accelerator: 'Ctrl+O'
-      }, {
-        label: '&Close',
-        accelerator: 'Ctrl+W',
+        label: '&Exit',
+        accelerator: 'Alt+F4',
         click() {
           mainWindow.close();
         }
