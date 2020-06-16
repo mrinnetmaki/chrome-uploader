@@ -92,6 +92,24 @@ const serverdata = {
     UPLOAD_URL: 'https://connect.sensotrend.fi/tpupload',
     DATA_URL: 'https://connect.sensotrend.fi/tpdata',
     BLIP_URL: 'https://connect.sensotrend.fi/'
+  },
+  ['Nightscout.fi Staging (dev)']: {
+    API_URL: 'https://dev.nightscout.fi/tpapi',
+    UPLOAD_URL: 'https://dev.nightscout.fi/tpupload',
+    DATA_URL: 'https://dev.nightscout.fi/tpdata',
+    BLIP_URL: 'https://dev.nightscout.fi/'
+  },
+  ['Nightscout.fi Integration (test)']: {
+    API_URL: 'https://test.nightscout.fi/tpapi',
+    UPLOAD_URL: 'https://test.nightscout.fi/tpupload',
+    DATA_URL: 'https://test.nightscout.fi/tpdata',
+    BLIP_URL: 'https://test.nightscout.fi/'
+  },
+  ['Nightscout.fi Production']: {
+    API_URL: 'https://connect.nightscout.fi/tpapi',
+    UPLOAD_URL: 'https://connect.nightscout.fi/tpupload',
+    DATA_URL: 'https://connect.nightscout.fi/tpdata',
+    BLIP_URL: 'https://connect.nightscout.fi/'
   }
 };
 
