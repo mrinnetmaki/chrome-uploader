@@ -127,6 +127,7 @@ export class App extends Component {
       log: this.log
     });
 
+    /*
     const addServers = (servers) => {
       if (servers && servers.length && servers.length > 0) {
         for (let server of servers) {
@@ -167,6 +168,7 @@ export class App extends Component {
         addServers(tidepoolNamedServers);
       }
     });
+    */
 
     window.addEventListener('contextmenu', this.handleContextMenu, false);
   }
