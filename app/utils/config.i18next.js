@@ -11,7 +11,7 @@ let i18nextOptions = module.exports = {
   saveMissing: true,
   fallbackLng: 'en',
   returnEmptyString: false,
-  whitelist: ['en', 'es'],
+  whitelist: ['en', 'es', 'fi'],
   keySeparator: false,
   nsSeparator: '|',
   debug: false,
