@@ -25,7 +25,7 @@ const devices = {
   },
   caresensble: {
     instructions: i18n.t('Once paired, hold in right arrow until "BT Send" appears on the screen'),
-    name: 'CareSens N Premier & Dual (using Bluetooth)',
+    name: i18n.t('CareSens N Premier & Dual (using Bluetooth)'),
     key: 'caresensble',
     source: {type: 'device', driverId: 'BluetoothLE'},
     enabled: {mac: true, win: false, linux: true}
@@ -46,8 +46,8 @@ const devices = {
       'alt': 'Contour Next Link'
     },
     key: 'medtronic',
-    name: 'Medtronic 523, 723, Veo or 530G',
-    selectName: 'Medtronic 523, 723, Veo or 530G (using Contour Next Link)',
+    name: i18n.t('Medtronic 523, 723, Veo or 530G'),
+    selectName: i18n.t('Medtronic 523, 723, Veo or 530G (using Contour Next Link)'),
     source: {type: 'device', driverId: 'Medtronic'},
     enabled: {mac: true, win: true, linux: true}
   },
@@ -60,8 +60,8 @@ const devices = {
       'alt': 'Bayer Contour Next Link 2.4'
     },
     key: 'medtronic600',
-    name: 'Medtronic 630G, 640G or 670G',
-    selectName: 'Medtronic 630G, 640G, 670G (using Contour Next Link 2.4)',
+    name: i18n.t('Medtronic 630G, 640G or 670G'),
+    selectName: i18n.t('Medtronic 630G, 640G, 670G (using Contour Next Link 2.4)'),
     showDriverLink: {mac: false, win: false},
     source: {type: 'device', driverId: 'Medtronic600'},
     enabled: {mac: true, win: true, linux: true}
@@ -129,7 +129,7 @@ const devices = {
   bayercontour: {
     instructions: i18n.t('Plug in meter with cable and make sure meter is switched on'),
     key: 'bayercontour',
-    name: 'Ascensia (Bayer) Contour Next EZ, Contour, Contour Link or Contour Plus',
+    name: i18n.t('Ascensia (Bayer) Contour Next EZ, Contour, Contour Link or Contour Plus'),
     source: {type: 'device', driverId: 'BayerContour'},
     enabled: {mac: true, win: true, linux: true}
   },
@@ -142,7 +142,7 @@ const devices = {
   },
   onetouchverio: {
     instructions: i18n.t('Plug in meter with micro-USB'),
-    name: 'OneTouch Verio, Verio Flex and Verio Reflect',
+    name: i18n.t('OneTouch Verio, Verio Flex and Verio Reflect'),
     key: 'onetouchverio',
     source: {type: 'device', driverId: 'OneTouchVerio'},
     enabled: {linux: true, mac: true, win: true},
