@@ -7,7 +7,7 @@ let i18nextOptions = module.exports = {
   interpolation: {
     escapeValue: false
   },
-  lng: 'en',
+  lng: 'fi',
   saveMissing: true,
   fallbackLng: 'en',
   returnEmptyString: false,
