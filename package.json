@@ -28,10 +28,10 @@
     "start-main-dev": "cross-env HOT=1 NODE_ENV=development electron -r @babel/register ./app/main.dev.js",
     "prepare-qa-build": "node -r @babel/register scripts/prepare-qa-build.js",
     "package": "npm run build-quiet && electron-builder -p always -c electron-builder-publish.js",
-    "package-win": "npm run build && electron-builder --win --x64",
-    "package-mac": "npm run build && electron-builder --mac",
-    "package-linux": "npm run build && electron-builder --linux",
-    "package-all": "npm run build && electron-builder -mwl"
+    "package-win": "npm run build && electron-builder --win --x64 -c electron-builder-publish.js",
+    "package-mac": "npm run build && electron-builder --mac -c electron-builder-publish.js",
+    "package-linux": "npm run build && electron-builder --linux -c electron-builder-publish.js",
+    "package-all": "npm run build && electron-builder -mwl -c electron-builder-publish.js"
   },
   "dependencies": {
     "@hot-loader/react-dom": "16.14.0",
