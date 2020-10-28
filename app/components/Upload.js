@@ -517,7 +517,7 @@ export default class Upload extends Component {
       <div>
         <div className={styles.textInputWrapper}>
           Medtronic has removed the CareLink export feature.
-          Click below to enable direct upload to Tidepool using a Contour Next Link.
+          Click below to enable direct upload to Sensotrend Connect using a Contour Next Link.
         </div>
       </div>
     );

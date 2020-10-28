@@ -74,7 +74,7 @@ export function getUpdateProfileErrorMessage(status) {
     case 401:
       return 'You need to be logged in to update your preferences.';
     case 409:
-      return 'This email is already associated with a Tidepool account.';
+      return 'This email is already associated with a Sensotrend account.';
     case 503:
       return errorText.E_OFFLINE;
     default:

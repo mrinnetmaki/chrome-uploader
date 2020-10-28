@@ -33,9 +33,9 @@ export default class VersionCheckError extends Component {
   static defaultProps = {
     errorText: {
       CONNECT: 'Please check your connection, quit & relaunch to try again.',
-      ERROR_DETAILS: 'Details for Tidepool\'s developers:',
+      ERROR_DETAILS: 'Details for Sensotrend\'s developers:',
       OFFLINE: 'You\'re not connected to the Internet.',
-      SERVERS_DOWN: 'We can\'t connect to Tidepool right now.',
+      SERVERS_DOWN: 'We can\'t connect to Sensotrend Connect right now.',
       TRY_AGAIN: 'Quit & relaunch the Uploader to try again.'
     }
   };
