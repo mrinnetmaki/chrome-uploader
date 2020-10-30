@@ -325,12 +325,12 @@ operating system, as soon as possible.`,
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('http://support.tidepool.org/');
+          shell.openExternal('mailto:support@sensotrend.com');
         }
       }, {
         label: i18n.t('Privacy Policy'),
         click() {
-          shell.openExternal('https://developer.tidepool.org/privacy-policy/');
+          shell.openExternal('https://connect.sensotrend.fi/privacy');
         }
       }]
     }];
@@ -406,7 +406,7 @@ operating system, as soon as possible.`,
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('http://support.tidepool.org/');
+          shell.openExternal('mailto:support@sensotrend.com');
         }
       }, {
         label: i18n.t('Check for Updates'),
@@ -417,7 +417,7 @@ operating system, as soon as possible.`,
       }, {
         label: i18n.t('Privacy Policy'),
         click() {
-          shell.openExternal('https://developer.tidepool.org/privacy-policy/');
+          shell.openExternal('https://connect.sensotrend.fi/privacy');
         }
       }, {
         label: i18n.t('About Tidepool Uploader'),
@@ -533,8 +533,8 @@ ipcMain.on('autoUpdater', (event, arg) => {
   autoUpdater[arg]();
 });
 
-if(!app.isDefaultProtocolClient('tidepoolupload')){
-  app.setAsDefaultProtocolClient('tidepoolupload');
+if(!app.isDefaultProtocolClient('sensotrendupload')){
+  app.setAsDefaultProtocolClient('sensotrendupload');
 }
 
 app.on('window-all-closed', () => {
