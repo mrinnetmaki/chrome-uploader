@@ -114,14 +114,14 @@ function createWindow() {
     if (osName() === 'Windows 7') {
       const options = {
         type: 'info',
-        title: 'Please update to a modern operating system',
+        title: i18n.t('Please update to a modern operating system'),
         message:
-          `Windows 7 won't be patched for any new viruses or security problems
+          i18n.t(`Windows 7 won't be patched for any new viruses or security problems
 going forward.
 
 While Windows 7 will continue to work, Microsoft recommends you
 start planning to upgrade to Windows 10, or an alternative
-operating system, as soon as possible.`,
+operating system, as soon as possible.`),
         buttons: ['Continue']
       };
       await dialog.showMessageBox(options);
