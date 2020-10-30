@@ -9,6 +9,7 @@ import { push } from 'connected-react-router';
 import { ipcRenderer } from 'electron';
 import { ConnectedRouter } from 'connected-react-router';
 import { createHashHistory } from 'history';
+import moment from 'moment';
 
 import config from '../lib/config';
 window.DEBUG = config.DEBUG;
@@ -29,6 +30,10 @@ store.dispatch(push('/'));
 // from an action creator.
 ipcRenderer.on('action', function(event, action) {
   store.dispatch(action);
+});
+
+ipcRenderer.on('setLanguage', function(event, language) {
+  moment.locale(language);
 });
 
 const AppContainer = process.env.PLAIN_HMR ? Fragment : ReactHotAppContainer;
