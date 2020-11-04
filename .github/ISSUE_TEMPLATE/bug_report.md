@@ -26,7 +26,7 @@ Screenshots:
 ### 2. Requirement analysis by software developer 
 Correction plan:
 Target schedule:
-Dependencies on other perts of the SW:
+Dependencies on other parts of the SW:
 
 ### 3. Software control after implementation
 
