@@ -9,7 +9,7 @@ assignees: ''
 
 When creating a report, please fill in part 1 with as much information as possible. Other parts will be filled by our software developers.
 
-## 1. Bug report 
+### 1. Bug report 
 
 [Write the description here…]
 
@@ -20,7 +20,7 @@ Additional information: [To be filled when applicable]
 - Operation system: [Operation systen, f.ex Win10 or Mac]
 - Did the device error cause an incident to the patient? [Yes/No. If yes, please write details about the incident here]
 
-## 2. Requirement analysis by software developer 
+### 2. Requirement analysis by software developer 
 
 Known requirements (functional, performance, usability, safety):
 Identified potential risks to the patient:
@@ -29,7 +29,7 @@ Implementation plan:
 Target schedule:
 Dependencies on other issues:
 
-## 3. Software control after implementation
+### 3. Software control after implementation
 
 ### 3.1. OWASP top 10
 [https://github.com/OWASP/www-project-top-ten/blob/master/index.md](url)
