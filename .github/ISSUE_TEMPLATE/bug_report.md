@@ -20,10 +20,10 @@ Did it cause an incident to the patient? [Yes/No. If yes, please write details a
 Screenshots:
 [If applicable, add screenshots to help explain the problem.]
 
-Additional information (when applicable):
+System information:
 - Sensotrend Uploader version: [for example 2.33.0-beta]
 - Device used as a data source: [for example FreeSyle Libre or CareSens Dual using Bluetooth]
-- Operation system: [for example Win10, or MacOS Catalina, or Linux Ubuntu 20.04]
+- Operation system and version: [for example Win10, or MacOS Catalina, or Linux Ubuntu 20.04]
 - Possible other system information:
 
 ### 2. Requirements and dependencies 
