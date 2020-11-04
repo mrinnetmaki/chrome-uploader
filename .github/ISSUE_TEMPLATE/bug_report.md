@@ -18,7 +18,7 @@ Additional information (when applicable):
 - Sensotrend Uploader version: [f.ex. 2.33.0-beta]
 - Device used as a data source: [f.ex. FreeSyle Libre or CareSens Dual using Bluetooth]
 - Operation system: [f.ex Win10 or Mac]
-- Did the device error cause an incident to the patient? [Yes/No. If yes, please write details about the incident here]
+- Did the bug cause an incident to the patient? [Yes/No. If yes, please write details about the incident here]
 
 Screenshots:
 [If applicable, add screenshots to help explain the problem]
