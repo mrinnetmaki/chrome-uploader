@@ -15,9 +15,9 @@ Description: [A clear and concise description of what the bug is]
 
 Additional information (when applicable):
 - Is the problem repeatable: [Yes/No]
-- Sensotrend Uploader version: [Version information at the bottom of the window, f.ex. 2.33.0-beta]
-- Device used as a data source: [Device and possible connection type, f.ex. FreeSyle Libre or CareSens Dual using Bluetooth]
-- Operation system: [Operation systen, f.ex Win10 or Mac]
+- Sensotrend Uploader version: [f.ex. 2.33.0-beta]
+- Device used as a data source: [f.ex. FreeSyle Libre or CareSens Dual using Bluetooth]
+- Operation system: [f.ex Win10 or Mac]
 - Did the device error cause an incident to the patient? [Yes/No. If yes, please write details about the incident here]
 
 Screenshots:
@@ -48,7 +48,6 @@ Dependencies on other issues:
 - [ ] 10 Insufficient Logging & Monitoring - [comments]
 
 ### 3.2. Verification
-
 Verification plan:
 Verification date:
 Verification results:

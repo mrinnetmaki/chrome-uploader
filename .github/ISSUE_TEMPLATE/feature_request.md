@@ -1,16 +1,19 @@
 ---
-name: Requirement issue template
-about: Used for new requirements
+name: 💡 Other request
+about: Add a feature or improvement request
 title: ''
 labels: 'evaluation needed'
 assignees: ''
 
 ---
 
-### Description
+When creating a request, please fill in part 1 with as much information as possible. Other parts will be filled by our software developers.
+
+### 1. Description
 [Write the description here…]
 
-### Requirement analysis
+### 2. Requirement analysis by software developer
+
 Known requirements (functional, performance, usability, safety):
 Identified potential risks to the patient:
 
@@ -18,7 +21,10 @@ Implementation plan:
 Target schedule:
 Dependencies on other issues:
 
-### OWASP top 10
+### 3. Software control after implementation
+
+### 3.1 OWASP top 10
+
 [https://github.com/OWASP/www-project-top-ten/blob/master/index.md](url)
 - [ ] 1 Injection - [comments]
 - [ ] 2 Broken Authentication - [comments]
@@ -31,7 +37,8 @@ Dependencies on other issues:
 - [ ] 9 Using Components with Known Vulnerabilities - [comments]
 - [ ] 10 Insufficient Logging & Monitoring - [comments]
 
-### Verification
+### 3.2. Verification
+
 Verification plan:
 Verification date:
 Verification results:
