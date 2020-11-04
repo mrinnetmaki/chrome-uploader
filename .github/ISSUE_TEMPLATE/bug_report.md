@@ -7,12 +7,12 @@ assignees: ''
 
 ---
 
-When creating a report, please fill in parts 1 and 2 with as much information as possible.
+When creating a report, please fill in parts 1 and 2 with as much information as possible. A good problem description is most important for us. Other fiels are optional information that will help us resolve the problem as quickly as possible.
 
 ### 1. Bug report 
 
 Description: [A clear and concise description of the problem reported.]
-Expected behavior: [A clear and concise description of what you expected to happen.]
+Expected behavior: [Description of what you expected to happen.]
 Is the problem repeatable: [Yes/No. Optionally steps to reproduse; for example 1. Go to '...' 2. Click on '....' 3. Scroll down to '....' 4. See error]
 
 Did it cause an incident to the patient? [Yes/No. If yes, please write details about the incident.]
@@ -25,7 +25,6 @@ Additional information (when applicable):
 - Device used as a data source: [for example FreeSyle Libre or CareSens Dual using Bluetooth]
 - Operation system: [for example Win10, or MacOS Catalina, or Linux Ubuntu 20.04]
 - Possible other system information:
-
 
 ### 2. Requirements and dependencies 
 Known dependencies for
