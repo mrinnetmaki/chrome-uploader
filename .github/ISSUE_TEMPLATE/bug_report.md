@@ -24,13 +24,9 @@ Screenshots:
 [If applicable, add screenshots to help explain the problem]
 
 ### 2. Requirement analysis by software developer 
-
-Known requirements (functional, performance, usability, safety):
-Identified potential risks to the patient:
-
-Implementation plan:
+Correction plan:
 Target schedule:
-Dependencies on other issues:
+Dependencies on other perts of the SW:
 
 ### 3. Software control after implementation
 
