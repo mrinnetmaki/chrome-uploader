@@ -1,5 +1,5 @@
 ---
-name: 🐛 Bug report
+name: Bug report
 about: Create a report when something went wrong
 title: ''
 labels: 'evaluation needed', 'bug'
