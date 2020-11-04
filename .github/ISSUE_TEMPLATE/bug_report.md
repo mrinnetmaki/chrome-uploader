@@ -1,5 +1,5 @@
 ---
-name: 🐛 Bug report
+name: 🕷️ Bug report
 about: Create a report when something went wrong
 title: ''
 labels: 'evaluation needed, bug'
@@ -7,28 +7,38 @@ assignees: ''
 
 ---
 
-When creating a report, please fill in part 1 with as much information as possible. Other parts will be filled by our software developers.
+When creating a report, please fill in parts 1 and 2 with as much information as possible.
 
 ### 1. Bug report 
 
-Description: [A clear and concise description of what the bug is]
+Description: [A clear and concise description of the problem reported.]
+Expected behavior: [A clear and concise description of what you expected to happen.]
+Is the problem repeatable: [Yes/No. Optionally steps to reproduse; for example 1. Go to '...' 2. Click on '....' 3. Scroll down to '....' 4. See error]
 
-Additional information (when applicable):
-- Is the problem repeatable: [Yes/No]
-- Sensotrend Uploader version: [f.ex. 2.33.0-beta]
-- Device used as a data source: [f.ex. FreeSyle Libre or CareSens Dual using Bluetooth]
-- Operation system: [f.ex Win10 or Mac]
-- Did the bug cause an incident to the patient? [Yes/No. If yes, please write details about the incident here]
+Did it cause an incident to the patient? [Yes/No. If yes, please write details about the incident.]
 
 Screenshots:
-[If applicable, add screenshots to help explain the problem]
+[If applicable, add screenshots to help explain the problem.]
 
-### 2. Requirement analysis by software developer 
-Correction plan:
-Target schedule:
-Dependencies on other parts of the SW:
+Additional information (when applicable):
+- Sensotrend Uploader version: [for example 2.33.0-beta]
+- Device used as a data source: [for example FreeSyle Libre or CareSens Dual using Bluetooth]
+- Operation system: [for example Win10, or MacOS Catalina, or Linux Ubuntu 20.04]
+- Possible other system information:
 
-### 3. Software control after implementation
+
+### 2. Requirements and dependencies 
+Known dependencies for
+- functional: 
+- performance: 
+- usability: 
+- safety: 
+Potential risks to the patient: 
+Dependencies on other parts of the SW: 
+Target schedule of the correction: 
+
+### 3. Implementation details
+Correction plan: 
 
 ### 3.1. OWASP top 10
 [https://github.com/OWASP/www-project-top-ten/blob/master/index.md](url)
@@ -43,7 +53,7 @@ Dependencies on other parts of the SW:
 - [ ] 9 Using Components with Known Vulnerabilities - [comments]
 - [ ] 10 Insufficient Logging & Monitoring - [comments]
 
-### 3.2. Verification
+### 4. Verification
 Verification plan:
 Verification date:
 Verification results:

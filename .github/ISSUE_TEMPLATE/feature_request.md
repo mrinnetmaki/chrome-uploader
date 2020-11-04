@@ -7,24 +7,25 @@ assignees: ''
 
 ---
 
-When creating a request, please fill in part 1 with as much information as possible. Other parts will be filled by our software developers.
+When creating a request, please fill in parts 1 and 2 with as much information as possible.
 
 ### 1. Description
 [Write the description here…]
 
-### 2. Requirement analysis by software developer
+### 2. Requirements and dependencies
+Known requirements for
+- functional: 
+- performance: 
+- usability: 
+- safety: 
+Identified potential risks to the patient: 
+Dependencies on other issues: 
+Target schedule: 
 
-Known requirements (functional, performance, usability, safety):
-Identified potential risks to the patient:
-
+### 3. Implementation details
 Implementation plan:
-Target schedule:
-Dependencies on other issues:
-
-### 3. Software control after implementation
 
 ### 3.1 OWASP top 10
-
 [https://github.com/OWASP/www-project-top-ten/blob/master/index.md](url)
 - [ ] 1 Injection - [comments]
 - [ ] 2 Broken Authentication - [comments]
@@ -37,8 +38,7 @@ Dependencies on other issues:
 - [ ] 9 Using Components with Known Vulnerabilities - [comments]
 - [ ] 10 Insufficient Logging & Monitoring - [comments]
 
-### 3.2. Verification
-
+### 4. Verification
 Verification plan:
 Verification date:
 Verification results:
