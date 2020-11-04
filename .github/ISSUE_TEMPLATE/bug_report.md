@@ -1,8 +1,8 @@
 ---
-name: Bug report
+name: 🐛 Bug report
 about: Create a report when something went wrong
 title: ''
-labels: 'evaluation needed'
+labels: 'evaluation needed, bug'
 assignees: ''
 
 ---
@@ -11,14 +11,17 @@ When creating a report, please fill in part 1 with as much information as possib
 
 ### 1. Bug report 
 
-[Write the description here…]
+Description: [A clear and concise description of what the bug is]
 
-Additional information: [To be filled when applicable]
+Additional information (when applicable):
 - Is the problem repeatable: [Yes/No]
 - Sensotrend Uploader version: [Version information at the bottom of the window, f.ex. 2.33.0-beta]
 - Device used as a data source: [Device and possible connection type, f.ex. FreeSyle Libre or CareSens Dual using Bluetooth]
 - Operation system: [Operation systen, f.ex Win10 or Mac]
 - Did the device error cause an incident to the patient? [Yes/No. If yes, please write details about the incident here]
+
+Screenshots:
+[If applicable, add screenshots to help explain the problem]
 
 ### 2. Requirement analysis by software developer 
 
