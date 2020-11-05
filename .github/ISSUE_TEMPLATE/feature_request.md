@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-When creating a request, please fill in parts 1 and 2 with as much information as possible.
+When creating a request, please fill in parts 1 and 2 with as much information as possible. A good description is most important for us. Fields in the part 2 can also be filled when analyzing the issue.
 
 ### 1. Description
 [Write the description here…]
@@ -18,6 +18,7 @@ Known requirements for
 - performance: 
 - usability: 
 - safety: 
+
 Identified potential risks to the patient: 
 Dependencies on other issues: 
 Target schedule: 

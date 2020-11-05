@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-When creating a report, please fill in parts 1 and 2 with as much information as possible. A good problem description is most important for us. Other fiels are optional information that will help us resolve the problem as quickly as possible.
+When creating a report, please fill in parts 1 and 2 with as much information as possible. A good problem description is most important for us. Other fields are optional information that will help us resolve the problem as quickly as possible.
 
 ### 1. Bug report 
 
@@ -32,6 +32,7 @@ Known dependencies for
 - performance: 
 - usability: 
 - safety: 
+
 Potential risks to the patient: 
 Dependencies on other parts of the SW: 
 Target schedule of the correction: 
