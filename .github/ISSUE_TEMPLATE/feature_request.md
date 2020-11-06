@@ -13,34 +13,33 @@ When creating a request, please fill in parts 1 and 2 with as much information a
 [Write the description here…]
 
 ### 2. Requirements and dependencies
-Known requirements for
-- functional: 
-- performance: 
-- usability: 
-- safety: 
+*Known requirements for*
+- *functional:* 
+- *performance:* 
+- *usability:* 
+- *safety:* 
 
-Identified potential risks to the patient: 
-Dependencies on other issues: 
-Target schedule: 
+*Dependencies on other issues:* 
 
 ### 3. Implementation details
-Implementation plan:
+*Implementation plan:*
+*Target schedule:* 
 
 ### 3.1 OWASP top 10
 [https://github.com/OWASP/www-project-top-ten/blob/master/index.md](url)
-- [ ] 1 Injection - [comments]
-- [ ] 2 Broken Authentication - [comments]
-- [ ] 3 Sensitive Data Exposure - [comments]
-- [ ] 4 XML External Entities (XXE) - [comments]
-- [ ] 5 Broken Access Control - [comments]
-- [ ] 6 Security Misconfiguration - [comments]
-- [ ] 7 Cross-Site Scripting XSS - [comments]
-- [ ] 8 Insecure Deserialization - [comments]
-- [ ] 9 Using Components with Known Vulnerabilities - [comments]
-- [ ] 10 Insufficient Logging & Monitoring - [comments]
+- [ ] *1 Injection* - [comments]
+- [ ] *2 Broken Authentication* - [comments]
+- [ ] *3 Sensitive Data Exposure* - [comments]
+- [ ] *4 XML External Entities (XXE)* - [comments]
+- [ ] *5 Broken Access Control* - [comments]
+- [ ] *6 Security Misconfiguration* - [comments]
+- [ ] *7 Cross-Site Scripting XSS* - [comments]
+- [ ] *8 Insecure Deserialization* - [comments]
+- [ ] *9 Using Components with Known Vulnerabilities* - [comments]
+- [ ] *10 Insufficient Logging & Monitoring* - [comments]
 
 ### 4. Verification
-Verification plan:
-Verification date:
-Verification results:
+*Verification plan:*
+*Verification date:*
+*Verification results:*
 
