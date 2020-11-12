@@ -40,7 +40,7 @@ When creating a report, please fill in parts 1 and 2 with as much information as
 **Target schedule of the correction:** 
 
 ### 3.1. OWASP top 10
-[https://github.com/OWASP/www-project-top-ten/blob/master/index.md](url)
+[https://github.com/OWASP/www-project-top-ten/blob/master/index.md](https://github.com/OWASP/www-project-top-ten/blob/master/index.md)
 - [ ] **1 Injection** - [comments]
 - [ ] **2 Broken Authentication** - [comments]
 - [ ] **3 Sensitive Data Exposure** - [comments]
