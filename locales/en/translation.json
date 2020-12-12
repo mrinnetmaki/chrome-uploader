@@ -217,6 +217,7 @@
   "Make sure your Bluetooth is switched on": "Make sure your Bluetooth is switched on",
   "Tidepool is having trouble connecting to your Dexcom receiver. Please make sure your other Dexcom uploading software programs are closed (like Dexcom Clarity or Glooko/Diasend). You can also try using another micro-USB cable. Some micro-USB cables are designed to carry a signal for power only.": "Sensotrend is having trouble connecting to your Dexcom receiver. Please make sure your other Dexcom uploading software programs are closed (like Dexcom Clarity or Glooko/Diasend). You can also try using another micro-USB cable. Some micro-USB cables are designed to carry a signal for power only.",
   "We need your e-mail to log you in!": "We need your e-mail to log you in!",
+  "We couldn't log you in. Try again in a few minutes.": "We couldn't log you in. Try again in a few minutes.",
   "Something looks funky, make sure this account info is correct.": "Something looks funky, make sure this account info is correct.",
   "Your session timed out. You'll need to log back in.": "Your session timed out. You'll need to log back in.",
   "We can't create this account because that email address already has an account.": "We can't create this account because that email address already has an account.",
