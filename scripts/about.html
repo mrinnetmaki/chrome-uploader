@@ -7,7 +7,7 @@
         http-equiv="Content-Security-Policy"
         content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'unsafe-inline' 'self'; script-src 'unsafe-inline'; font-src data: 'self'; "
     >
-    <title>About ${description}</title>
+    <title>Tietoja ${description}</title>
     <link rel="stylesheet" href="./dist/style.css" />
     <style type="text/css">
         body, #main {
@@ -92,12 +92,12 @@
         const main = document.querySelector("#main");
         if (license.classList.contains("top")) {
             license.classList.remove("top");
-            license.querySelector("button").textContent = "Show license";
+            license.querySelector("button").textContent = "Näytä lisenssi";
             license.setAttribute("aria-hidden", "true");
             main.setAttribute("aria-hidden", "false");
         } else {
             license.classList.add("top");
-            license.querySelector("button").textContent = "Hide license";
+            license.querySelector("button").textContent = "Piilota lisenssi";
             license.setAttribute("aria-hidden", "false");
             main.setAttribute("aria-hidden", "true");
         }
@@ -110,13 +110,13 @@
 
     <h2>${description}</h2>
     <h3>${name} ${version}</h3>
-    <h4>Based on <a href="https://github.com/tidepool-org/uploader">Tidepool Universal Uploader</a></h4>
+    <h4>Pohjautuu <a href="https://github.com/tidepool-org/uploader">Tidepool Universal Uploaderiin</a></h4>
     <div class="imgText">
         <img alt="CE" class="mark" src="resources/ce.svg"/>
         <span class="inline">
     <span class="alert">
-    This demo version does not meet all regulatory requirements.<br/>
-    Not for clinical use.
+    Tämä demoversio ei täytä kaikkia regulatiivisia vaatimuksia.<br/>
+    Ei kliiniseen käyttöön.
     </span>
     </span>
     </div>
@@ -125,10 +125,10 @@
         <address><a href="mailto:support@sensotrend.com">support@sensotrend.com</a></address></div>
     </div>
     <div class="copyrights">${:copyrights}
-<br/>Distributed under ${license}</div>
+<br/>Jaettu ${license} lisenssin alaisena</div>
 </div>
 <div id="license" aria-hidden="true">
-    <button type="button" onclick="toggleLicense();">Show license</button>
+    <button type="button" onclick="toggleLicense();">Näytä lisenssi</button>
     <pre>${:licenseFile}</pre>
 </div>
 </body>
