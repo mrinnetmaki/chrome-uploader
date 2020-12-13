@@ -325,12 +325,12 @@ operating system, as soon as possible.`),
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('mailto:support@sensotrend.com');
+          shell.openExternal(i18n.t('mailto:support@sensotrend.com'));
         }
       }, {
         label: i18n.t('Privacy Policy'),
         click() {
-          shell.openExternal('https://connect.sensotrend.fi/privacy');
+          shell.openExternal('https://www.sensotrend.fi/connect/privacy/');
         }
       }]
     }];
@@ -406,7 +406,7 @@ operating system, as soon as possible.`),
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('mailto:support@sensotrend.com');
+          shell.openExternal(i18n.t('mailto:support@sensotrend.com'));
         }
       }, {
         label: i18n.t('Check for Updates'),
@@ -417,7 +417,7 @@ operating system, as soon as possible.`),
       }, {
         label: i18n.t('Privacy Policy'),
         click() {
-          shell.openExternal('https://connect.sensotrend.fi/privacy');
+          shell.openExternal('https://www.sensotrend.fi/connect/privacy/');
         }
       }, {
         label: i18n.t('About Tidepool Uploader'),
