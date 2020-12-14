@@ -102,9 +102,18 @@
             main.setAttribute("aria-hidden", "true");
         }
     }
+    let _isEscDown = false;
+    function isEsc(event) {
+        return event.code === "Escape" && !(event.isComposing || event.altKey || event.ctrlKey || event.shiftKey);
+    }
+    document.onkeydown = function(event) {
+        _isEscDown = isEsc(event);
+    }
     document.onkeyup = function(event) {
-        if (event.code === "Escape") {
+        if (_isEscDown && isEsc(event)) {
             window.close();
+        } else {
+            _isEscDown = false;
         }
     }
     //--></script>
