@@ -37,10 +37,10 @@ module.exports = {
   // NB: it is distinct from our own "debug mode"
   DEBUG: stringToBoolean(process.env.DEBUG, true),
   // the defaults for these need to be pointing to prod
-  API_URL: process.env.API_URL || 'https://test.sensotrend.fi/tpapi',
-  UPLOAD_URL: process.env.UPLOAD_URL || 'https://test.sensotrend.fi/tpupload',
-  DATA_URL: process.env.DATA_URL || 'https://test.sensotrend.fi/tpdata',
-  BLIP_URL: process.env.BLIP_URL || 'https://sensotrend.fi/dashboard/',
+  API_URL: process.env.API_URL || 'https://connect.sensotrend.fi/tpapi',
+  UPLOAD_URL: process.env.UPLOAD_URL || 'https://connect.sensotrend.fi/tpupload',
+  DATA_URL: process.env.DATA_URL || 'https://connect.sensotrend.fi/tpdata',
+  BLIP_URL: process.env.BLIP_URL || 'https://connect.sensotrend.fi/view',
   DEFAULT_TIMEZONE: process.env.DEFAULT_TIMEZONE || 'Europe/Helsinki',
   DEFAULT_CARELINK_DAYS: process.env.DEFAULT_CARELINK_DAYS || '180'
 };

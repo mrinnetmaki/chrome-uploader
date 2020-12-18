@@ -7,7 +7,7 @@
         http-equiv="Content-Security-Policy"
         content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'unsafe-inline' 'self'; script-src 'unsafe-inline'; font-src data: 'self'; "
     >
-    <title>About ${description}</title>
+    <title>Tietoja ${description}</title>
     <link rel="stylesheet" href="./dist/style.css" />
     <style type="text/css">
         body, #main {
@@ -69,11 +69,14 @@
         }
 
         .imgText img {
-            margin: 1em;
+            margin: 1em 0 1em 1em;
         }
 
         .inline {
             display: inline-block;
+            padding-left: 1em;
+            padding-right: 1em;
+            user-select: text;
         }
 
         img.mark {
@@ -92,14 +95,28 @@
         const main = document.querySelector("#main");
         if (license.classList.contains("top")) {
             license.classList.remove("top");
-            license.querySelector("button").textContent = "Show license";
+            license.querySelector("button").textContent = "Näytä lisenssi";
             license.setAttribute("aria-hidden", "true");
             main.setAttribute("aria-hidden", "false");
         } else {
             license.classList.add("top");
-            license.querySelector("button").textContent = "Hide license";
+            license.querySelector("button").textContent = "Piilota lisenssi";
             license.setAttribute("aria-hidden", "false");
             main.setAttribute("aria-hidden", "true");
+        }
+    }
+    let _isEscDown = false;
+    function isEsc(event) {
+        return event.code === "Escape" && !(event.isComposing || event.altKey || event.ctrlKey || event.shiftKey);
+    }
+    document.onkeydown = function(event) {
+        _isEscDown = isEsc(event);
+    }
+    document.onkeyup = function(event) {
+        if (_isEscDown && isEsc(event)) {
+            window.close();
+        } else {
+            _isEscDown = false;
         }
     }
     //--></script>
@@ -110,25 +127,25 @@
 
     <h2>${description}</h2>
     <h3>${name} ${version}</h3>
-    <h4>Based on <a href="https://github.com/tidepool-org/uploader">Tidepool Universal Uploader</a></h4>
+    <h4>Pohjautuu <a href="https://github.com/tidepool-org/uploader">Tidepool Universal Uploaderiin</a></h4>
     <div class="imgText">
         <img alt="CE" class="mark" src="resources/ce.svg"/>
         <span class="inline">
+        Sensotrend Uploader on luokan I lääkinnällinen laite.<br/>
     <span class="alert">
-    This demo version does not meet all regulatory requirements.<br/>
-    Not for clinical use.
+    Sovellus on vielä kehitysvaiheessa.
     </span>
     </span>
     </div>
     <div class="imgText">
         <img alt="Manufacturer" class="mark" src="resources/manufacturer.svg"/><div class="inline">Sensotrend Oy<br/>
-        <address><a href="mailto:support@sensotrend.com">support@sensotrend.com</a></address></div>
+        <address><a href="mailto:tuki@sensotrend.com">tuki@sensotrend.com</a></address></div>
     </div>
     <div class="copyrights">${:copyrights}
-<br/>Distributed under ${license}</div>
+<br/>Jaettu lisenssillä ${license}</div>
 </div>
 <div id="license" aria-hidden="true">
-    <button type="button" onclick="toggleLicense();">Show license</button>
+    <button type="button" onclick="toggleLicense();">Näytä lisenssi</button>
     <pre>${:licenseFile}</pre>
 </div>
 </body>
