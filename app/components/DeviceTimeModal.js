@@ -87,7 +87,8 @@ export class DeviceTimeModal extends Component {
     }
     buttons.push(
       <div className={styles.buttonGroup} key='cancel'>
-      {i18n.t('Are you in {{timezone}}? Double-check',{ timezone: timezone })}<br/>
+      {i18n.t('Are you in {{timezone}}{{footnoteAsterisk}}? Double-check',
+        { timezone: timezone, footnoteAsterisk: footnote })}<br/>
       {i18n.t('selected time zone and current device time.')}
       {reminder}
       <button className={styles.button} onClick={this.handleCancel}>

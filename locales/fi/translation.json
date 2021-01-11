@@ -60,7 +60,7 @@
   "meter": "mittari",
   "Is the time on your {{text}} incorrect?": "Tarkista {{text}}, onko kellonaika virheellinen?",
   "Automatically update time to {{time}}<br/> and upload": "Päivitä automaattisesti aikaan {{time}}<br/> ja lähetä",
-  "Are you in {{timezone}}? Double-check": "Oletko varmasti aikavyöhykkeellä {{timezone}}? Varmista",
+  "Are you in {{timezone}}{{footnoteAsterisk}}? Double-check": "Oletko varmasti aikavyöhykkeellä {{timezone}}{{footnoteAsterisk}}? Varmista",
   "selected time zone and current device time.": "valittu aikavyöhyke ja tämänhetkinen laitteen aika.",
   "Cancel this upload": "Peru tämä lähetys",
   "* Changing your device time will not change any previous records.": "* Laitteen kellon muuttaminen ei muuta aiempia tietueita.",
