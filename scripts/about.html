@@ -7,7 +7,7 @@
         http-equiv="Content-Security-Policy"
         content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'unsafe-inline' 'self'; script-src 'unsafe-inline'; font-src data: 'self'; "
     >
-    <title>Tietoja ${description}</title>
+    <title>Tietoja sovelluksesta</title>
     <link rel="stylesheet" href="./dist/style.css" />
     <style type="text/css">
         body, #main {
@@ -66,10 +66,7 @@
         .imgText {
             display: flex;
             align-items: center;
-        }
-
-        .imgText img {
-            margin: 1em 0 1em 1em;
+            margin-top: 0.5em;
         }
 
         .inline {
@@ -87,7 +84,13 @@
             font-size: 12px;
             line-height: 17px;
             color: #555;
+            margin-top: 0.7em;
         }
+
+        address + address {
+            margin-top: 0.4em;
+        }
+
     </style>
     <script type="application/javascript"><!--
     function toggleLicense() {
@@ -131,15 +134,19 @@
     <div class="imgText">
         <img alt="CE" class="mark" src="resources/ce.svg"/>
         <span class="inline">
-        Sensotrend Uploader on luokan I lääkinnällinen laite.<br/>
-    <span class="alert">
-    Sovellus on vielä kehitysvaiheessa.
-    </span>
-    </span>
+            Sensotrend Uploader on luokan I lääkinnällinen laite.<br/>
+            <span class="alert">
+                Sovellus on vielä kehitysvaiheessa.
+            </span>
+        </span>
     </div>
     <div class="imgText">
-        <img alt="Manufacturer" class="mark" src="resources/manufacturer.svg"/><div class="inline">Sensotrend Oy<br/>
-        <address><a href="mailto:tuki@sensotrend.com">tuki@sensotrend.com</a></address></div>
+        <img alt="Manufacturer" class="mark" src="resources/manufacturer.svg"/><div class="inline">
+        <address>Sensotrend Oy<br/>
+Tampellan esplanadi 19 A 55<br/>
+33180 Tampere</address>
+        <address><a href="mailto:tuki@sensotrend.com">tuki@sensotrend.com</a></address>
+    </div>
     </div>
     <div class="copyrights">${:copyrights}
 <br/>Jaettu lisenssillä ${license}</div>
