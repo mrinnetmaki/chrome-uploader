@@ -67,7 +67,7 @@ const serverdata = {
     API_URL: 'http://localhost:1300/tpapi',
     UPLOAD_URL: 'http://localhost:1300/tpupload',
     DATA_URL: 'http://localhost:1300/tpdata',
-    BLIP_URL: 'http://localhost:8443/api'
+    BLIP_URL: 'https://localhost:8443/api'
   },
   Development: {
     API_URL: 'https://dev-connect.sensotrend.fi/tpapi',
