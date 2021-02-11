@@ -53,10 +53,10 @@ When creating a report, please fill in parts 1 and 2 with as much information as
 - [ ] **10 Insufficient Logging & Monitoring** - [comments]
 
 ### 4. Verification
-To be verifified by following steps:
+To be verifified by following cases:
 
-1. [Test step 1]
-2. [Test step 2]
+1. [Test case 1]
+2. [Test case 2]
 
 **Verification results:**
 - [ ] 1. Pass/Fail (SW version, date)
