@@ -1,16 +1,10 @@
-import {join} from 'path';
-
-let path = (process.env.NODE_ENV === 'production') ? 'resources': '.';
-if (process.env.APPIMAGE && process.env.APPDIR) {
-  // In AppImage we need to prepend the mount path to path where we look
-  // for resources. Current work directory is not the mount path.
-  path = join(process.env.APPDIR, path);
-}
-
+var path = require('path');
+console.log(__dirname);
+let dirPath = (process.env.NODE_ENV === 'production') ? path.join(__dirname, '../') : '.';
 let i18nextOptions = module.exports = {
   backend: {
-    loadPath: path + '/locales/{{lng}}/{{ns}}.json',
-    addPath: path + '/locales/{{lng}}/{{ns}}.missing.json'
+    loadPath: dirPath + '/locales/{{lng}}/{{ns}}.json',
+    addPath: dirPath + '/locales/{{lng}}/{{ns}}.missing.json'
   },
   interpolation: {
     escapeValue: false
