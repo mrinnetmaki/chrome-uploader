@@ -325,7 +325,7 @@ operating system, as soon as possible.`),
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal(i18n.t('mailto:support@sensotrend.com'));
+          shell.openExternal('https://www.sensotrend.fi/connect/instructions/uploader');
         }
       }, {
         label: i18n.t('Privacy Policy'),
@@ -406,7 +406,7 @@ operating system, as soon as possible.`),
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal(i18n.t('mailto:support@sensotrend.com'));
+          shell.openExternal('https://www.sensotrend.fi/connect/instructions/uploader');
         }
       }, {
         label: i18n.t('Check for Updates'),
