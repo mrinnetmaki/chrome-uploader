@@ -33,7 +33,9 @@ const config = {
   files: [
     'dist/',
     'node_modules/',
+    'resources/',
     'app.html',
+    'about.html',
     'main.prod.js',
     'main.prod.js.map',
     'package.json'

@@ -59,7 +59,7 @@
   "Is the time on your {{text}} incorrect?": "¿Es incorrecta la hora de tu {{text}}?",
   "Automatically update time to": "Actualizar automáticamente el tiempo a",
   "and upload": "y subir",
-  "Are you in {{timezone}}? Double-check": "¿Estás en {{timezone}}? Doble verificación",
+  "Are you in {{timezone}}{{footnoteAsterisk}}? Double-check": "¿Estás en {{timezone}}{{footnoteAsterisk}}? Doble verificación",
   "selected time zone and current device time.": "zona horaria seleccionada y hora actual del dispositivo.",
   "Cancel this upload": "Cancelar la carga de datos",
   "* Changing your device time will not change any previous records.": "* Cambiar la hora de su dispositivo no cambiará ningún registro anterior.",
