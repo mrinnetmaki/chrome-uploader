@@ -125,35 +125,33 @@
     //--></script>
 </head>
 <body>
-<div id="main" aria-hidden="false">
+  <div id="main" aria-hidden="false">
     <img id="app-icon" alt="Application icon" height="200" src="resources/icon.png">
 
     <h2>${description}</h2>
     <h3>${name} ${version}</h3>
     <h4>Pohjautuu <a href="https://github.com/tidepool-org/uploader">Tidepool Universal Uploaderiin</a></h4>
     <div class="imgText">
-        <img alt="CE" class="mark" src="resources/ce.svg"/>
-        <span class="inline">
-            Sensotrend Uploader on luokan I lääkinnällinen laite.<br/>
-            <span class="alert">
-                Sovellus on vielä kehitysvaiheessa.
-            </span>
-        </span>
+      <img alt="CE" class="mark" src="resources/ce.svg"/>
+      <span class="inline"> Sensotrend Uploader on luokan I lääkinnällinen laite.</span>
     </div>
     <div class="imgText">
-        <img alt="Manufacturer" class="mark" src="resources/manufacturer.svg"/><div class="inline">
+      <img alt="Manufacturer" class="mark" src="resources/manufacturer.svg"/>
+      <div class="inline">
         <address>Sensotrend Oy<br/>
-Tampellan esplanadi 19 A 55<br/>
-33180 Tampere</address>
+          Tampellan esplanadi 19 A 55<br/>
+          33180 Tampere
+        </address>
         <address><a href="mailto:tuki@sensotrend.com">tuki@sensotrend.com</a></address>
-    </div>
+      </div>
     </div>
     <div class="copyrights">${:copyrights}
-<br/>Jaettu lisenssillä ${license}</div>
-</div>
-<div id="license" aria-hidden="true">
+      <br/>Jaettu lisenssillä ${license}
+    </div>
+  </div>
+  <div id="license" aria-hidden="true">
     <button type="button" onclick="toggleLicense();">Näytä lisenssi</button>
     <pre>${:licenseFile}</pre>
-</div>
+  </div>
 </body>
 </html>
