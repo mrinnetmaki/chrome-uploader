@@ -91,12 +91,13 @@ function addDataPeriodGlobalListener(menu) {
 };
 
 app.on('ready', async () => {
-  await installExtensions();
+  // await installExtensions();
   setLanguage();
 });
 
 function createWindow() {
   const resizable = (process.env.NODE_ENV === 'development');
+
   mainWindow = new BrowserWindow({
     show: false,
     width: 663,
@@ -113,14 +114,14 @@ function createWindow() {
     if (osName() === 'Windows 7') {
       const options = {
         type: 'info',
-        title: 'Please update to a modern operating system',
+        title: i18n.t('Please update to a modern operating system'),
         message:
-          `Windows 7 won't be patched for any new viruses or security problems
+          i18n.t(`Windows 7 won't be patched for any new viruses or security problems
 going forward.
 
 While Windows 7 will continue to work, Microsoft recommends you
 start planning to upgrade to Windows 10, or an alternative
-operating system, as soon as possible.`,
+operating system, as soon as possible.`),
         buttons: ['Continue']
       };
       await dialog.showMessageBox(options);
@@ -185,7 +186,9 @@ operating system, as soon as possible.`,
       label: i18n.t('Tidepool Uploader'),
       submenu: [{
         label: i18n.t('About Tidepool Uploader'),
-        selector: 'orderFrontStandardAboutPanel:'
+        click() {
+          aboutDialog();
+        }
       }, {
         label: i18n.t('Check for Updates'),
         click() {
@@ -322,12 +325,12 @@ operating system, as soon as possible.`,
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('http://support.tidepool.org/');
+          shell.openExternal(i18n.t('mailto:support@sensotrend.com'));
         }
       }, {
         label: i18n.t('Privacy Policy'),
         click() {
-          shell.openExternal('https://developer.tidepool.org/privacy-policy/');
+          shell.openExternal('https://www.sensotrend.fi/connect/privacy/');
         }
       }]
     }];
@@ -339,11 +342,8 @@ operating system, as soon as possible.`,
     template = [{
       label: i18n.t('&File'),
       submenu: [{
-        label: i18n.t('&Open'),
-        accelerator: 'Ctrl+O'
-      }, {
-        label:  i18n.t('&Close'),
-        accelerator: 'Ctrl+W',
+        label: i18n.t('&Exit'),
+        accelerator: 'Alt+F4',
         click() {
           mainWindow.close();
         }
@@ -406,7 +406,7 @@ operating system, as soon as possible.`,
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('http://support.tidepool.org/');
+          shell.openExternal(i18n.t('mailto:support@sensotrend.com'));
         }
       }, {
         label: i18n.t('Check for Updates'),
@@ -417,7 +417,12 @@ operating system, as soon as possible.`,
       }, {
         label: i18n.t('Privacy Policy'),
         click() {
-          shell.openExternal('https://developer.tidepool.org/privacy-policy/');
+          shell.openExternal('https://www.sensotrend.fi/connect/privacy/');
+        }
+      }, {
+        label: i18n.t('About Tidepool Uploader'),
+        click() {
+          aboutDialog();
         }
       }]
     }];
@@ -425,6 +430,50 @@ operating system, as soon as possible.`,
     addDataPeriodGlobalListener(menu);
     mainWindow.setMenu(menu);
   }
+}
+
+let aboutWindow = null;
+function aboutDialog() {
+  if (aboutWindow !== null) {
+    aboutWindow.show();
+    return;
+  }
+
+  aboutWindow = new BrowserWindow({
+    width: 600,
+    height: 600,
+    minWidth: 400,
+    minHeight: 400,
+    useContentSize: true,
+    center: true,
+    titleBarStyle: 'hidden-inset',
+    icon: `file://${__dirname}/resources/icon.png`,
+    webPreferences: {
+        nodeIntegration: true,
+    },
+    parent: mainWindow,
+    skipTaskbar: true,
+    // devTools: false,
+    // modal: true,
+    show: false
+  });
+
+  aboutWindow.loadURL(`file://${__dirname}/about.html`).catch((reason) => {
+    console.log(reason);
+  });
+  aboutWindow.once('ready-to-show', () => {
+    aboutWindow.show();
+  });
+  aboutWindow.once('closed', () => {
+    aboutWindow = null;
+  });
+  aboutWindow.webContents.on('will-navigate', (e, url) => {
+    e.preventDefault();
+    shell.openExternal(url).catch((reason) => {
+      console.log('Could not open external: ' + reason);
+    });
+  });
+  aboutWindow.setMenu(null);
 }
 
 function checkUpdates(){
@@ -484,8 +533,8 @@ ipcMain.on('autoUpdater', (event, arg) => {
   autoUpdater[arg]();
 });
 
-if(!app.isDefaultProtocolClient('tidepoolupload')){
-  app.setAsDefaultProtocolClient('tidepoolupload');
+if(!app.isDefaultProtocolClient('sensotrendupload')){
+  app.setAsDefaultProtocolClient('sensotrendupload');
 }
 
 app.on('window-all-closed', () => {

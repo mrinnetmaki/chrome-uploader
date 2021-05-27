@@ -31,7 +31,7 @@ const devices = {
     enabled: {mac: true, win: false, linux: true}
   },
   caresens: {
-    instructions: 'Plug in meter with cable and make sure the meter is switched on',
+    instructions: i18n.t('Plug in meter with cable and make sure the meter is switched on'),
     name: 'CareSens N Premier & Dual',
     key: 'caresens',
     source: {type: 'device', driverId: 'CareSens'},

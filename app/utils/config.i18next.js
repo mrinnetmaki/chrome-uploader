@@ -1,5 +1,5 @@
 var path = require('path');
-
+console.log(__dirname);
 let dirPath = (process.env.NODE_ENV === 'production') ? path.join(__dirname, '../') : '.';
 let i18nextOptions = module.exports = {
   backend: {
@@ -9,8 +9,8 @@ let i18nextOptions = module.exports = {
   interpolation: {
     escapeValue: false
   },
-  lng: 'en',
-  saveMissing: true,
+  lng: 'fi',
+  saveMissing: process.env.NODE_ENV !== 'production',
   fallbackLng: 'en',
   returnEmptyString: false,
   whitelist: ['en', 'es', 'fi'],

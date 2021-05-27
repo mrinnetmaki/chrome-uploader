@@ -46,15 +46,20 @@ export default class Footer extends Component {
     return (
       <div className={styles.footer}>
         <div className={styles.footerRow}>
-          <div>
-            <a className={styles.footerLink} href="http://support.tidepool.org/" target="_blank">{i18n.t('Get Support')}</a>
+          <div className={styles.el1}>
+            <a className={styles.footerLink} href={i18n.t('mailto:support@sensotrend.com')} target="_blank">{i18n.t('Get Support')}</a>
           </div>
-          <div>
-            <a className={styles.footerLink} href="http://tidepool.org/legal/" target="_blank">{i18n.t('Privacy and Terms of Use')}</a>
+          <div className={styles.el2}>
+            <a className={styles.footerLink} href="https://www.sensotrend.fi/connect/privacy/" target="_blank">{i18n.t('Privacy')}</a>
           </div>
+          <div className={styles.el3}>
+            <a className={styles.footerLink} href="https://www.sensotrend.fi/connect/eula/" target="_blank">{i18n.t('Terms of Use')}</a>
+          </div>
+          {/*
           <div className={styles.jdrfContainer}>
             <span className={styles.jdrfText}>{i18n.t('Made possible by')}</span><img className={styles.jdrfImage} src={logo}/>
           </div>
+          */}
         </div>
         <div className={styles.footerRow}>
           <div className={styles.version}>{`v${version}${osArch}${environment}`}</div>
