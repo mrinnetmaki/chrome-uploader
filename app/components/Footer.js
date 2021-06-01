@@ -47,7 +47,7 @@ export default class Footer extends Component {
       <div className={styles.footer}>
         <div className={styles.footerRow}>
           <div className={styles.el1}>
-            <a className={styles.footerLink} href={i18n.t('mailto:support@sensotrend.com')} target="_blank">{i18n.t('Get Support')}</a>
+            <a className={styles.footerLink} href="https://www.sensotrend.fi/connect/instructions/uploader" target="_blank">{i18n.t('Get Support')}</a>
           </div>
           <div className={styles.el2}>
             <a className={styles.footerLink} href="https://www.sensotrend.fi/connect/privacy/" target="_blank">{i18n.t('Privacy')}</a>
