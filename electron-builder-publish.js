@@ -1,6 +1,11 @@
 const config = {
   publish: [
-      'github'
+    {
+      provider: 'generic',
+      url: 'https://www.sensotrend.fi/download/uploader/update/${os}',
+      channel: 'latest',
+      useMultipleRangeRequest: false
+    },
   ],
   productName: 'Sensotrend Uploader',
   appId: 'org.sensotrend.SensotrendUploader',
