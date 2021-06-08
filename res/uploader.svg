@@ -1,0 +1,47 @@
+<svg
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns="http://www.w3.org/2000/svg"
+  version="1.1"
+  width="200"
+  height="200"
+  viewBox="-50 -50 100 100"
+>
+  <style>
+    #blueCircle {
+      fill:none;
+      stroke:#578ad6;
+      stroke-width:8;
+      opacity:0.85;
+    }
+    path.arrow {
+      fill: none;
+      stroke: black;
+      stroke-width:15;
+    }
+  </style>
+  <defs>
+    <marker
+      id="arrow"
+      viewBox="0 0 25 25"
+      refX="0"
+      refY="12.5"
+      markerWidth="2"
+      markerHeight="2"
+      orient="auto"
+    >
+      <path d="M 0,0 l 12.5,12.5 l -12.5,12.5 z" />
+    </marker>
+    <marker
+      id="dovetail"
+      viewBox="0 0 10 10"
+      refX="5"
+      refY="10"
+      markerWidth="1"
+      markerHeight="1"
+    >
+      <path d="M 5,10 l -5,-5 v 5 h 10 v -5 z" />
+    </marker>
+  </defs>
+  <circle id="blueCircle" r="16" />
+  <path class="arrow" d="M -30,-30 v 30 a 30 30 0 1 0 60,0 v -30" marker-start="url(#dovetail)" marker-end="url(#arrow)" />
+</svg>
