@@ -59,6 +59,8 @@
     "CGM": "CGM",
     "meter": "mètre",
     "Is the time on your {{text}} incorrect?": "L'heure de votre {{text}} est-elle incorrecte ?",
+    "Automatically update time to": "Mettre à jour automatiquement l'heure à",
+    "and upload": " et télécharger",
     "Are you in {{timezone}}{{footnoteAsterisk}}? Double-check": "Êtes-vous en {{timezone}}{{footnoteAsterisk}} ? Revérifier",
     "selected time zone and current device time.": "le fuseau horaire sélectionné et l'heure actuelle de l'appareil.",
     "Cancel this upload": "Annuler ce téléchargement",
@@ -227,7 +229,5 @@
     "This email is already associated with a Tidepool account.": "Cet email est déjà associé à un compte Sensotrend.",
     "We can't save your device and timezone selection right now.": "Nous ne pouvons pas enregistrer votre sélection d'appareil et de fuseau horaire pour le moment.",
     "Please update to a modern operating system": "Veuillez mettre à jour vers un système d'exploitation moderne",
-    "Windows 7 won't be patched for any new viruses or security problems\ngoing forward.\n\nWhile Windows 7 will continue to work, Microsoft recommends you\nstart planning to upgrade to Windows 10, or an alternative\noperating system, as soon as possible.": "Windows 7 ne sera pas corrigé pour les nouveaux virus ou problèmes de sécurité\naller de l'avant.\n\nAlors que Windows 7 continuera à fonctionner, Microsoft vous recommande\ncommencer à planifier la mise à niveau vers Windows 10, ou une alternative\nsystème d'exploitation, dès que possible.",
-    "Automatically update time to": "Mettre à jour automatiquement l'heure à",
-    "and upload": " et télécharger"
+    "Windows 7 won't be patched for any new viruses or security problems\ngoing forward.\n\nWhile Windows 7 will continue to work, Microsoft recommends you\nstart planning to upgrade to Windows 10, or an alternative\noperating system, as soon as possible.": "Windows 7 ne sera pas corrigé pour les nouveaux virus ou problèmes de sécurité\naller de l'avant.\n\nAlors que Windows 7 continuera à fonctionner, Microsoft vous recommande\ncommencer à planifier la mise à niveau vers Windows 10, ou une alternative\nsystème d'exploitation, dès que possible."
 }

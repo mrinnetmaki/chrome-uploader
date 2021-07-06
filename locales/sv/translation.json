@@ -59,6 +59,8 @@
     "CGM": "CGM",
     "meter": "meter",
     "Is the time on your {{text}} incorrect?": "Är tiden på din {{text}} felaktig?",
+    "Automatically update time to": "Uppdatera tiden automatiskt till",
+    "and upload": " och ladda upp",
     "Are you in {{timezone}}{{footnoteAsterisk}}? Double-check": "Är du i {{timezone}} {{footnoteAsterisk}}? Dubbelkolla",
     "selected time zone and current device time.": "vald tidszon och aktuell enhetstid.",
     "Cancel this upload": "Avbryt denna uppladdning",
@@ -227,7 +229,5 @@
     "This email is already associated with a Tidepool account.": "Det här e-postmeddelandet är redan kopplat till ett Sensotrend-konto.",
     "We can't save your device and timezone selection right now.": "Vi kan inte spara valet av enhet och tidszon just nu.",
     "Please update to a modern operating system": "Uppdatera till ett modernt operativsystem",
-    "Windows 7 won't be patched for any new viruses or security problems\ngoing forward.\n\nWhile Windows 7 will continue to work, Microsoft recommends you\nstart planning to upgrade to Windows 10, or an alternative\noperating system, as soon as possible.": "Windows 7 lappas inte för nya virus eller säkerhetsproblem\ngår framåt.\n\nMedan Windows 7 fortsätter att fungera rekommenderar Microsoft dig\nbörja planera att uppgradera till Windows 10, eller ett alternativ\noperativsystem så snart som möjligt.",
-    "Automatically update time to": "Uppdatera tiden automatiskt till",
-    "and upload": " och ladda upp"
+    "Windows 7 won't be patched for any new viruses or security problems\ngoing forward.\n\nWhile Windows 7 will continue to work, Microsoft recommends you\nstart planning to upgrade to Windows 10, or an alternative\noperating system, as soon as possible.": "Windows 7 lappas inte för nya virus eller säkerhetsproblem\ngår framåt.\n\nMedan Windows 7 fortsätter att fungera rekommenderar Microsoft dig\nbörja planera att uppgradera till Windows 10, eller ett alternativ\noperativsystem så snart som möjligt."
 }

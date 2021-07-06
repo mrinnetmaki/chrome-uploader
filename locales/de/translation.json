@@ -59,6 +59,8 @@
     "CGM": "CGM",
     "meter": "Meter",
     "Is the time on your {{text}} incorrect?": "Ist die Uhrzeit auf Ihrem {{text}} falsch?",
+    "Automatically update time to": "Uhrzeit automatisch aktualisieren auf",
+    "and upload": " und hochladen",
     "Are you in {{timezone}}{{footnoteAsterisk}}? Double-check": "Sind Sie in {{timezone}}{{footnoteAsterisk}}? Überprüfen",
     "selected time zone and current device time.": "ausgewählte Zeitzone und aktuelle Gerätezeit.",
     "Cancel this upload": "Dieses Hochladen abbrechen",
@@ -227,7 +229,5 @@
     "This email is already associated with a Tidepool account.": "Diese E-Mail ist bereits mit einem Sensotrend-Konto verknüpft.",
     "We can't save your device and timezone selection right now.": "Wir können Ihre Geräte- und Zeitzonenauswahl momentan nicht speichern.",
     "Please update to a modern operating system": "Bitte aktualisieren Sie auf ein modernes Betriebssystem",
-    "Windows 7 won't be patched for any new viruses or security problems\ngoing forward.\n\nWhile Windows 7 will continue to work, Microsoft recommends you\nstart planning to upgrade to Windows 10, or an alternative\noperating system, as soon as possible.": "Windows 7 wird nicht auf neue Viren oder Sicherheitsprobleme gepatcht\nvorwärts gehen.\n\nWährend Windows 7 weiterhin funktioniert, empfiehlt Microsoft Ihnen\nBeginnen Sie mit der Planung eines Upgrades auf Windows 10 oder eine Alternative\nBetriebssystem, so schnell wie möglich.",
-    "Automatically update time to": "Uhrzeit automatisch aktualisieren auf",
-    "and upload": " und hochladen"
+    "Windows 7 won't be patched for any new viruses or security problems\ngoing forward.\n\nWhile Windows 7 will continue to work, Microsoft recommends you\nstart planning to upgrade to Windows 10, or an alternative\noperating system, as soon as possible.": "Windows 7 wird nicht auf neue Viren oder Sicherheitsprobleme gepatcht\nvorwärts gehen.\n\nWährend Windows 7 weiterhin funktioniert, empfiehlt Microsoft Ihnen\nBeginnen Sie mit der Planung eines Upgrades auf Windows 10 oder eine Alternative\nBetriebssystem, so schnell wie möglich."
 }
