@@ -181,6 +181,24 @@ operating system, as soon as possible.`),
     });
   }
 
+  let languageMenu;
+  const availableLanguages = i18nextOptions.supportedLngs;
+
+  if (availableLanguages.length > 0) {
+    // Build the language submenu
+    languageMenu = {
+      label: i18n.t('Language'),
+      submenu: availableLanguages.map(locale => ({
+        label: locale,
+        click() {
+          i18n.changeLanguage(locale);
+        },
+        type: 'radio',
+        checked: i18n.language === locale
+      }))
+    };
+  }
+
   if (process.platform === 'darwin') {
     template = [{
       label: i18n.t('Tidepool Uploader'),
@@ -334,7 +352,11 @@ operating system, as soon as possible.`),
         }
       }]
     }];
-
+    if (languageMenu) {
+      template[0].splice(2, 0, {
+        type: 'separator'
+      }, languageMenu);
+    }
     menu = Menu.buildFromTemplate(template);
     addDataPeriodGlobalListener(menu);
     Menu.setApplicationMenu(menu);
@@ -426,6 +448,11 @@ operating system, as soon as possible.`),
         }
       }]
     }];
+    if (languageMenu) {
+      template[3].push({
+        type: 'separator'
+      }, languageMenu);
+    }
     menu = Menu.buildFromTemplate(template);
     addDataPeriodGlobalListener(menu);
     mainWindow.setMenu(menu);
