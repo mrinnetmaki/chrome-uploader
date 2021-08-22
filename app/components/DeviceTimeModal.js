@@ -79,8 +79,10 @@ export class DeviceTimeModal extends Component {
         <div className={styles.buttonGroup} key='continue' >
         {i18n.t('Is the time on your {{text}} incorrect?', { text: type.text })}<br/>&nbsp;
         <button className={styles.button} onClick={this.handleContinue}>
-          {i18n.t('Automatically update time to <br/>{{time}} and upload', {
-            time: sundial.formatInTimezone(serverTime, timezone, 'LT') })}
+          {i18n.t('Automatically update time to')}
+          <br />
+          {sundial.formatInTimezone(serverTime, timezone, 'LT')}
+          {i18n.t('and upload')}
         </button>
         </div>
       );

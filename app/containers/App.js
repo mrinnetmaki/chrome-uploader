@@ -25,7 +25,10 @@ import * as metrics from '../constants/metrics';
 import { Route, Switch } from 'react-router-dom';
 import dns from 'dns';
 
-const { Menu } = remote;
+const { getCurrentWindow, Menu } = remote;
+const i18n = remote.getGlobal( 'i18n' );
+import i18nextOptions from '../utils/config.i18next';
+import localeNames from '../utils/locales.json';
 
 import bows from 'bows';
 
@@ -94,6 +97,9 @@ const serverdata = {
     BLIP_URL: 'https://www.sensotrend.fi/api'
   }
 };
+
+
+const availableLanguages = i18nextOptions.supportedLngs;
 
 export class App extends Component {
   static propTypes = {
@@ -228,6 +234,26 @@ export class App extends Component {
         }
       });
     }
+    if (availableLanguages.length > 0) {
+      // Build the language submenu
+      template.push({
+        label: 'Change language',
+        submenu: availableLanguages.map(locale => ({
+          label: `${localeNames[locale]} (${locale})`,
+          click() {
+            i18n.changeLanguage(locale)
+            .then((t) => {
+              console.log('New language', i18n.language, t('Done'));
+              getCurrentWindow().reload();              
+            })
+            .catch(console.error);
+          },
+          type: 'radio',
+          checked: i18n.language === locale
+        }))
+      });
+    }
+
     const menu = Menu.buildFromTemplate(template);
     menu.popup(remote.getCurrentWindow());
   };

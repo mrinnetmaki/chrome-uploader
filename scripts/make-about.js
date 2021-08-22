@@ -9,6 +9,10 @@ const LICENSE = 'LICENSE';
 
 const SOURCES = [PKG, SRC, DST, LICENSE];
 
+function pad(number) {
+    return `${number < 10 ? 0 : ''}${number}`;
+}
+
 function makeAbout() {
     console.log(`Updating ${DST}`);
     const pkg = JSON.parse(fs.readFileSync(PKG).toString());
@@ -21,13 +25,16 @@ function makeAbout() {
 
     const copyrights = [];
     for (const line of licenseFile.split('\n')) {
-        if (line.startsWith('Copyright ')) {
-            copyrights.push(line);
+        if (line.startsWith('Copyright (c) ')) {
+            copyrights.push(line.replace('Copyright (c)', '&copy;'));
         } else {
             break;
         }
     }
     pkg[':copyrights'] = copyrights.join('<br/>\n');
+
+    const now = new Date();
+    pkg[':date'] = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
 
     const sub = new RegExp('\\${([^}]+)}', 'g');
 

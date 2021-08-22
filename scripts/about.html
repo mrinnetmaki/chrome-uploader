@@ -1,157 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-    <meta
-        http-equiv="Content-Security-Policy"
-        content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'unsafe-inline' 'self'; script-src 'unsafe-inline'; font-src data: 'self'; "
-    >
-    <title>Tietoja sovelluksesta</title>
-    <link rel="stylesheet" href="./dist/style.css" />
-    <style type="text/css">
-        body, #main {
-            background: #fff;
-            user-select: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'unsafe-inline' 'self'; script-src 'unsafe-inline'; font-src data: 'self'; ">
+  <title>Tietoja sovelluksesta</title>
+  <link rel="stylesheet" href="./dist/style.css" />
+  <style type="text/css">
+    body {
+      background: #fff;
+      user-select: text;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
 
-            font-family: "Basis", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            line-height: 19px;
-        }
+      font-family: "Basis", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 19px;
+    }
 
-        #main {
-            margin-top: auto;
-            margin-bottom: auto;
-        }
+    header {
+      margin-top: 2em;
+    }
 
-        h3, h4 {
-            margin-block-start: 0.2em;
-            margin-block-end: 0.2em;
-        }
+    #main {
+      margin-top: auto;
+      margin-bottom: auto;
+      text-align: left;
+    }
 
-        .alert {
-            color: #f44;
-        }
+    h2 {
+      text-align: center;
+    }
 
-        #license pre {
-            display: none;
-            font-size: smaller;
-        }
+    h4 {
+      margin-block-start: 2em;
+    }
 
-        #license.top pre {
-            display: block;
-        }
+    #license pre {
+      display: none;
+      font-size: smaller;
+    }
 
-        #license {
-            margin-top: 1em;
-            margin-bottom: 1em;
-        }
+    #license.top pre {
+      display: block;
+      text-align: left;
+    }
 
-        #license.top {
-            position: absolute;
-            margin-top: 0;
-            top: 0;
-            width: 95%;
-            height: 95%;
-            background: #fff;
-            padding: 1em;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    #license {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
 
-        .imgText {
-            display: flex;
-            align-items: center;
-            margin-top: 0.5em;
-        }
+    #license.top {
+      position: absolute;
+      top: 0;
+      width: 95%;
+      height: 95%;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        .inline {
-            display: inline-block;
-            padding-left: 1em;
-            padding-right: 1em;
-            user-select: text;
-        }
+    section {
+      padding-left: 3em;
+      margin-bottom: 1.2em;
+    }
 
-        img.mark {
-            max-width: 32px;
-            max-height: 32px;
-        }
-        .copyrights {
-            font-size: 12px;
-            line-height: 17px;
-            color: #555;
-            margin-top: 0.7em;
-        }
+    section > img {
+      width: 2em;
+      float: left;
+      margin-top: 0.23em;
+      margin-left: -3em;
+    }
 
-        address + address {
-            margin-top: 0.4em;
-        }
+    p {
+      margin: 0;
+    }
 
-    </style>
-    <script type="application/javascript"><!--
-    function toggleLicense() {
+    .copyrights {
+      font-size: 12px;
+      line-height: 17px;
+      color: #555;
+      margin-top: 0.7em;
+    }
+
+  </style>
+  <script type="application/javascript">
+      function toggleLicense() {
         const license = document.querySelector("#license");
         const main = document.querySelector("#main");
         if (license.classList.contains("top")) {
-            license.classList.remove("top");
-            license.querySelector("button").textContent = "Näytä lisenssi";
-            license.setAttribute("aria-hidden", "true");
-            main.setAttribute("aria-hidden", "false");
+          license.classList.remove("top");
+          license.querySelector("button").textContent = "Näytä lisenssi";
+          license.setAttribute("aria-hidden", "true");
+          main.setAttribute("aria-hidden", "false");
         } else {
-            license.classList.add("top");
-            license.querySelector("button").textContent = "Piilota lisenssi";
-            license.setAttribute("aria-hidden", "false");
-            main.setAttribute("aria-hidden", "true");
+          license.classList.add("top");
+          license.querySelector("button").textContent = "Piilota lisenssi";
+          license.setAttribute("aria-hidden", "false");
+          main.setAttribute("aria-hidden", "true");
         }
-    }
+      }
     let _isEscDown = false;
     function isEsc(event) {
-        return event.code === "Escape" && !(event.isComposing || event.altKey || event.ctrlKey || event.shiftKey);
+      return event.code === "Escape" && !(event.isComposing || event.altKey || event.ctrlKey || event.shiftKey);
     }
-    document.onkeydown = function(event) {
-        _isEscDown = isEsc(event);
+    document.onkeydown = function (event) {
+      _isEscDown = isEsc(event);
     }
-    document.onkeyup = function(event) {
-        if (_isEscDown && isEsc(event)) {
-            window.close();
-        } else {
-            _isEscDown = false;
-        }
+    document.onkeyup = function (event) {
+      if (_isEscDown && isEsc(event)) {
+        window.close();
+      } else {
+        _isEscDown = false;
+      }
     }
-    //--></script>
+  </script>
 </head>
-<body>
-  <div id="main" aria-hidden="false">
-    <img id="app-icon" alt="Application icon" height="200" src="resources/icon.png">
 
-    <h2>${description}</h2>
-    <h3>${name} ${version}</h3>
-    <h4>Pohjautuu <a href="https://github.com/tidepool-org/uploader">Tidepool Universal Uploaderiin</a></h4>
-    <div class="imgText">
-      <img alt="CE" class="mark" src="resources/ce.svg"/>
-      <span class="inline"> Sensotrend Uploader on luokan I lääkinnällinen laite.</span>
-    </div>
-    <div class="imgText">
-      <img alt="Manufacturer" class="mark" src="resources/manufacturer.svg"/>
-      <div class="inline">
-        <address>Sensotrend Oy<br/>
-          Tampellan esplanadi 19 A 55<br/>
-          33180 Tampere
-        </address>
-        <address><a href="mailto:tuki@sensotrend.com">tuki@sensotrend.com</a></address>
-      </div>
-    </div>
-    <div class="copyrights">${:copyrights}
-      <br/>Jaettu lisenssillä ${license}
-    </div>
-  </div>
-  <div id="license" aria-hidden="true">
+<body>
+  <header>
+    <img alt="" height="35" src="resources/sensotrend.svg">
+  </header>
+  <article id="main" aria-hidden="false">
+    <h2>${description} <small>v${version}</small></h2>
+    <section id="ce">
+      <img alt="CE" src="resources/ce.svg" />
+      <p>Sensotrend Uploader on luokan I lääkinnällinen laite.</p>
+      <p>Ks. <a
+        href="https://www.sensotrend.fi/connect/static/media/DECO-T5-DC-MDD_EU_Declaration_of_Conformity_-_Sensotrend_Uploader_-_signed.17445413.pdf">Vaatimustenmukaisuusvakuutus</a>.</p>
+    </section>
+    <section id="device">
+      <img alt="Laitetunniste" title="Laitetunniste" src="resources/udi.png" />
+      <p>UDI-DI: D-FIMF000000500SU000001QT</p>
+    </section>
+    <section id="date">
+      <img alt="Valmistuspäivä" title="Valmistuspäivä" src="resources/manufacturingDate.png" />
+      <time>${:date}</time>
+    </section>
+    <section id="manufacturer">
+      <img alt="Valmistaja" title="Valmistaja" src="resources/manufacturer.png" />
+      <address>Sensotrend Oy<br />
+        Tampellan esplanadi 19 A 55<br />
+        33180 Tampere<br />
+        <a href="mailto:tuki@sensotrend.com">tuki@sensotrend.com</a>
+      </address>
+    </section>
+    <section id="info">
+      <img alt="Lisätietoja" title="Lisätietoja" src="resources/website.png" />
+      <p><a href="https://www.sensotrend.fi/uploader">https://www.sensotrend.fi/uploader</a></p>
+    </section>
+    <section id="credits">
+      <h4>Pohjautuu <a href="https://www.tidepool.org/download#tidepool-uploader">Tidepool
+          Universal Uploaderiin</a>.</h4>
+      <p class="copyrights">${:copyrights}
+        <br />Jaettu lisenssillä ${license}
+      </p>
+    </section>
+  </article>
+  <aside id="license" aria-hidden="true">
     <button type="button" onclick="toggleLicense();">Näytä lisenssi</button>
     <pre>${:licenseFile}</pre>
-  </div>
+  </aside>
 </body>
+
 </html>
