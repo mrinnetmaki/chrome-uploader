@@ -91,7 +91,7 @@ function addDataPeriodGlobalListener(menu) {
 };
 
 app.on('ready', async () => {
-  // await installExtensions();
+  await installExtensions();
   setLanguage();
 });
 
@@ -126,9 +126,6 @@ operating system, as soon as possible.`),
       };
       await dialog.showMessageBox(options);
     }
-
-    // Make the language known to renderer.
-    mainWindow.webContents.send('setLanguage', i18nextOptions['lng']);
 
     mainWindow.show();
     mainWindow.focus();
@@ -179,24 +176,6 @@ operating system, as soon as possible.`),
         }
       }]).popup(mainWindow);
     });
-  }
-
-  let languageMenu;
-  const availableLanguages = i18nextOptions.supportedLngs;
-
-  if (availableLanguages.length > 0) {
-    // Build the language submenu
-    languageMenu = {
-      label: i18n.t('Language'),
-      submenu: availableLanguages.map(locale => ({
-        label: locale,
-        click() {
-          i18n.changeLanguage(locale);
-        },
-        type: 'radio',
-        checked: i18n.language === locale
-      }))
-    };
   }
 
   if (process.platform === 'darwin') {
@@ -352,11 +331,7 @@ operating system, as soon as possible.`),
         }
       }]
     }];
-    if (languageMenu) {
-      template[0].splice(2, 0, {
-        type: 'separator'
-      }, languageMenu);
-    }
+
     menu = Menu.buildFromTemplate(template);
     addDataPeriodGlobalListener(menu);
     Menu.setApplicationMenu(menu);
@@ -448,11 +423,6 @@ operating system, as soon as possible.`),
         }
       }]
     }];
-    if (languageMenu) {
-      template[3].push({
-        type: 'separator'
-      }, languageMenu);
-    }
     menu = Menu.buildFromTemplate(template);
     addDataPeriodGlobalListener(menu);
     mainWindow.setMenu(menu);
