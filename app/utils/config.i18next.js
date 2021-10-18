@@ -12,7 +12,7 @@ let i18nextOptions = module.exports = {
   lng: 'fi',
   saveMissing: process.env.NODE_ENV !== 'production',
   fallbackLng: 'en',
-  returnEmptyString: false,
+  returnEmptyString: true,
   supportedLngs: ['de', 'en', 'es', 'fi', 'fr', 'it', 'no', 'sv'],
   keySeparator: false,
   nsSeparator: '|',

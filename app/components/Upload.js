@@ -646,7 +646,7 @@ export default class Upload extends Component {
     }
     if (_.isObject(details)) {
       return (
-        <div className={styles.detail}>{details.text} <a href={details.link} target="_blank">{i18n.t(details.linkText)}</a></div>
+        <div className={styles.detail}>{details.text} <a href={details.link} target="_blank">{details.linkText}</a>{details.afterLink}</div>
       );
     }
     return (

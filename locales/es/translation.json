@@ -232,5 +232,11 @@
   "Windows 7 won't be patched for any new viruses or security problems\ngoing forward.\n\nWhile Windows 7 will continue to work, Microsoft recommends you\nstart planning to upgrade to Windows 10, or an alternative\noperating system, as soon as possible.": "Windows 7 no recibirá parches para detectar nuevos virus o problemas\nde seguridad en el futuro.\n\nSi bien Windows 7 seguirá funcionando, Microsoft recomienda\nque comience a planificar la actualización a Windows 10, o un\nsistema operativo alternativo, lo antes posible.",
   "Your device doesn't appear to be connected. You can try using another USB cable, as some USB cables are designed to carry a signal for power only.": "Su dispositivo no parece estar conectado. Puede intentar usar otro cable USB, ya que algunos cables USB están diseñados para transportar una señal de alimentación únicamente.",
   "Turn meter on and make sure Bluetooth is switched on": "Encienda el medidor y asegúrese de que Bluetooth esté encendido",
-  "Sorry, we don't support the Libre 2 yet": "Lo sentimos, todavía no admitimos el Libre 2"  
+  "Sorry, we don't support the Libre 2 yet": "Lo sentimos, todavía no admitimos el Libre 2",
+  "Ensure the Smart Pix is mounted before starting.": "Asegúrese de que el Smart Pix esté montado antes de comenzar.",
+  "Click send and then start the transfer from your device.": "Haga clic en enviar y luego inicie la transferencia desde su dispositivo.",
+  "Plug in meter with cable and set meter to": "Plug in meter with cable and set meter to",
+  "PC Link Mode": "PC Link Mode",
+  "afterLink": "",
+  "Make sure the meter is switched off and plug in with micro-USB cable": "Asegúrese de que el medidor esté apagado y conéctelo con un cable micro-USB"
 }
