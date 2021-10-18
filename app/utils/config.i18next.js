@@ -9,12 +9,11 @@ let i18nextOptions = module.exports = {
   interpolation: {
     escapeValue: false
   },
-  supportedLngs: ['de', 'en', 'es', 'fi', 'fr', 'it', 'no', 'sv'],
   lng: 'fi',
   saveMissing: process.env.NODE_ENV !== 'production',
   fallbackLng: 'en',
   returnEmptyString: false,
-  whitelist: ['de', 'en', 'es', 'fi', 'fr', 'it', 'no', 'sv'],
+  supportedLngs: ['de', 'en', 'es', 'fi', 'fr', 'it', 'no', 'sv'],
   keySeparator: false,
   nsSeparator: '|',
   debug: false,

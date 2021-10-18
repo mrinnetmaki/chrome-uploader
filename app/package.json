@@ -1,7 +1,7 @@
 {
   "name": "sensotrend-uploader",
   "productName": "sensotrend-uploader",
-  "version": "2.38.1",
+  "version": "2.39.0",
   "description": "Sensotrend Uploader",
   "main": "./main.prod.js",
   "author": {
@@ -14,8 +14,11 @@
     "keytar": "5.6.0",
     "node-hid": "1.1.0",
     "@ronomon/direct-io": "3.0.1",
-    "serialport": "9.2.1",
+    "serialport": "9.0.7",
     "usb": "1.6.3"
+  },
+  "resolutions": {
+    "@serialport/bindings": "9.0.7"
   },
   "optionalDependencies": {
     "winreg": "1.2.4"
