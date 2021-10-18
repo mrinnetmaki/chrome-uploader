@@ -232,5 +232,7 @@
     "Windows 7 won't be patched for any new viruses or security problems\ngoing forward.\n\nWhile Windows 7 will continue to work, Microsoft recommends you\nstart planning to upgrade to Windows 10, or an alternative\noperating system, as soon as possible.": "Windows 7 lappas inte för nya virus eller säkerhetsproblem\ngår framåt.\n\nMedan Windows 7 fortsätter att fungera rekommenderar Microsoft dig\nbörja planera att uppgradera till Windows 10, eller ett alternativ\noperativsystem så snart som möjligt.",
     "Your device doesn't appear to be connected. You can try using another USB cable, as some USB cables are designed to carry a signal for power only.": "Din enhet verkar inte vara ansluten. Du kan prova att använda en annan USB -kabel, eftersom vissa USB -kablar är utformade för att bara överföra en signal för ström.",
     "Turn meter on and make sure Bluetooth is switched on": "Slå på mätaren och se till att Bluetooth är på",
-    "Sorry, we don't support the Libre 2 yet": "Vi stöder tyvärr inte Libre 2 än"  
+    "Sorry, we don't support the Libre 2 yet": "Vi stöder tyvärr inte Libre 2 än",
+    "Ensure the Smart Pix is mounted before starting.": "Se till att Smart Pix är monterad innan du startar.",
+    "Click send and then start the transfer from your device.": "Klicka på skicka och starta sedan överföringen från din enhet."
 }

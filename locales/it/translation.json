@@ -232,5 +232,7 @@
     "Windows 7 won't be patched for any new viruses or security problems\ngoing forward.\n\nWhile Windows 7 will continue to work, Microsoft recommends you\nstart planning to upgrade to Windows 10, or an alternative\noperating system, as soon as possible.": "Windows 7 non verrà aggiornato per eventuali nuovi virus o problemi di sicurezza\nandando avanti.\n\nMentre Windows 7 continuerà a funzionare, Microsoft ti consiglia\ninizia a pianificare l'aggiornamento a Windows 10 o un'alternativa\nsistema operativo, il prima possibile.",
     "Your device doesn't appear to be connected. You can try using another USB cable, as some USB cables are designed to carry a signal for power only.": "Il tuo dispositivo non sembra essere connesso. Puoi provare a utilizzare un altro cavo USB, poiché alcuni cavi USB sono progettati per trasportare un segnale solo per l'alimentazione.",
     "Turn meter on and make sure Bluetooth is switched on": "Accendi lo strumento e assicurati che il Bluetooth sia acceso",
-    "Sorry, we don't support the Libre 2 yet": "Spiacenti, non supportiamo ancora Libre 2"  
-  }
+    "Sorry, we don't support the Libre 2 yet": "Spiacenti, non supportiamo ancora Libre 2",
+    "Ensure the Smart Pix is mounted before starting.": "Assicurati che Smart Pix sia montato prima di iniziare.",
+    "Click send and then start the transfer from your device.": "Fare clic su Invia e quindi avviare il trasferimento dal dispositivo."
+}
