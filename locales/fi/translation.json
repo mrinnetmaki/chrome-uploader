@@ -234,5 +234,9 @@
   "Turn meter on and make sure Bluetooth is switched on": "Käynnistä mittari ja varmista, että Bluetooth on käytössä",
   "Sorry, we don't support the Libre 2 yet": "Pahoittelut, emme vielä tue Libre 2 -lukijaa",
   "Ensure the Smart Pix is mounted before starting.": "Varmista, että Smart Pix on asennettu ennen kuin aloitat.",
-  "Click send and then start the transfer from your device.": "Klikkaa Lähetä ja käynnistä sitten tiedonsiirto laitteestasi."
+  "Click send and then start the transfer from your device.": "Klikkaa Lähetä ja käynnistä sitten tiedonsiirto laitteestasi.",
+  "Plug in meter with cable and set meter to": "Liitä mittari kaapelilla ja aseta se ",
+  "PC Link Mode": "PC Link -tilaan",
+  "afterLink": "",
+  "Make sure the meter is switched off and plug in with micro-USB cable": "Varmista, että mittari on kytketty pois päältä ja liitä se sitten mikro-USB-kaapelilla"
 }

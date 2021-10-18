@@ -234,5 +234,9 @@
   "Turn meter on and make sure Bluetooth is switched on": "Schalten Sie das Messgerät ein und stellen Sie sicher, dass Bluetooth eingeschaltet ist",
   "Sorry, we don't support the Libre 2 yet": "Entschuldigung, wir unterstützen das Libre 2 noch nicht",
   "Ensure the Smart Pix is mounted before starting.": "Stellen Sie sicher, dass das Smart Pix montiert ist, bevor Sie beginnen.",
-  "Click send and then start the transfer from your device.": "Klicken Sie auf Senden und starten Sie dann die Übertragung von Ihrem Gerät."
+  "Click send and then start the transfer from your device.": "Klicken Sie auf Senden und starten Sie dann die Übertragung von Ihrem Gerät.",
+  "Plug in meter with cable and set meter to": "Messgerät mit Kabel anschließen und Messgerät auf ",
+  "PC Link Mode": "PC-Link-Modus",
+  "afterLink": " einstellen",
+  "Make sure the meter is switched off and plug in with micro-USB cable": "Stellen Sie sicher, dass das Messgerät ausgeschaltet ist und schließen Sie es mit einem Micro-USB-Kabel an"
 }
