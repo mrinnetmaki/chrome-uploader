@@ -229,5 +229,8 @@
     "This email is already associated with a Tidepool account.": "Questa email è già associata a un account Sensotrend.",
     "We can't save your device and timezone selection right now.": "Al momento non è possibile salvare il dispositivo e la selezione del fuso orario.",
     "Please update to a modern operating system": "Si prega di aggiornare a un sistema operativo moderno",
-    "Windows 7 won't be patched for any new viruses or security problems\ngoing forward.\n\nWhile Windows 7 will continue to work, Microsoft recommends you\nstart planning to upgrade to Windows 10, or an alternative\noperating system, as soon as possible.": "Windows 7 non verrà aggiornato per eventuali nuovi virus o problemi di sicurezza\nandando avanti.\n\nMentre Windows 7 continuerà a funzionare, Microsoft ti consiglia\ninizia a pianificare l'aggiornamento a Windows 10 o un'alternativa\nsistema operativo, il prima possibile."
-}
+    "Windows 7 won't be patched for any new viruses or security problems\ngoing forward.\n\nWhile Windows 7 will continue to work, Microsoft recommends you\nstart planning to upgrade to Windows 10, or an alternative\noperating system, as soon as possible.": "Windows 7 non verrà aggiornato per eventuali nuovi virus o problemi di sicurezza\nandando avanti.\n\nMentre Windows 7 continuerà a funzionare, Microsoft ti consiglia\ninizia a pianificare l'aggiornamento a Windows 10 o un'alternativa\nsistema operativo, il prima possibile.",
+    "Your device doesn't appear to be connected. You can try using another USB cable, as some USB cables are designed to carry a signal for power only.": "Il tuo dispositivo non sembra essere connesso. Puoi provare a utilizzare un altro cavo USB, poiché alcuni cavi USB sono progettati per trasportare un segnale solo per l'alimentazione.",
+    "Turn meter on and make sure Bluetooth is switched on": "Accendi lo strumento e assicurati che il Bluetooth sia acceso",
+    "Sorry, we don't support the Libre 2 yet": "Spiacenti, non supportiamo ancora Libre 2"  
+  }
