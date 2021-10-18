@@ -101,6 +101,7 @@ const devices = {
                     text: i18n.t('Plug in meter with cable and set meter to'),
                     linkText: i18n.t('PC Link Mode'),
                     link: 'https://support.tidepool.org/hc/en-us/articles/4402234174100',
+                    afterLink: i18n.t('afterLink', '')
                   },
     name: 'GLUCOCARD Expression',
     key: 'glucocardexpression',

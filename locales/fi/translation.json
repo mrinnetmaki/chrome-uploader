@@ -232,5 +232,11 @@
   "Windows 7 won't be patched for any new viruses or security problems\ngoing forward.\n\nWhile Windows 7 will continue to work, Microsoft recommends you\nstart planning to upgrade to Windows 10, or an alternative\noperating system, as soon as possible.": "Windows 7:ää ei enää päivitetä virus- ja tietoturvauhkien varalta.\n\nVaikka Windows 7 jatkaa toimimista, Microsoft suosittelee suunnittelemaan Windows 10:een tai vaihtoehtoiseen käyttöjärjestelmään päivittämistä mahdollisimman pian.",
   "Your device doesn't appear to be connected. You can try using another USB cable, as some USB cables are designed to carry a signal for power only.": "Laitteesi ei näyttäisi olevan liitetty. Kokeile varmuuden vuoksi toisella USB-kaapelilla, koska käyttämäsi kaapeli saattaa olla viallinen tai tarkoitettu vain laitteen lataamiseen.",
   "Turn meter on and make sure Bluetooth is switched on": "Käynnistä mittari ja varmista, että Bluetooth on käytössä",
-  "Sorry, we don't support the Libre 2 yet": "Pahoittelut, emme vielä tue Libre 2 -lukijaa"  
+  "Sorry, we don't support the Libre 2 yet": "Pahoittelut, emme vielä tue Libre 2 -lukijaa",
+  "Ensure the Smart Pix is mounted before starting.": "Varmista, että Smart Pix on asennettu ennen kuin aloitat.",
+  "Click send and then start the transfer from your device.": "Klikkaa Lähetä ja käynnistä sitten tiedonsiirto laitteestasi.",
+  "Plug in meter with cable and set meter to": "Liitä mittari kaapelilla ja aseta se ",
+  "PC Link Mode": "PC Link -tilaan",
+  "afterLink": "",
+  "Make sure the meter is switched off and plug in with micro-USB cable": "Varmista, että mittari on kytketty pois päältä ja liitä se sitten mikro-USB-kaapelilla"
 }
