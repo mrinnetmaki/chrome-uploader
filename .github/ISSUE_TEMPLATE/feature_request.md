@@ -41,23 +41,10 @@ Instructions for use
 Browser/mobile
 Accessibility
 
-#### Risk analysis
+#### Regulatory requirements
 
-*Instructions: 1. Identify risks that may arise due to this issue. 2. Check the product's existing risks and how they may appear in this issue. 3. Describe how each risk is taken into account in this issue. If new risks or risk controls are identified, invite a risk workshop to discuss these.*
-
-- [ ] Risk analysis done and risks updated according to QMS
-
-Identified risks (mark potential new ones by bolding them):
-1. [Description]
-2. [Description]
-
-Related risks from the risk list:
-1. [Identifier, description]
-2. [Identifier, description]
-
-Control and actions (all risks from previous lists):
-1. [Risk, controls, actions]
-2. [Risk, controls, actions]
+Describe here
+- Regulatory requirements deviating from the business as usual
 
 ## 3. Implementation
 
@@ -68,22 +55,6 @@ Describe here
 - Which other products or product components does this feature use?
 - Which external libraries etc. does this feature use?
 
-#### Security check-up
-
-Check that the OWASP top 10 have been taken into account.
-
-[https://github.com/OWASP/www-project-top-ten/blob/master/index.md](https://github.com/OWASP/www-project-top-ten/blob/master/index.md)
-- [ ] **1 Injection** - [comments]
-- [ ] **2 Broken Authentication** - [comments]
-- [ ] **3 Sensitive Data Exposure** - [comments]
-- [ ] **4 XML External Entities (XXE)** - [comments]
-- [ ] **5 Broken Access Control** - [comments]
-- [ ] **6 Security Misconfiguration** - [comments]
-- [ ] **7 Cross-Site Scripting XSS** - [comments]
-- [ ] **8 Insecure Deserialization** - [comments]
-- [ ] **9 Using Components with Known Vulnerabilities** - [comments]
-- [ ] **10 Insufficient Logging & Monitoring** - [comments]
-
 ## 4. Verification
 
 General description of how to test the feature
@@ -92,7 +63,7 @@ General description of how to test the feature
 - Usability
 - Automatically or manually
 
-To be verifified by the following cases:
+To be verified by the following cases:
 
 1. [Test case 1]
 2. [Test case 2]
