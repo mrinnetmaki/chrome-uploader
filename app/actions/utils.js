@@ -107,6 +107,12 @@ export function makeUploadCb(dispatch, getState, errCode, utc) {
         displayErr.message = errorText.E_DATETIME_SET_BY_PUMP;
         uploadErrProps.details = 'Incorrect date/time being synced from linked pump';
       }
+      
+      if (err.code === 'E_VERIO_WRITE') {
+        displayErr.message = 'We couldn\'t communicate with the meter. You may need to give Uploader';
+        displayErr.link = 'https://support.tidepool.org/hc/en-us/articles/4409628277140';
+        displayErr.linkText = 'controlled folder access.';
+      }
 
       if (!(process.env.NODE_ENV === 'test')) {
         uploadErrProps.stringifiedStack = _.map(
