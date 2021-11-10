@@ -238,5 +238,6 @@
   "Plug in meter with cable and set meter to": "Branchez le compteur avec le câble et réglez le compteur en ",
   "PC Link Mode": "mode PC Link",
   "afterLink": "",
-  "Make sure the meter is switched off and plug in with micro-USB cable": "Assurez-vous que le compteur est éteint et branchez-le avec un câble micro-USB"
+  "Make sure the meter is switched off and plug in with micro-USB cable": "Assurez-vous que le compteur est éteint et branchez-le avec un câble micro-USB",
+  "Please correct the date/time on the linked pump.": "Veuillez corriger la date/l'heure sur la pompe liée."
 }

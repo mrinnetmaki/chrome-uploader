@@ -238,5 +238,6 @@
   "Plug in meter with cable and set meter to": "Liitä mittari kaapelilla ja aseta se ",
   "PC Link Mode": "PC Link -tilaan",
   "afterLink": "",
-  "Make sure the meter is switched off and plug in with micro-USB cable": "Varmista, että mittari on kytketty pois päältä ja liitä se sitten mikro-USB-kaapelilla"
+  "Make sure the meter is switched off and plug in with micro-USB cable": "Varmista, että mittari on kytketty pois päältä ja liitä se sitten mikro-USB-kaapelilla",
+  "Please correct the date/time on the linked pump.": "Aseta linkitettyyn pumppuun oikea aika ja päivämäärää."  
 }
