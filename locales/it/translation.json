@@ -238,5 +238,6 @@
   "Plug in meter with cable and set meter to": "Collegare lo strumento con il cavo e impostare lo strumento in ",
   "PC Link Mode": "modalità PC Link",
   "afterLink": "",
-  "Make sure the meter is switched off and plug in with micro-USB cable": "Assicurarsi che lo strumento sia spento e collegarlo con un cavo micro-USB"
+  "Make sure the meter is switched off and plug in with micro-USB cable": "Assicurarsi che lo strumento sia spento e collegarlo con un cavo micro-USB",
+  "Please correct the date/time on the linked pump.": "Correggere la data/ora sulla pompa collegata."  
 }
