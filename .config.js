@@ -42,5 +42,4 @@ module.exports = {
   DATA_URL: process.env.DATA_URL || 'https://connect.sensotrend.fi/tpdata',
   BLIP_URL: process.env.BLIP_URL || 'https://www.sensotrend.fi/api',
   DEFAULT_TIMEZONE: process.env.DEFAULT_TIMEZONE || 'Europe/Helsinki',
-  DEFAULT_CARELINK_DAYS: process.env.DEFAULT_CARELINK_DAYS || '180'
 };
