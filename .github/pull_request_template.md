@@ -1,22 +1,22 @@
 ## Risk analysis
-_Instruction: Skip other questions, if first checkbox is ticked._
+Instruction: Remove bullets not included to the analysis results._
 
-Risks of the implementation in this pull request have been analyzed with following results:
-- [ ] No significant risks. 
-- [ ] Following items in the [risk list](https://github.com/Sensotrend/sensotrend-regulatory/blob/master/product-sensotrend-uploader/RISK-T5-FM%20Risk%20Management%20File%20-%20Medical%20Issues.xlsx) are related to the implementation: [list of risk ids]
-- [ ] The implementation poses the following new risks: [description of new risks]
+- [ ] Risks of the implementation in this pull request have been analyzed with following results:
+- No significant risks. 
+- Following items in the [risk list](https://github.com/Sensotrend/sensotrend-regulatory/blob/master/product-sensotrend-uploader/RISK-T5-FM%20Risk%20Management%20File%20-%20Medical%20Issues.xlsx) are related to the implementation: [list of risk ids]
+- The implementation poses the following new risks: [description of new risks]
 
 Following risk control actions and/or risk list updates are needed:
 1. [action]
 2. [action]
 
 ## Significance
+_Instruction: Remove bullet, which is not the analysis result._
 
-Is the software change considered significant? (ref. [MDCG 2020-3, chart C](https://drive.google.com/file/d/1QAqBhV-6NzuqXCY20kH5cH0VTGl83Jj0/view?usp=sharing))
-- [ ] **Yes**, certification according MDR is needed.
-- [ ] **No**, can be made to the product certified according MDD.
+- [ ] Analysis, is the software change considered significant (ref. [MDCG 2020-3, chart C](https://drive.google.com/file/d/1QAqBhV-6NzuqXCY20kH5cH0VTGl83Jj0/view?usp=sharing)), has been made with following result: 
+- **Significant change**, certification according MDR is needed.
+- **Not significant change**, can be made to the product certified according MDD.
 	- Reasons for the decision - [answer]
-
 
 ## Security check-up
 
