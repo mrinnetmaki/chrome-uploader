@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
+/*const fs = require('fs');
 
 const PKG = 'app/package.json';
 const SRC = 'scripts/about.html';
@@ -67,3 +67,4 @@ function main() {
 }
 
 main();
+*/

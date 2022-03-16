@@ -43,16 +43,20 @@ export default merge.smart(baseConfig, {
 
   target: 'electron-renderer',
 
-  entry: [
+  entry:{ 
+    renderer: [
     ...(process.env.PLAIN_HMR ? [] : ['react-hot-loader/patch']),
     `webpack-dev-server/client?http://localhost:${port}/`,
     'webpack/hot/only-dev-server',
-    require.resolve('./app/index')
+    require.resolve('./app/index'),
   ],
+    about: [require.resolve('./app/about.js')]
+
+},
 
   output: {
     publicPath: `http://localhost:${port}/dist/`,
-    filename: 'renderer.dev.js'
+    filename: '[name].dev.js'
   },
 
   module: {
