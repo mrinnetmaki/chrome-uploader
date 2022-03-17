@@ -2,7 +2,91 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Sensotrend Uploader</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <title>Tietoja sovelluksesta</title>
+    <link rel="stylesheet" href="./dist/style.css" />
+    <style type="text/css">
+      body {
+        background: #fff;
+        user-select: text;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+  
+        font-family: "Basis", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 19px;
+      }
+  
+      header {
+        margin-top: 2em;
+      }
+  
+      #main {
+        margin-top: auto;
+        margin-bottom: auto;
+        text-align: left;
+      }
+  
+      h2 {
+        text-align: center;
+      }
+  
+      h4 {
+        margin-block-start: 2em;
+      }
+  
+      #license pre {
+        display: none;
+        font-size: smaller;
+      }
+  
+      #license.top pre {
+        display: block;
+        text-align: left;
+      }
+  
+      #license {
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+  
+      #license.top {
+        position: absolute;
+        top: 0;
+        width: 95%;
+        height: 95%;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      section {
+        padding-left: 3em;
+        margin-bottom: 1.2em;
+      }
+  
+      section > img {
+        width: 2em;
+        float: left;
+        margin-top: 0.23em;
+        margin-left: -3em;
+      }
+  
+      p {
+        margin: 0;
+      }
+  
+      .copyrights {
+        font-size: 12px;
+        line-height: 17px;
+        color: #555;
+        margin-top: 0.7em;
+      }
+  
+    </style>
     <script>
       (function() {
         if (!process.env.HOT) {

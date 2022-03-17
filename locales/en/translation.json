@@ -231,5 +231,14 @@
   "PC Link Mode": "PC Link Mode",
   "afterLink": "",
   "Make sure the meter is switched off and plug in with micro-USB cable": "Make sure the meter is switched off and plug in with micro-USB cable",
-  "Please correct the date/time on the linked pump.": "Please correct the date/time on the linked pump."
+  "Please correct the date/time on the linked pump.": "Please correct the date/time on the linked pump.",
+  "Sensotrend Uploader on luokan I lääkinnällinen laite.": "Sensotrend Uploader is a class I medical device.",
+  "Vaatimustenmukaisuusvakuutus": "Declaration of Conformity",
+  "Pohjautuu": "Based on",
+  "Jaettu lisenssillä": "Shared using",
+  "license": "license",
+  "Ks.": "See",
+  "mailto:tuki@sensotrend.com": "mailto:support@sensotrend.com",
+  "tuki@sensotrend.com": "support@sensotrend.com"
+
 }
