@@ -231,5 +231,12 @@
   "PC Link Mode": "PC Link Mode",
   "afterLink": "",
   "Make sure the meter is switched off and plug in with micro-USB cable": "Make sure the meter is switched off and plug in with micro-USB cable",
-  "Please correct the date/time on the linked pump.": "Please correct the date/time on the linked pump."
+  "Please correct the date/time on the linked pump.": "Please correct the date/time on the linked pump.",
+  "Plug in PDA with micro-USB": "Plug in PDA with micro-USB",
+  "Select CSV file downloaded from LibreView": "Select CSV file downloaded from LibreView",
+  "We couldn't communicate with the meter. You may need to give Uploader": "We couldn't communicate with the meter. You may need to give Uploader",
+  "We found more than one device plugged in. Only plug in the device you intend to upload.": "We found more than one device plugged in. Only plug in the device you intend to upload.",
+  "Uploading Libre 2 data?": "Uploading Libre 2 data?",
+  "Please set your LibreView date format to Year-Month-Day and export the CSV again": "Please set your LibreView date format to Year-Month-Day and export the CSV again"
+  
 }
