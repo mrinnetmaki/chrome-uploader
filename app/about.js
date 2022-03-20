@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React, { Fragment } from 'react';
 import { render } from 'react-dom';
-
+import BuildTime from './BuildTime';
 
 import { remote } from 'electron';
 const i18n = remote.getGlobal( 'i18n' );
@@ -69,15 +69,15 @@ render(
         href="https://www.sensotrend.fi/connect/static/media/DECO-T5-DC-MDD_EU_Declaration_of_Conformity_-_Sensotrend_Uploader_-_signed.17445413.pdf">{i18n.t('Vaatimustenmukaisuusvakuutus')}</a>.</p>
     </section>
     <section id="device">
-      <img alt="Laitetunniste" title="Laitetunniste" src="resources/udi.png" />
+      <img alt={i18n.t('Unique Device Identification')} title={i18n.t('Unique Device Identification')} src="resources/udi.png" />
       <p>UDI-DI: D-FIMF000000500SU000001QT</p>
     </section>
     <section id="date">
-      <img alt="Valmistuspäivä" title="Valmistuspäivä" src="resources/manufacturingDate.png" />
-      <time>{pkg.date}</time>
+      <img alt={i18n.t('Manifacturing date')} title={i18n.t('Manifacturing date')} src="resources/manufacturingDate.png" />
+      {BuildTime}
     </section>
     <section id="manufacturer">
-      <img alt="Valmistaja" title="Valmistaja" src="resources/manufacturer.png" />
+      <img alt={i18n.t('Manifacturer')} title={i18n.t('Manifacturer')} src="resources/manufacturer.png" />
       <address>Sensotrend Oy<br />
         Tampellan esplanadi 19 A 55<br />
         33180 Tampere, Finland<br />
@@ -85,7 +85,7 @@ render(
       </address>
     </section>
     <section id="info">
-      <img alt="Lisätietoja" title="Lisätietoja" src="resources/website.png" />
+      <img alt={i18n.t('Additional info')} title={i18n.t('Additional info')} src="resources/website.png" />
       <p><a href="https://www.sensotrend.fi/uploader">https://www.sensotrend.fi/uploader</a></p>
     </section>
     <section id="credits">
