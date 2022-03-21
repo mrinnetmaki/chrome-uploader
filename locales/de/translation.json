@@ -238,5 +238,12 @@
   "Plug in meter with cable and set meter to": "Messgerät mit Kabel anschließen und Messgerät auf ",
   "PC Link Mode": "PC-Link-Modus",
   "afterLink": " einstellen",
-  "Make sure the meter is switched off and plug in with micro-USB cable": "Stellen Sie sicher, dass das Messgerät ausgeschaltet ist und schließen Sie es mit einem Micro-USB-Kabel an"
+  "Make sure the meter is switched off and plug in with micro-USB cable": "Stellen Sie sicher, dass das Messgerät ausgeschaltet ist und schließen Sie es mit einem Micro-USB-Kabel an",
+  
+  "Plug in PDA with micro-USB": "Plug in PDA with micro-USB",
+  "Select CSV file downloaded from LibreView": "Select CSV file downloaded from LibreView",
+  "We couldn't communicate with the meter. You may need to give Uploader": "We couldn't communicate with the meter. You may need to give Uploader",
+  "We found more than one device plugged in. Only plug in the device you intend to upload.": "We found more than one device plugged in. Only plug in the device you intend to upload.",
+  "Uploading Libre 2 data?": "Uploading Libre 2 data?",
+  "Please set your LibreView date format to Year-Month-Day and export the CSV again": "Please set your LibreView date format to Year-Month-Day and export the CSV again"
 }
