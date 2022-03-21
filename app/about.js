@@ -35,14 +35,21 @@ document.onkeyup = function (event) {
 const pkg = JSON.parse((fs.readFileSync(PKG)));
 
 
-const now = new Date();
-function pad(number) {
-  return `${number < 10 ? 0 : ''}${number}`;
+function toggleLicense() {
+  const license = document.querySelector("#license");
+  const main = document.querySelector("#main");
+  if (license.classList.contains("top")) {
+    license.classList.remove("top");
+    license.querySelector("button").textContent = "Näytä lisenssi";
+    license.setAttribute("aria-hidden", "true");
+    main.setAttribute("aria-hidden", "false");
+  } else {
+    license.classList.add("top");
+    license.querySelector("button").textContent = "Piilota lisenssi";
+    license.setAttribute("aria-hidden", "false");
+    main.setAttribute("aria-hidden", "true");
+  }
 }
-
-//insert date to 'pkg' 
-//need to figure out how to insert the date of the build instead of date everytime application is launched.
-pkg['date'] = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
 
 const licenseFile = fs.readFileSync(LICENSE).toString()
 pkg['licenseFile'] = licenseFile;
@@ -57,10 +64,11 @@ for (const line of licenseFile.split('\n')) {
 }
 
 render(
-  <div>
+  <div id='about-dialog'>
     <header>
       <img alt="" height="35" src="resources/sensotrend.svg"></img>
     </header>
+    <article id="main" aria-hidden="false">
     <h2>{pkg.description} <small>v{pkg.version}</small></h2>
     <section id="ce">
       <img alt="CE" src="resources/ce.svg" />
@@ -95,6 +103,11 @@ render(
         <br />{i18n.t('Jaettu lisenssillä')} {pkg.license} {i18n.t('license')}
       </p>
     </section>
+    </article>
+    <aside id="license" aria-hidden="true">
+    <button type="button" onClick={toggleLicense}>Näytä lisenssi</button>
+    <pre>${licenseFile}</pre>
+  </aside>
 
   </div>,
   document.getElementById('about-page')
