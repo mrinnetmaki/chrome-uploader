@@ -438,12 +438,16 @@ export default class Upload extends Component {
       <div className={styles.inputWrapper}>
         <input
           className={styles.fileinput}
+          title={i18n.t('No file chosen')}
           disabled={disabled}
+          data-value={i18n.t('Choose File')}
           ref="file"
           type="file"
           accept={_.get(upload, 'source.extension')}
           onChange={this.onBlockModeInputChange}/>
+          
       </div>
+      
     );
   }
 
