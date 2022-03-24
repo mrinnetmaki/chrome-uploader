@@ -251,7 +251,12 @@
   "Unique Device Identification": "Laitetunniste",
   "Manifacturing date": "Valmistus päivä",
   "Manifacturer": "Valmistaja",
-  "Additional info": "Lisätietoja"
+  "Additional info": "Lisätietoja",
+  "e-instructions": "e-instructions",
+  "https://www.sensotrend.fi/connect/instructions/uploaders/?l=en": "https://www.sensotrend.fi/connect/instructions/uploaders/",
+  "Instructions": "Käyttöohjeet",
+  "https://www.sensotrend.com/uploader.html": "https://www.sensotrend.fi/uploader",
+  "https://www.sensotrend.com/uploader": "https://www.sensotrend.fi/uploader"
 
 
 

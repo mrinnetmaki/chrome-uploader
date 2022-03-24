@@ -92,9 +92,13 @@ render(
         <a href={i18n.t('mailto:tuki@sensotrend.com')}>{i18n.t('tuki@sensotrend.com')}</a>
       </address>
     </section>
+    <section id="instructions">
+      <img alt={i18n.t('e-instructions')} title={i18n.t('e-instructions')} src="resources/e-instruction.png" />
+      <p><a href={i18n.t('https://www.sensotrend.fi/connect/instructions/uploaders/?l=en')}>{i18n.t('Instructions')}</a></p>
+    </section>
     <section id="info">
       <img alt={i18n.t('Additional info')} title={i18n.t('Additional info')} src="resources/website.png" />
-      <p><a href="https://www.sensotrend.fi/uploader">https://www.sensotrend.fi/uploader</a></p>
+      <p><a href={i18n.t('https://www.sensotrend.com/uploader.html')}>{i18n.t('https://www.sensotrend.com/uploader')}</a></p>
     </section>
     <section id="credits">
       <h4>{i18n.t('Pohjautuu')}<a href="https://www.tidepool.org/download#tidepool-uploader">Tidepool

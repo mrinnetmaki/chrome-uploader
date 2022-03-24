@@ -239,5 +239,11 @@
   "PC Link Mode": "PC Link Mode",
   "afterLink": "",
   "Make sure the meter is switched off and plug in with micro-USB cable": "Se till att mätaren är avstängd och anslut den med en mikro-USB-kabel",
-  "Please correct the date/time on the linked pump.": "Vänligen korrigera datum/tid på den länkade pumpen."  
+  "Please correct the date/time on the linked pump.": "Vänligen korrigera datum/tid på den länkade pumpen.",
+  "e-instructions": "e-instructions",
+  "https://www.sensotrend.fi/connect/instructions/uploaders/?l=en": "https://www.sensotrend.fi/connect/instructions/uploaders/?l=sv",
+  "Instructions": "Instructions",
+  "https://www.sensotrend.fi/uploader": "https://www.sensotrend.fi/uploader",
+  "https://www.sensotrend.com/uploader.html": "https://www.sensotrend.com/uploader.html",
+  "https://www.sensotrend.com/uploader": "https://www.sensotrend.com/uploader"
 }

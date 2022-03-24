@@ -243,5 +243,11 @@
   "Unique Device Identification": "Unique Device Identification",
   "Manifacturing date": "Manifacturing date",
   "Manifacturer": "Manifacturer",
-  "Additional info": "Additional info"
+  "Additional info": "Additional info",
+  "https://www.sensotrend.fi/connect/instructions/uploaders/?l=en": "https://www.sensotrend.fi/connect/instructions/uploaders/?l=en",
+  "Instructions": "Instructions",
+  "https://www.sensotrend.fi/uploader": "https://www.sensotrend.fi/uploader",
+  "https://www.sensotrend.com/uploader.html": "https://www.sensotrend.com/uploader.html",
+  "https://www.sensotrend.com/uploader": "https://www.sensotrend.com/uploader"
+
 }

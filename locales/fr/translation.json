@@ -239,5 +239,11 @@
   "PC Link Mode": "mode PC Link",
   "afterLink": "",
   "Make sure the meter is switched off and plug in with micro-USB cable": "Assurez-vous que le compteur est éteint et branchez-le avec un câble micro-USB",
-  "Please correct the date/time on the linked pump.": "Veuillez corriger la date/l'heure sur la pompe liée."
+  "Please correct the date/time on the linked pump.": "Veuillez corriger la date/l'heure sur la pompe liée.",
+  "e-instructions": "e-instructions",
+  "https://www.sensotrend.fi/connect/instructions/uploaders/?l=en": "https://www.sensotrend.fi/connect/instructions/uploaders/?l=fr",
+  "Instructions": "Instructions",
+  "https://www.sensotrend.fi/uploader": "https://www.sensotrend.fi/uploader",
+  "https://www.sensotrend.com/uploader.html": "https://www.sensotrend.com/uploader.html",
+  "https://www.sensotrend.com/uploader": "https://www.sensotrend.com/uploader"
 }
