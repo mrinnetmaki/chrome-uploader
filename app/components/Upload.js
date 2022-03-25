@@ -445,7 +445,6 @@ export default class Upload extends Component {
           type="file"
           accept={_.get(upload, 'source.extension')}
           onChange={this.onBlockModeInputChange}/>
-          
       </div>
       
     );

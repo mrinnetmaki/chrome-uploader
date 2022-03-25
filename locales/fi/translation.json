@@ -243,9 +243,9 @@
   "Plug in PDA with micro-USB": "Kytke PDA micro-USB kaapelilla",
   "Select CSV file downloaded from LibreView": "Valitse LibreView:sta ladattu CSV tiedosto",
   "We couldn't communicate with the meter. You may need to give Uploader": "Emme saaneet yhteyttä mittariin. Sinun tarvitsee antaa Uploaderille",
-  "We found more than one device plugged in. Only plug in the device you intend to upload.": "Löysimme enemmän kuin yhden laitteen kytkettynä. Kytke vain yksi laite kun haluat lähettää tietoja.a",
-  "Uploading Libre 2 data?": "Libre 2 tietojen lähetys?",
+  "We found more than one device plugged in. Only plug in the device you intend to upload.": "Löysimme enemmän kuin yhden laitteen kytkettynä. Kytke vain yksi laite kun haluat lähettää tietoja.",
+  "Uploading Libre 2 data?": "Lähetetäänkö Libre 2:n tietoja?",
   "Please set your LibreView date format to Year-Month-Day and export the CSV again": "Aseta LibreViewn päivämäärän muoto vuosi-kuukausi-päivä muotoon ja vie CSV uudestaan",
-  "Choose File": "Valitse CSV",
+  "Choose File": "Valitse tiedosto",
   "No file chosen": "Tiedostoa ei ole valittu"
 }
