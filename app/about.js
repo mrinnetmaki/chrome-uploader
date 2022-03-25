@@ -88,7 +88,7 @@ render(
       <img alt={i18n.t('Manifacturer')} title={i18n.t('Manifacturer')} src="resources/manufacturer.png" />
       <address>Sensotrend Oy<br />
         Tampellan esplanadi 19 A 55<br />
-        33180 Tampere, {i18n.t('Finland')}<br />
+        33180 Tampere{i18n.t(', Finland')}<br />
         <a href={i18n.t('mailto:tuki@sensotrend.com')}>{i18n.t('tuki@sensotrend.com')}</a>
       </address>
     </section>
