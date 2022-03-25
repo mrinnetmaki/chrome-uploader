@@ -40,12 +40,12 @@ function toggleLicense() {
   const main = document.querySelector("#main");
   if (license.classList.contains("top")) {
     license.classList.remove("top");
-    license.querySelector("button").textContent = "Näytä lisenssi";
+    license.querySelector("button").textContent = i18n.t('Show license');
     license.setAttribute("aria-hidden", "true");
     main.setAttribute("aria-hidden", "false");
   } else {
     license.classList.add("top");
-    license.querySelector("button").textContent = "Piilota lisenssi";
+    license.querySelector("button").textContent = i18n.t('Hide license');
     license.setAttribute("aria-hidden", "false");
     main.setAttribute("aria-hidden", "true");
   }
@@ -72,9 +72,9 @@ render(
     <h2>{pkg.description} <small>v{pkg.version}</small></h2>
     <section id="ce">
       <img alt="CE" src="resources/ce.svg" />
-      <p>{i18n.t('Sensotrend Uploader on luokan I lääkinnällinen laite.')}</p>
-      <p>{i18n.t('Ks.')} <a
-        href="https://www.sensotrend.fi/connect/static/media/DECO-T5-DC-MDD_EU_Declaration_of_Conformity_-_Sensotrend_Uploader_-_signed.17445413.pdf">{i18n.t('Vaatimustenmukaisuusvakuutus')}</a>.</p>
+      <p>{i18n.t('Sensotrend Uploader is a class I medical device.')}</p>
+      <p>{i18n.t('See')} <a
+        href="https://www.sensotrend.fi/connect/static/media/DECO-T5-DC-MDD_EU_Declaration_of_Conformity_-_Sensotrend_Uploader_-_signed.17445413.pdf">{i18n.t('Declaration of Conformity')}</a>.</p>
     </section>
     <section id="device">
       <img alt={i18n.t('Unique Device Identification')} title={i18n.t('Unique Device Identification')} src="resources/udi.png" />
@@ -88,7 +88,7 @@ render(
       <img alt={i18n.t('Manifacturer')} title={i18n.t('Manifacturer')} src="resources/manufacturer.png" />
       <address>Sensotrend Oy<br />
         Tampellan esplanadi 19 A 55<br />
-        33180 Tampere, Finland<br />
+        33180 Tampere, {i18n.t('Finland')}<br />
         <a href={i18n.t('mailto:tuki@sensotrend.com')}>{i18n.t('tuki@sensotrend.com')}</a>
       </address>
     </section>
@@ -101,15 +101,14 @@ render(
       <p><a href={i18n.t('https://www.sensotrend.com/uploader.html')}>{i18n.t('https://www.sensotrend.com/uploader')}</a></p>
     </section>
     <section id="credits">
-      <h4>{i18n.t('Pohjautuu')}<a href="https://www.tidepool.org/download#tidepool-uploader">Tidepool
-          Universal Uploaderiin</a>.</h4>
+      <h4>{i18n.t('Based on')}<a href="https://www.tidepool.org/download#tidepool-uploader">{i18n.t('Tidepool Universal Uploader')}</a>.</h4>
       <p className='copyrights'>{copyrights}
-        <br />{i18n.t('Jaettu lisenssillä')} {pkg.license} {i18n.t('license')}
+        <br />{i18n.t('Shared using')} {pkg.license} {i18n.t('license')}
       </p>
     </section>
     </article>
     <aside id="license" aria-hidden="true">
-    <button type="button" onClick={toggleLicense}>Näytä lisenssi</button>
+    <button type="button" onClick={toggleLicense}>{i18n.t('Show license')}</button>
     <pre>${licenseFile}</pre>
   </aside>
 
