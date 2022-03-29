@@ -81,11 +81,11 @@ render(
       <p>UDI-DI: D-FIMF000000500SU000001QT</p>
     </section>
     <section id="date">
-      <img alt={i18n.t('Manifacturing date')} title={i18n.t('Manifacturing date')} src="resources/manufacturingDate.png" />
+      <img alt={i18n.t('Manufacturing date')} title={i18n.t('Manufacturing date')} src="resources/manufacturingDate.png" />
       {BuildTime}
     </section>
     <section id="manufacturer">
-      <img alt={i18n.t('Manifacturer')} title={i18n.t('Manifacturer')} src="resources/manufacturer.png" />
+      <img alt={i18n.t('Manufacturer')} title={i18n.t('Manufacturer')} src="resources/manufacturer.png" />
       <address>Sensotrend Oy<br />
         Tampellan esplanadi 19 A 55<br />
         33180 Tampere{i18n.t(', Finland')}<br />
@@ -93,12 +93,12 @@ render(
       </address>
     </section>
     <section id="instructions">
-      <img alt={i18n.t('e-instructions')} title={i18n.t('e-instructions')} src="resources/e-instruction.png" />
-      <p><a href={i18n.t('https://www.sensotrend.fi/connect/instructions/uploaders/?l=en')}>{i18n.t('Instructions')}</a></p>
+      <img alt={i18n.t('eIFU indicator')} title={i18n.t('Consult instructions for use')} src="resources/e-instruction.png" />
+      <p><a href={i18n.t('https://www.sensotrend.fi/connect/instructions/uploaders/?l=en')}>{i18n.t('Consult instructions for use')}</a></p>
     </section>
     <section id="info">
       <img alt={i18n.t('Additional info')} title={i18n.t('Additional info')} src="resources/website.png" />
-      <p><a href={i18n.t('https://www.sensotrend.com/uploader.html')}>{i18n.t('https://www.sensotrend.com/uploader')}</a></p>
+      <p><a href={i18n.t('https://www.sensotrend.com/uploader.html')}>{i18n.t('https://www.sensotrend.com/uploader.html')}</a></p>
     </section>
     <section id="credits">
       <h4>{i18n.t('Based on')}<a href="https://www.tidepool.org/download#tidepool-uploader">{i18n.t('Tidepool Universal Uploader')}</a>.</h4>
