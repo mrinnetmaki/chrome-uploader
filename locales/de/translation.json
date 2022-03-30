@@ -239,13 +239,12 @@
   "PC Link Mode": "PC-Link-Modus",
   "afterLink": " einstellen",
   "Make sure the meter is switched off and plug in with micro-USB cable": "Stellen Sie sicher, dass das Messgerät ausgeschaltet ist und schließen Sie es mit einem Micro-USB-Kabel an",
-  
-  "Plug in PDA with micro-USB": "Plug in PDA with micro-USB",
-  "Select CSV file downloaded from LibreView": "Select CSV file downloaded from LibreView",
-  "We couldn't communicate with the meter. You may need to give Uploader": "We couldn't communicate with the meter. You may need to give Uploader",
-  "We found more than one device plugged in. Only plug in the device you intend to upload.": "We found more than one device plugged in. Only plug in the device you intend to upload.",
-  "Uploading Libre 2 data?": "Uploading Libre 2 data?",
-  "Please set your LibreView date format to Year-Month-Day and export the CSV again": "Please set your LibreView date format to Year-Month-Day and export the CSV again",
-  "Choose File": "Choose File",
-  "No file chosen": "No file chosen"
+  "Plug in PDA with micro-USB": "Schließen Sie den PDA mit Micro-USB an",
+  "Select CSV file downloaded from LibreView": "Wählen Sie die von LibreView heruntergeladene CSV-Datei aus",
+  "We couldn't communicate with the meter. You may need to give Uploader": "Wir konnten nicht mit dem Messgerät kommunizieren. Möglicherweise müssen Sie Uploader angeben",
+  "We found more than one device plugged in. Only plug in the device you intend to upload.": "Wir haben festgestellt, dass mehr als ein Gerät angeschlossen ist. Schließen Sie nur das Gerät an, das Sie hochladen möchten.",
+  "Uploading Libre 2 data?": "Libre 2 Daten hochladen? ",
+  "Please set your LibreView date format to Year-Month-Day and export the CSV again": "Bitte stellen Sie Ihr LibreView-Datumsformat auf Jahr-Monat-Tag ein und exportieren Sie die CSV-Datei erneut",
+  "Choose File": "Datei wählen",
+  "No file chosen": "keine Datei ausgewählt"
 }

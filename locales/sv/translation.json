@@ -241,12 +241,12 @@
   "Make sure the meter is switched off and plug in with micro-USB cable": "Se till att mätaren är avstängd och anslut den med en mikro-USB-kabel",
   "Please correct the date/time on the linked pump.": "Vänligen korrigera datum/tid på den länkade pumpen.",
 
-  "Plug in PDA with micro-USB": "Plug in PDA with micro-USB",
-  "Select CSV file downloaded from LibreView": "Select CSV file downloaded from LibreView",
-  "We couldn't communicate with the meter. You may need to give Uploader": "We couldn't communicate with the meter. You may need to give Uploader",
-  "We found more than one device plugged in. Only plug in the device you intend to upload.": "We found more than one device plugged in. Only plug in the device you intend to upload.",
-  "Uploading Libre 2 data?": "Uploading Libre 2 data?",
-  "Please set your LibreView date format to Year-Month-Day and export the CSV again": "Please set your LibreView date format to Year-Month-Day and export the CSV again",
-  "Choose File": "Choose File",
-  "No file chosen": "No file chosen"
+  "Plug in PDA with micro-USB": "Koppla in PDA med micro-USB",
+  "Select CSV file downloaded from LibreView": "Välj CSV-fil som laddats ner från LibreView",
+  "We couldn't communicate with the meter. You may need to give Uploader": "Vi kunde inte kommunicera med mätaren. Du kan behöva ge Uploader",
+  "We found more than one device plugged in. Only plug in the device you intend to upload.": "Vi hittade mer än en enhet ansluten. Anslut bara den enhet du tänker ladda upp.",
+  "Uploading Libre 2 data?": "Laddar du upp Libre 2 data?",
+  "Please set your LibreView date format to Year-Month-Day and export the CSV again": "Ställ in ditt LibreView-datumformat till År-månad-dag och exportera CSV-filen igen",
+  "Choose File": "Välj Fil ",
+  "No file chosen": "fil inte vald"
 }

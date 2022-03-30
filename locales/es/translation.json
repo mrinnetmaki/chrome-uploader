@@ -231,13 +231,12 @@
   "afterLink": "",
   "Make sure the meter is switched off and plug in with micro-USB cable": "Asegúrese de que el medidor esté apagado y conéctelo con un cable micro-USB",
   "Please correct the date/time on the linked pump.": "Corrija la fecha / hora en la bomba vinculada.",
-  
-  "Plug in PDA with micro-USB": "Plug in PDA with micro-USB",
-  "Select CSV file downloaded from LibreView": "Select CSV file downloaded from LibreView",
-  "We couldn't communicate with the meter. You may need to give Uploader": "We couldn't communicate with the meter. You may need to give Uploader",
-  "We found more than one device plugged in. Only plug in the device you intend to upload.": "We found more than one device plugged in. Only plug in the device you intend to upload.",
-  "Uploading Libre 2 data?": "Uploading Libre 2 data?",
-  "Please set your LibreView date format to Year-Month-Day and export the CSV again": "Please set your LibreView date format to Year-Month-Day and export the CSV again",
-  "Choose File": "Choose File",
-  "No file chosen": "No file chosen"
+  "Plug in PDA with micro-USB": "Enchufe PDA con micro-USB",
+  "Select CSV file downloaded from LibreView": "Seleccione el archivo CSV descargado de LibreView",
+  "We couldn't communicate with the meter. You may need to give Uploader": "No pudimos comunicarnos con el medidor. Es posible que deba darle a Uploader",
+  "We found more than one device plugged in. Only plug in the device you intend to upload.": "Encontramos más de un dispositivo conectado. Solo conecte el dispositivo que desea cargar.",
+  "Uploading Libre 2 data?": "¿Subiendo datos de Libre 2?",
+  "Please set your LibreView date format to Year-Month-Day and export the CSV again": "Establezca el formato de fecha de LibreView en Año-Mes-Día y vuelva a exportar el CSV",
+  "Choose File": "Elija el archivo",
+  "No file chosen": "archivo no elegido"
 }

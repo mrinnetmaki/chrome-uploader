@@ -130,7 +130,6 @@
 
 .button {
   composes: btn btnPrimary from '../core/buttons.module.less';
-  width: 150px;
 }
 
 input[type=file] {
@@ -139,7 +138,6 @@ input[type=file] {
     outline: 0;
     border-color: @form-control-border-color;
   }
-  width: 150px;
 }
 
 .inputWrapper {
@@ -161,8 +159,13 @@ input[type=file] {
   visibility: visible;
   color: #fff;
   content: attr(data-value);
-  margin-left: 25px;
-  vertical-align: middle;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  margin: 2px auto;
+  top: 0;
+  bottom: 0;
+  height: 100%;
 }
 
 .fileinput {
@@ -172,6 +175,8 @@ input[type=file] {
   border: none;
   height: 34px;
   width: 116px;
+  text-align: center;
+  position: relative;
 }
 
 .dataDownloadLink {
