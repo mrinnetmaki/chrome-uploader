@@ -93,7 +93,7 @@ render(
       </address>
     </section>
     <section id="instructions">
-      <img alt={i18n.t('eIFU indicator')} title={i18n.t('Consult instructions for use')} src="resources/e-instruction.png" />
+      <img alt={i18n.t('eIFU indicator')} src="resources/e-instruction.png" />
       <p><a href={i18n.t('https://www.sensotrend.fi/connect/instructions/uploaders/?l=en')}>{i18n.t('Consult instructions for use')}</a></p>
     </section>
     <section id="info">
