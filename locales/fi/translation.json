@@ -247,8 +247,7 @@
   "Shared using": "Jaettu lisenssillä",
   "license": "",
   "See": "Ks.",
-  "mailto:tuki@sensotrend.com": "mailto:tuki@sensotrend.com",
-  "tuki@sensotrend.com": "tuki@sensotrend.com",
+  "support@sensotrend.com": "tuki@sensotrend.com",
   "Unique Device Identification": "Laitetunniste",
   "Manufacturing date": "Valmistus päivä",
   "Manufacturer": "Valmistaja",
@@ -261,5 +260,8 @@
   "https://www.sensotrend.fi/connect/instructions/uploaders/?l=en": "https://www.sensotrend.fi/connect/instructions/uploaders/",
   "Consult instructions for use": "Katso käyttöohjeet, ohjeet sähköisessä muodossa",
   "https://www.sensotrend.com/uploader.html": "https://www.sensotrend.fi/uploader",
-  "https://www.sensotrend.com/uploader": "https://www.sensotrend.fi/uploader"
+  "https://www.sensotrend.com/uploader": "https://www.sensotrend.fi/uploader",
+  "Instructions for use in electronic form": "Käyttöohjeet sähköisessä muodossa",
+  "This instruction for use is supplied in electronic form only. You can request a paper version from ": "Tämä käyttöohje toimitetaan vain sähköisessä muodossa. Voit pyytää paperiversion osoitteesta ",
+  "The paper version will be delivered within 7 calendar days of receiving the request.": "Paperiversio toimitetaan 7 kalenteripäivän kuluessa pyynnön vastaanottamisesta."
 }

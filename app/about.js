@@ -89,12 +89,14 @@ render(
       <address>Sensotrend Oy<br />
         Tampellan esplanadi 19 A 55<br />
         33180 Tampere{i18n.t(', Finland')}<br />
-        <a href={i18n.t('mailto:tuki@sensotrend.com')}>{i18n.t('tuki@sensotrend.com')}</a>
+        <a href={i18n.t('mailto:support@sensotrend.com')}>{i18n.t('support@sensotrend.com')}</a>
       </address>
     </section>
     <section id="instructions">
-      <img alt={i18n.t('eIFU indicator')} src="resources/e-instruction.png" />
-      <p><a href={i18n.t('https://www.sensotrend.fi/connect/instructions/uploaders/?l=en')}>{i18n.t('Consult instructions for use')}</a></p>
+      <img alt={i18n.t('Consult instructions for use')} title={i18n.t('Consult instructions for use')} src="resources/e-instruction.png" />
+      <p><a href={i18n.t('https://www.sensotrend.fi/connect/instructions/uploaders/?l=en')}>{i18n.t('Instructions for use in electronic form')}</a></p>
+      <br/>
+      <p>{i18n.t('This instruction for use is supplied in electronic form only. You can request a paper version from ')}<a href={i18n.t('mailto:support@sensotrend.com')}>{i18n.t('support@sensotrend.com')}</a>. {i18n.t('The paper version will be delivered within 7 calendar days of receiving the request.')}</p>
     </section>
     <section id="info">
       <img alt={i18n.t('Additional info')} title={i18n.t('Additional info')} src="resources/website.png" />

@@ -238,8 +238,7 @@
   "Shared using": "uso compartido",
   "license": "licencia",
   "See": "ver",
-  "mailto:tuki@sensotrend.com": "mailto:support@sensotrend.com",
-  "tuki@sensotrend.com": "support@sensotrend.com",
+  "support@sensotrend.com": "support@sensotrend.com",
   "Unique Device Identification": "Identificación única del dispositivo",
   "Manufacturing date": "Fecha de fabricación",
   "Manufacturer": "Fabricante",
@@ -253,5 +252,8 @@
   "Consult instructions for use": "Consultar instrucciones de uso",
   "https://www.sensotrend.fi/uploader": "https://www.sensotrend.fi/uploader",
   "https://www.sensotrend.com/uploader.html": "https://www.sensotrend.com/uploader.html",
-  "https://www.sensotrend.com/uploader": "https://www.sensotrend.com/uploader"
+  "https://www.sensotrend.com/uploader": "https://www.sensotrend.com/uploader",
+  "Instructions for use in electronic form": "Instrucciones de uso en formato electrónico",
+  "This instruction for use is supplied in electronic form only. You can request a paper version from ": "Estas instrucciones de uso se suministran únicamente en formato electrónico. Puede solicitar una versión en papel de ",
+  "The paper version will be delivered within 7 calendar days of receiving the request.": "La versión en papel se entregará dentro de los 7 días naturales siguientes a la recepción de la solicitud."
 }
