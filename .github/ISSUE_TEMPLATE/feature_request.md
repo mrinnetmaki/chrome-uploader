@@ -15,9 +15,10 @@ When creating a request, please fill in parts 1 and 2 with as much information a
 ### 2. Requirements
 **Known requirements for**
 - **customer:**
-- **functionality:** 
-- **usability:** 
-- **regulation:** 
+- **functionality (incl. [62304, ch. 5.2.2 sublauses a,b,d](https://drive.google.com/file/d/19vfHS2bDeDMbb1QquLW44N_cBbctIE00/view?usp=sharing)):** 
+- **usability (incl. [62304, ch. 5.2.2 sublause f](https://drive.google.com/file/d/19vfHS2bDeDMbb1QquLW44N_cBbctIE00/view?usp=sharing)):** 
+- **regulation (incl. [62304, ch. 5.2.2 sublause l](https://drive.google.com/file/d/19vfHS2bDeDMbb1QquLW44N_cBbctIE00/view?usp=sharing)):** 
+- **any other mentioned in [62304, ch. 5.2.2](https://drive.google.com/file/d/19vfHS2bDeDMbb1QquLW44N_cBbctIE00/view?usp=sharing):** 
 
 - [ ] Design and development inputs have approved by [name, date].
 
