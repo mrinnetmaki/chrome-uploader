@@ -24,9 +24,9 @@ ObjC.import('stdlib')
 const app = Application.currentApplication()
 app.includeStandardAdditions = true
 
-const result = app.displayDialog('Please enter your computer password to allow Tidepool Uploader to access your OneTouch meter.', {
+const result = app.displayDialog('Please enter your computer password to allow WARIFA Uploader to access your OneTouch meter.', {
   defaultAnswer: '',
-  withIcon: Path('/Applications/Sensotrend\ Uploader.app/Contents/Resources/icon.icns'),
+  withIcon: Path('/Applications/WARIFA\ Uploader.app/Contents/Resources/icon.icns'),
   buttons: ['Cancel', 'Why do I need to do this?', 'OK'],
   defaultButton: 'OK',
   hiddenAnswer: true,

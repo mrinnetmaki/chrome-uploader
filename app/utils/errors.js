@@ -80,7 +80,7 @@ export function getUpdateProfileErrorMessage(status) {
     case 401:
       return 'You need to be logged in to update your preferences.';
     case 409:
-      return 'This email is already associated with a Sensotrend account.';
+      return 'This email is already associated with a WARIFA account.';
     case 503:
       return ErrorMessages.E_OFFLINE;
     default:

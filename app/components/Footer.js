@@ -46,13 +46,13 @@ export default class Footer extends Component {
       <div className={styles.footer}>
         <div className={styles.footerRow}>
           <div className={styles.el1}>
-            <a className={styles.footerLink} href="https://www.sensotrend.fi/connect/instructions/uploader" target="_blank">{i18n.t('Get Support')}</a>
+            <a className={styles.footerLink} href="https://sensotrend.warifa.cloud/connect/instructions/uploader" target="_blank">{i18n.t('Get Support')}</a>
           </div>
           <div className={styles.el2}>
-            <a className={styles.footerLink} href="https://www.sensotrend.fi/connect/privacy/" target="_blank">{i18n.t('Privacy')}</a>
+            <a className={styles.footerLink} href="https://sensotrend.warifa.cloud/connect/privacy/" target="_blank">{i18n.t('Privacy')}</a>
           </div>
           <div className={styles.el3}>
-            <a className={styles.footerLink} href="https://www.sensotrend.fi/connect/eula/" target="_blank">{i18n.t('Terms of Use')}</a>
+            <a className={styles.footerLink} href="https://sensotrend.warifa.cloud/connect/eula/" target="_blank">{i18n.t('Terms of Use')}</a>
           </div>
           {/*
           <div className={styles.jdrfContainer}>

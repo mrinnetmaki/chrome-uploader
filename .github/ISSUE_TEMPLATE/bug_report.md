@@ -21,7 +21,7 @@ When creating a report, please fill in part 1 with as much information as possib
 [If applicable, add screenshots to help explain the problem.]
 
 **System information:**
-- **Sensotrend Uploader version:** [for example 2.33.0-beta]
+- **WARIFA Uploader version:** [for example 2.33.0-beta]
 - **Device used as a data source:** [for example FreeSyle Libre or CareSens Dual using Bluetooth]
 - **Operation system and version:** [for example Win10, or MacOS Catalina, or Linux Ubuntu 20.04]
 - **Possible other system information:**

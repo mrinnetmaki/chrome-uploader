@@ -2,7 +2,7 @@
   "name": "sensotrend-uploader",
   "productName": "sensotrend-uploader",
   "version": "2.50.0",
-  "description": "Sensotrend Uploader",
+  "description": "WARIFA Uploader",
   "main": "./main.prod.js",
   "author": {
     "name": "Sensotrend Oy",

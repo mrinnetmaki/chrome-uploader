@@ -1,4 +1,4 @@
-# Sensotrend Uploader
+# WARIFA Uploader
 Installable uploader software, based on Tidepool's open source implementation
 
 

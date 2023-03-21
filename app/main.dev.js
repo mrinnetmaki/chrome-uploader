@@ -37,7 +37,7 @@ if(process.env.NODE_ENV === 'production') {
 
 crashReporter.start({
   productName: 'Uploader',
-  companyName: 'Tidepool',
+  companyName: 'WARIFA',
   submitURL: '',
   uploadToServer: false
 });
@@ -45,7 +45,7 @@ crashReporter.start({
 console.log('Crash logs can be found in:', app.getPath('crashDumps'));
 console.log('Last crash report:', crashReporter.getLastCrashReport());
 
-const PROTOCOL_PREFIX = 'tidepooluploader';
+const PROTOCOL_PREFIX = 'warifauploader';
 const baseURL = `file://${__dirname}/app.html`;
 
 let menu;
@@ -159,7 +159,7 @@ function createWindow() {
       // just send and append the hash if we're already in the app html
       if (
         webContents.getURL().includes(baseURL) ||
-        webContents.getURL().startsWith('tidepooluploader')
+        webContents.getURL().startsWith('warifauploader')
       ) {
         webContents.send('newHash', requestHash);
       } else {
@@ -469,12 +469,12 @@ operating system, as soon as possible.`),
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('https://www.sensotrend.fi/connect/instructions/uploader');
+          shell.openExternal('https://sensotrend.warifa.cloud/connect/instructions/uploader');
         }
       }, {
         label: i18n.t('Privacy Policy'),
         click() {
-          shell.openExternal('https://www.sensotrend.fi/connect/privacy/');
+          shell.openExternal('https://sensotrend.warifa.cloud/connect/privacy/');
         }
       }]
     }];
@@ -550,7 +550,7 @@ operating system, as soon as possible.`),
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('https://www.sensotrend.fi/connect/instructions/uploader');
+          shell.openExternal('https://sensotrend.warifa.cloud/connect/instructions/uploader');
         }
       }, {
         label: i18n.t('Check for Updates'),
@@ -561,7 +561,7 @@ operating system, as soon as possible.`),
       }, {
         label: i18n.t('Privacy Policy'),
         click() {
-          shell.openExternal('https://www.sensotrend.fi/connect/privacy/');
+          shell.openExternal('https://sensotrend.warifa.cloud/connect/privacy/');
         }
       }, {
         label: i18n.t('About Tidepool Uploader'),
@@ -690,8 +690,8 @@ ipcMain.on('bluetooth-pairing-response', (event, response) => {
   bluetoothPinCallback(response);
 });
 
-if(!app.isDefaultProtocolClient('sensotrendupload')){
-  app.setAsDefaultProtocolClient('sensotrendupload');
+if(!app.isDefaultProtocolClient('warifaupload')){
+  app.setAsDefaultProtocolClient('warifaupload');
 }
 
 app.on('window-all-closed', () => {

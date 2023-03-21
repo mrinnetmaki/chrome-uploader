@@ -15,7 +15,7 @@ RequestExecutionLevel admin
   UserInfo::GetAccountType
   pop $0
   ${If} $0 != "admin"
-      MessageBox MB_OK|MB_ICONSTOP "You need administrator rights to install the Sensotrend Uploader."
+      MessageBox MB_OK|MB_ICONSTOP "You need administrator rights to install the WARIFA Uploader."
       SetErrorLevel 740 ;ERROR_ELEVATION_REQUIRED
       Abort
   ${EndIf}

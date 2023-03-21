@@ -2,13 +2,13 @@ const config = {
   publish: [
     {
       provider: 'generic',
-      url: 'https://www.sensotrend.fi/download/uploader/update/${os}',
+      url: 'https://sensotrend.warifa.cloud/download/uploader/update/${os}',
       channel: 'latest',
       useMultipleRangeRequest: false
     },
   ],
-  productName: 'Sensotrend Uploader',
-  appId: 'org.sensotrend.SensotrendUploader',
+  productName: 'WARIFA Uploader',
+  appId: 'org.sensotrend.WarifaUploader',
   directories: {
     buildResources: 'resources',
     output: 'release'
