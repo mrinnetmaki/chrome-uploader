@@ -24,11 +24,6 @@ import { ipcRenderer } from 'electron';
 import { Route, Switch } from 'react-router-dom';
 import dns from 'dns';
 
-const { getCurrentWindow, Menu } = remote;
-const i18n = remote.getGlobal( 'i18n' );
-import i18nextOptions from '../utils/config.i18next';
-import localeNames from '../utils/locales.json';
-
 import bows from 'bows';
 
 import config from '../../lib/config.js';
@@ -66,6 +61,11 @@ import BluetoothModal from '../components/BluetoothModal';
 import styles from '../../styles/components/App.module.less';
 
 const remote = require('@electron/remote');
+
+const { getCurrentWindow, Menu } = remote;
+const i18n = remote.getGlobal( 'i18n' );
+import i18nextOptions from '../utils/config.i18next';
+import localeNames from '../utils/locales.json';
 
 const serverdata = {
   Local: {
