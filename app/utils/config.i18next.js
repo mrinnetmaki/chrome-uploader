@@ -9,7 +9,7 @@ let i18nextOptions = module.exports = {
   interpolation: {
     escapeValue: false
   },
-  lng: 'fi',
+  lng: 'en',
   saveMissing: process.env.NODE_ENV !== 'production',
   fallbackLng: 'en',
   returnEmptyString: true,
