@@ -322,12 +322,12 @@ operating system, as soon as possible.`),
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('https://www.sensotrend.fi/connect/instructions/uploader');
+          shell.openExternal('https://sensotrend.warifa.cloud/connect/instructions/uploader');
         }
       }, {
         label: i18n.t('Privacy Policy'),
         click() {
-          shell.openExternal('https://www.sensotrend.fi/connect/privacy/');
+          shell.openExternal('https://sensotrend.warifa.cloud/connect/privacy/');
         }
       }]
     }];
@@ -403,7 +403,7 @@ operating system, as soon as possible.`),
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('https://www.sensotrend.fi/connect/instructions/uploader');
+          shell.openExternal('https://sensotrend.warifa.cloud/connect/instructions/uploader');
         }
       }, {
         label: i18n.t('Check for Updates'),
@@ -414,7 +414,7 @@ operating system, as soon as possible.`),
       }, {
         label: i18n.t('Privacy Policy'),
         click() {
-          shell.openExternal('https://www.sensotrend.fi/connect/privacy/');
+          shell.openExternal('https://sensotrend.warifa.cloud/connect/privacy/');
         }
       }, {
         label: i18n.t('About Tidepool Uploader'),
@@ -530,8 +530,8 @@ ipcMain.on('autoUpdater', (event, arg) => {
   autoUpdater[arg]();
 });
 
-if(!app.isDefaultProtocolClient('sensotrendupload')){
-  app.setAsDefaultProtocolClient('sensotrendupload');
+if(!app.isDefaultProtocolClient('warifaupload')){
+  app.setAsDefaultProtocolClient('warifaupload');
 }
 
 app.on('window-all-closed', () => {

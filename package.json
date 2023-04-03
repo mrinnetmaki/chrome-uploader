@@ -1,12 +1,11 @@
 {
-  "name": "sensotrend-uploader",
+  "name": "warifa-uploader",
   "version": "2.46.0",
-  "description": "Sensotrend Uploader",
+  "description": "WARIFA Uploader",
   "private": true,
   "main": "main.prod.js",
-  "author": "Mikael Rinnetmäki",
   "license": "BSD-2-Clause",
-  "repository": "Sensotrend/sensotrend-uploader",
+  "repository": "https://github.com/mrinnetmaki/warifa-uploader",
   "scripts": {
     "av-whitelist": "node ./scripts/whitelisting/av-submit.js",
     "build-docs": "./scripts/update-gh-pages.sh",
