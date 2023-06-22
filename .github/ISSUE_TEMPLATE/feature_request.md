@@ -37,3 +37,8 @@ To be verified by following test cases:
 - [ ] 1. Pass/Fail (SW version, date, verifier)
 - [ ] 2. Pass/Fail (SW version, date, verifier)
 
+## Traceability
+
+_instruction: Check that the pull request is linked to an issue, if not then link it_
+
+- [ ] This issue(input) has been linked to a pull request(output)

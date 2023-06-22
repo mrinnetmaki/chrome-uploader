@@ -47,3 +47,8 @@ To be verified by following cases:
 - [ ] 1. Pass/Fail (your name, SW version, date)
 - [ ] 2. Pass/Fail (your name, SW version, date)
 
+## Traceability
+
+_instruction: Check that the pull request is linked to an issue, if not then link it_
+
+- [ ] This issue(input) has been linked to a pull request(output)
