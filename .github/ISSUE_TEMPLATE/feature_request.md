@@ -39,6 +39,6 @@ To be verified by following test cases:
 
 ## Traceability
 
-_instruction: Check that the pull request is linked to an issue, if not then link it_
+_instruction: Check that the issue is linked to atleast one pull request, if not then link it_
 
 - [ ] This issue(input) has been linked to a pull request(output)
