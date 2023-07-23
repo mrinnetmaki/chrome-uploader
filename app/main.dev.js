@@ -322,7 +322,7 @@ operating system, as soon as possible.`),
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('https://www.sensotrend.fi/connect/instructions/uploader');
+          shell.openExternal(i18n.t('https://www.sensotrend.fi/connect/instructions/uploaders/?l=en'));
         }
       }, {
         label: i18n.t('Privacy Policy'),
@@ -403,7 +403,7 @@ operating system, as soon as possible.`),
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('https://www.sensotrend.fi/connect/instructions/uploader');
+          shell.openExternal(i18n.t('https://www.sensotrend.fi/connect/instructions/uploaders/?l=en'));
         }
       }, {
         label: i18n.t('Check for Updates'),
