@@ -256,5 +256,12 @@
   "https://www.sensotrend.com/uploader": "https://www.sensotrend.com/uploader",
   "Instructions for use in electronic form": "Instructions for use in electronic form",
   "This instruction for use is supplied in electronic form only. You can request a paper version from ": "This instruction for use is supplied in electronic form only. You can request a paper version from ",
-  "The paper version will be delivered within 7 calendar days of receiving the request.": "The paper version will be delivered within 7 calendar days of receiving the request."
+  "The paper version will be delivered within 7 calendar days of receiving the request.": "The paper version will be delivered within 7 calendar days of receiving the request.",
+  "Plug in PDA with micro-USB": "Plug in PDA with micro-USB",
+  "We couldn't communicate with the meter. You may need to give Uploader": "We couldn't communicate with the meter. You may need to give Uploader",
+  "We found more than one device plugged in. Only plug in the device you intend to upload.": "We found more than one device plugged in. Only plug in the device you intend to upload.",
+  "Uploading Libre 2 data?": "Uploading Libre 2 data?",
+  "Please set your LibreView date format to Year-Month-Day and export the CSV again": "Please set your LibreView date format to Year-Month-Day and export the CSV again",
+  "Choose File": "Choose File",
+  "No file chosen": "No file chosen"
 }

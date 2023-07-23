@@ -263,5 +263,12 @@
   "https://www.sensotrend.com/uploader": "https://www.sensotrend.com/uploader",
   "Instructions for use in electronic form": "Gebrauchsanweisungen in elektronischer Form",
   "This instruction for use is supplied in electronic form only. You can request a paper version from ": "Diese Gebrauchsanweisung wird nur in elektronischer Form geliefert. Sie können eine Papierversion anfordern bei ",
-  "The paper version will be delivered within 7 calendar days of receiving the request.": "Die Papierversion wird innerhalb von 7 Kalendertagen nach Erhalt der Anfrage geliefert."
+  "The paper version will be delivered within 7 calendar days of receiving the request.": "Die Papierversion wird innerhalb von 7 Kalendertagen nach Erhalt der Anfrage geliefert.",
+  "Plug in PDA with micro-USB": "Schließen Sie den PDA mit Micro-USB an",
+  "We couldn't communicate with the meter. You may need to give Uploader": "Wir konnten nicht mit dem Messgerät kommunizieren. Möglicherweise müssen Sie Uploader angeben",
+  "We found more than one device plugged in. Only plug in the device you intend to upload.": "Wir haben festgestellt, dass mehr als ein Gerät angeschlossen ist. Schließen Sie nur das Gerät an, das Sie hochladen möchten.",
+  "Uploading Libre 2 data?": "Libre 2 Daten hochladen? ",
+  "Please set your LibreView date format to Year-Month-Day and export the CSV again": "Bitte stellen Sie Ihr LibreView-Datumsformat auf Jahr-Monat-Tag ein und exportieren Sie die CSV-Datei erneut",
+  "Choose File": "Datei wählen",
+  "No file chosen": "keine Datei ausgewählt"
 }

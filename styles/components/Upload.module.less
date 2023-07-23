@@ -145,7 +145,6 @@ input[type=file] {
   flex-direction: row-reverse;
   overflow: hidden;
   margin-bottom: 15px;
-
 }
 
 // hide Chrome-default filepicker button
@@ -159,9 +158,14 @@ input[type=file] {
 .fileinput::before {
   visibility: visible;
   color: #fff;
-  content: 'Choose file';
-  margin-left: 25px;
-  vertical-align: middle;
+  content: attr(data-value);
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  margin: 2px auto;
+  top: 0;
+  bottom: 0;
+  height: 100%;
 }
 
 .fileinput {
@@ -171,6 +175,8 @@ input[type=file] {
   border: none;
   height: 34px;
   width: 116px;
+  text-align: center;
+  position: relative;
 }
 
 .dataDownloadLink {

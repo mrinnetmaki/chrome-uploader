@@ -263,5 +263,12 @@
   "https://www.sensotrend.com/uploader": "https://www.sensotrend.fi/uploader",
   "Instructions for use in electronic form": "Käyttöohjeet sähköisessä muodossa",
   "This instruction for use is supplied in electronic form only. You can request a paper version from ": "Tämä käyttöohje toimitetaan vain sähköisessä muodossa. Voit pyytää paperiversion osoitteesta ",
-  "The paper version will be delivered within 7 calendar days of receiving the request.": "Paperiversio toimitetaan 7 kalenteripäivän kuluessa pyynnön vastaanottamisesta."
+  "The paper version will be delivered within 7 calendar days of receiving the request.": "Paperiversio toimitetaan 7 kalenteripäivän kuluessa pyynnön vastaanottamisesta.",
+  "Plug in PDA with micro-USB": "Kytke PDA micro-USB kaapelilla",
+  "We couldn't communicate with the meter. You may need to give Uploader": "Emme saaneet yhteyttä mittariin. Sinun tarvitsee antaa Uploaderille",
+  "We found more than one device plugged in. Only plug in the device you intend to upload.": "Löysimme enemmän kuin yhden laitteen kytkettynä. Kytke vain yksi laite kun haluat lähettää tietoja.",
+  "Uploading Libre 2 data?": "Yritätkö lähettää Libre 2:n tietoja?",
+  "Please set your LibreView date format to Year-Month-Day and export the CSV again": "Aseta LibreViewn asetuksista päivämäärä muotoon vuosi-kuukausi-päivä ja lataa CSV uudestaan",
+  "Choose File": "Valitse tiedosto",
+  "No file chosen": "Tiedostoa ei ole valittu"
 }
