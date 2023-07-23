@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { remote } from 'electron';
+import { ipcRenderer } from 'electron';
 import { Route, Switch } from 'react-router-dom';
 import dns from 'dns';
 
@@ -32,6 +32,7 @@ import localeNames from '../utils/locales.json';
 import bows from 'bows';
 
 import config from '../../lib/config.js';
+import api from '../../lib/core/api';
 
 import device from '../../lib/core/device.js';
 import localStore from '../../lib/core/localStore.js';
@@ -40,7 +41,7 @@ import actions from '../actions/';
 const asyncActions = actions.async;
 const syncActions = actions.sync;
 
-import { urls, pagesMap } from '../constants/otherConstants';
+import { urls, pagesMap, paths } from '../constants/otherConstants';
 import { checkVersion } from '../utils/drivers';
 import debugMode from '../utils/debugMode';
 
@@ -60,8 +61,12 @@ import UpdateModal from '../components/UpdateModal';
 import UpdateDriverModal from '../components/UpdateDriverModal';
 import DeviceTimeModal from '../components/DeviceTimeModal';
 import AdHocModal from '../components/AdHocModal';
+import BluetoothModal from '../components/BluetoothModal';
+import LoggedOut from '../components/LoggedOut.js';
 
 import styles from '../../styles/components/App.module.less';
+
+const remote = require('@electron/remote');
 
 const serverdata = {
   Local: {
@@ -109,7 +114,14 @@ export class App extends Component {
   constructor(props) {
     super(props);
     this.log = bows('App');
-    const initial_server = _.findKey(serverdata, (key) => key.BLIP_URL === config.BLIP_URL);
+    let initial_server = _.findKey(serverdata, (key) => key.BLIP_URL === config.BLIP_URL);
+    const selectedEnv = localStore.getItem('selectedEnv');
+    if (selectedEnv) {
+      let parsedEnv = JSON.parse(selectedEnv);
+      console.log('setting initial server from localstore:', parsedEnv.environment);
+      api.setHosts(parsedEnv);
+      initial_server = parsedEnv.environment;
+    }
     this.state = {
       server: initial_server
     };
@@ -117,31 +129,20 @@ export class App extends Component {
 
   UNSAFE_componentWillMount(){
     checkVersion(this.props.dispatch);
-    let { api } = this.props;
-    this.props.async.doAppInit(
-      _.assign({ environment: this.state.server }, config), {
-      api: api,
-      device,
-      localStore,
-      log: this.log
-    });
+    const selectedEnv = localStore.getItem('selectedEnv')
+      ? JSON.parse(localStore.getItem('selectedEnv'))
+      : null;
 
-    const addServers = (servers) => {
-      if (servers && servers.length && servers.length > 0) {
-        for (let server of servers) {
-          const protocol = server.name === 'localhost' ? 'http://' : 'https://';
-          const url = protocol + server.name + ':' + server.port;
-          serverdata[server.name] = {
-            API_URL: url,
-            UPLOAD_URL: url,
-            DATA_URL: url + '/dataservices',
-            BLIP_URL: url,
-          };
+    this.props.async.fetchInfo(() => {
+      this.props.async.doAppInit(
+        _.assign({ environment: this.state.server }, config, selectedEnv),
+        {
+          api: api,
+          device,
+          log: this.log,
         }
-      } else {
-        this.log('No servers found');
-      }
-    };
+      );
+    });
 
     /*
     dns.resolveSrv('environments-srv.tidepool.org', (err, servers) => {
@@ -149,11 +150,11 @@ export class App extends Component {
         this.log(`DNS resolver error: ${err}. Retrying...`);
         dns.resolveSrv('environments-srv.tidepool.org', (err2, servers2) => {
           if (!err2) {
-           addServers(servers2);
+           this.addServers(servers2);
           }
         });
       } else {
-        addServers(servers);
+        this.addServers(servers);
       }
     });
     */
@@ -161,12 +162,55 @@ export class App extends Component {
     window.addEventListener('contextmenu', this.handleContextMenu, false);
   }
 
+  componentWillUnmount(){
+    window.removeEventListener('contextmenu', this.handleContextMenu, false);
+  }
+
+  addServers = (servers) => {
+    if (servers && servers.length && servers.length > 0) {
+      for (let server of servers) {
+        const protocol = server.name === 'localhost' ? 'http://' : 'https://';
+        const url = `${protocol}${server.name}:${server.port}`;
+        serverdata[server.name] = {
+          API_URL: url,
+          UPLOAD_URL: url,
+          DATA_URL: `${url}/dataservices`,
+          BLIP_URL: url,
+        };
+      }
+    } else {
+      this.log('No servers found');
+    }
+  };
+
   setServer = info => {
     console.log('will use', info.label, 'server');
-    var serverinfo = serverdata[info.label];
-    serverinfo.environment = info.label;
-    this.props.api.setHosts(serverinfo);
-    this.setState({server: info.label});
+    this.setState({ server: info.label }, ()=> {
+      const { sync, async } = this.props;
+      var serverinfo = serverdata[info.label];
+      serverinfo.environment = info.label;
+      api.setHosts(serverinfo);
+      localStore.setItem('selectedEnv', JSON.stringify(serverinfo));
+
+      sync.keycloakReset();
+      sync.setForgotPasswordUrl(api.makeBlipUrl(paths.FORGOT_PASSWORD));
+      sync.setSignUpUrl(api.makeBlipUrl(paths.SIGNUP));
+      sync.setNewPatientUrl(api.makeBlipUrl(paths.NEW_PATIENT));
+      sync.setBlipUrl(api.makeBlipUrl('/'));
+      async.fetchInfo((err, configInfo) => {
+        if (err) {
+          this.log(`Error getting server info: ${err}`);
+        } else {
+          if (_.get(configInfo, 'auth')) {
+            ipcRenderer.send('keycloakInfo', configInfo.auth);
+          }
+
+          serverinfo.keycloakUrl = _.get(configInfo, 'auth.url', null);
+          serverinfo.keycloakRealm = _.get(configInfo, 'auth.realm', null);
+          localStore.setItem('selectedEnv', JSON.stringify(serverinfo));
+        }
+      });
+    });
   };
 
   render() {
@@ -175,13 +219,14 @@ export class App extends Component {
         <Header location={this.props.location} />
         <Switch>
           <Route exact strict path="/" component={Loading} />
-          <Route path="/login" component={Login}/>
-          <Route path="/main" component={MainPage}/>
-          <Route path="/settings" component={SettingsPage}/>
-          <Route path="/clinic_user_select" component={ClinicUserSelectPage}/>
-          <Route path="/clinic_user_edit" component={ClinicUserEditPage}/>
-          <Route path="/no_upload_targets" component={NoUploadTargetsPage}/>
+          <Route path="/login" component={Login} />
+          <Route path="/main" component={MainPage} />
+          <Route path="/settings" component={SettingsPage} />
+          <Route path="/clinic_user_select" component={ClinicUserSelectPage} />
+          <Route path="/clinic_user_edit" component={ClinicUserEditPage} />
+          <Route path="/no_upload_targets" component={NoUploadTargetsPage} />
           <Route path="/workspace_switch" component={WorkspacePage} />
+          <Route path="/logged_out" component={LoggedOut} />
         </Switch>
         <Footer version={config.version} environment={this.state.server} />
         {/* VersionCheck as overlay */}
@@ -190,6 +235,7 @@ export class App extends Component {
         <UpdateDriverModal />
         <DeviceTimeModal />
         <AdHocModal />
+        <BluetoothModal />
       </div>
     );
   }
@@ -252,7 +298,8 @@ export class App extends Component {
       });
     }
 
-    const menu = Menu.buildFromTemplate(template);
+    // const menu = Menu.buildFromTemplate(template);
+    const menu = remote.Menu.buildFromTemplate(template);
     menu.popup(remote.getCurrentWindow());
   };
 
@@ -292,7 +339,7 @@ export default connect(
       unsupported: state.unsupported,
       // derived state
       readyToRenderVersionCheckOverlay: (
-        !state.working.initializingApp.inProgress && !state.working.checkingVersion.inProgress
+        !(state.working.initializingApp.inProgress || state.working.checkingVersion.inProgress)
       )
     };
   },
