@@ -245,7 +245,7 @@ const devices = {
     enabled: {mac: true, win: true, linux: true}
   },
   weitai: {
-    instructions: 'Plug in PDA with micro-USB',
+    instructions: i18n.t('Plug in PDA with micro-USB'),
     name: 'Equil Insulin Patch/Micro Pump',
     key: 'weitai',
     source: {type: 'device', driverId: 'Weitai'},

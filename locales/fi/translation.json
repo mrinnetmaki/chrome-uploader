@@ -239,5 +239,13 @@
   "PC Link Mode": "PC Link -tilaan",
   "afterLink": "",
   "Make sure the meter is switched off and plug in with micro-USB cable": "Varmista, että mittari on kytketty pois päältä ja liitä se sitten mikro-USB-kaapelilla",
-  "Please correct the date/time on the linked pump.": "Aseta linkitettyyn pumppuun oikea aika ja päivämäärää."  
+  "Please correct the date/time on the linked pump.": "Aseta linkitettyyn pumppuun oikea aika ja päivämäärää.",
+  "Plug in PDA with micro-USB": "Kytke PDA micro-USB kaapelilla",
+  "Select CSV file downloaded from LibreView": "Valitse LibreView:sta ladattu CSV-tiedosto",
+  "We couldn't communicate with the meter. You may need to give Uploader": "Emme saaneet yhteyttä mittariin. Sinun tarvitsee antaa Uploaderille",
+  "We found more than one device plugged in. Only plug in the device you intend to upload.": "Löysimme enemmän kuin yhden laitteen kytkettynä. Kytke vain yksi laite kun haluat lähettää tietoja.",
+  "Uploading Libre 2 data?": "Yritätkö lähettää Libre 2:n tietoja?",
+  "Please set your LibreView date format to Year-Month-Day and export the CSV again": "Aseta LibreViewn asetuksista päivämäärä muotoon vuosi-kuukausi-päivä ja lataa CSV uudestaan",
+  "Choose File": "Valitse tiedosto",
+  "No file chosen": "Tiedostoa ei ole valittu"
 }
