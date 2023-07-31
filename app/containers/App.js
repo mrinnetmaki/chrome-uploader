@@ -22,10 +22,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ipcRenderer } from 'electron';
 import { Route, Switch } from 'react-router-dom';
-import dns from 'dns';
+// import dns from 'dns';
 
-const { getCurrentWindow, Menu } = remote;
-const i18n = remote.getGlobal( 'i18n' );
 import i18nextOptions from '../utils/config.i18next';
 import localeNames from '../utils/locales.json';
 
@@ -67,6 +65,8 @@ import LoggedOut from '../components/LoggedOut.js';
 import styles from '../../styles/components/App.module.less';
 
 const remote = require('@electron/remote');
+const { getCurrentWindow, Menu } = remote;
+const i18n = remote.getGlobal( 'i18n' );
 
 const serverdata = {
   Local: {
