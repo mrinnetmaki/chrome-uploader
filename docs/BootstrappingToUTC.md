@@ -1,3 +1,5 @@
+<!-- NB: this markdown file is linked directly from a Tidepool blog post, DON'T MOVE -->
+
 ## Background
 
 At present, no diabetes device that Tidepool knows about represents the date & time at which device events occur in either UTC time or in a way that is anchored to UTC time - i.e., providing timezone and/or offset-from-UTC information. Because we are correlating data from many different sources for each user, we rely on UTC time as the absolute scale on which to place all the time series data ingested by the Tidepool platform.
@@ -63,7 +65,7 @@ Each instance of the `TimezoneOffsetUtil` keeps track of which method for genera
 
 #### Expectations for `timeChange` events
 
-The partially built `timeChange` events composing the array of `changes` provided as the third argument to a new `TimezoneOffsetUtil` instance should have the following listed fields set through use of the uploader's [objectBuilder](https://github.com/tidepool-org/chrome-uploader/blob/master/lib/objectBuilder.js). All timestamps should be [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601 'Wikipedia: ISO 8601')-formatted, without timezone offset information - e.g., `2015-01-01T12:00:00`.
+The partially built `timeChange` events composing the array of `changes` provided as the third argument to a new `TimezoneOffsetUtil` instance should have the following listed fields set through use of the uploader's [objectBuilder](https://github.com/tidepool-org/uploader/blob/master/lib/objectBuilder.js). All timestamps should be [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601 'Wikipedia: ISO 8601')-formatted, without timezone offset information - e.g., `2015-01-01T12:00:00`.
 
 - `deviceTime` = timestamp
 - `change` = an object that itself has the following fields:

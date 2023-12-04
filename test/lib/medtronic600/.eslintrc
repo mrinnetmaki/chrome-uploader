@@ -1,0 +1,16 @@
+{
+  "extends": "airbnb",
+  "plugins": ["lodash"],
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "rules": {
+    "linebreak-style": 0,
+    "no-plusplus": ["error", {
+      "allowForLoopAfterthoughts": true
+    }],
+  },
+  "settings": {
+    "lodash": 3
+  }
+}

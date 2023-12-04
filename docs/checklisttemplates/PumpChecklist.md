@@ -30,12 +30,19 @@
   - `[ ]` final (most recent) basal
     - `[ ]` basal rate interval with a start time, duration "guessed" from settings, rate delivered, and an annotation re: the "guessed" duration OR
     - `[ ]` basal rate interval with a start time and rate, no (= zero) duration
+  - `[ ]` automated basal
+    - `[ ]` basal rate intervals with a start time, duration, and rate delivered
+    - `[ ]` if closed loop mode changes during basal, two separate basal entries are created
+    - `[ ]` if basal rate is a single (flat) rate all day, pump records a new basal rate interval every midnight
 
 Device-specific? (Add any device-specific notes/additions here.)
 
 #### Boluses
 
   - `[ ]` normal bolus
+    - `[ ]` amount of insulin delivered
+    - `[ ]` amount of insulin delivery programmed (if differs from actual delivery, in case of bolus interruption, cancellation, etc.)
+  - `[ ]` automated bolus
     - `[ ]` amount of insulin delivered
     - `[ ]` amount of insulin delivery programmed (if differs from actual delivery, in case of bolus interruption, cancellation, etc.)
   - `[ ]` extended bolus
@@ -87,7 +94,7 @@ Device-specific? (Add any device-specific notes/additions here.)
     - `[ ]` other alarm types (details to be provided in `payload` object)
   - `[ ]` prime events
     - `[ ]` prime target = tubing
-    - `[ ]` prime target = cannula 
+    - `[ ]` prime target = cannula
     - `[ ]` prime targets not differentiated
     - `[ ]` prime volume in units of insulin
   - `[ ]` reservoir change (or reservoir rewind)
@@ -103,6 +110,10 @@ Device-specific? (Add any device-specific notes/additions here.)
     - `[ ]` agent of change (`automatic` or `manual`)
     - `[ ]` timezone
     - `[ ]` reason for change (read from device)
+  - `[ ]` pump settings override
+    - `[ ]` override type
+    - `[ ]` method = manual/automatic
+    - `[ ]` duration of override
 
 Device-specific? (Add any device-specific notes/additions here.)
 
@@ -145,6 +156,17 @@ Device-specific? (Add any device-specific notes/additions here.)
         - `[ ]` shape `{target: 100}` OR
         - `[ ]` shape `{target: 100, range: 20}` OR
         - `[ ]` shape `{target: 100, high: 120}`
+  - basal features:
+    - `[ ]` temp basal type (`manual` or `percentage`)
+    - `[ ]` max basal (as a u/hr rate)
+  - bolus features:
+    - `[ ]` bolus "wizard"/calculator enabled
+    - `[ ]` extended boluses enabled
+    - `[ ]` max bolus
+  - `[ ]` insulin action time
+  - `[ ]` display BG units
+  - `[ ]` automated delivery
+  - `[ ]` firmware version
 
 Settings history:
 
@@ -162,21 +184,13 @@ No Tidepool data model yet:
     - `[ ]` BG reminder
     - `[ ]` bolus reminder
   - `[ ]` alert settings (volume or vibration-only; whether enabled)
-  - basal features:
-    - `[ ]` temp basal type (`manual` or `percentage`)
-    - `[ ]` max basal (as a u/hr rate)
   - bolus features:
-    - `[ ]` bolus "wizard"/calculator enabled
     - `[ ]` bolus increment for non-"quick"/manual boluses
-    - `[ ]` extended boluses enabled
-    - `[ ]` extended bolus type (`manual` or `percentage`)
     - `[ ]` min BG to allow calculation of bolus delivery
     - `[ ]` reverse correction enabled
-    - `[ ]` max bolus
     - "quick"/manual bolus:
         - `[ ]` enabled
         - `[ ]` increment
-  - `[ ]` insulin action time
   - `[ ]` clock display preference (12h vs 24h format)
 
 Device-specific? (Add any device-specific notes/additions here.)
@@ -213,6 +227,7 @@ Device-specific? (Add any device-specific notes/additions here.)
     - `[ ]` internal timestamp or persistent log index (across device communication sessions) to order all pump events (regardless of type), independent of device display time OR
     - `[ ]` ephemeral log index (does not persist across device communication sessions) to order all pump events (regardless of type), independent of device display time
   - `[ ]` date & time settings changes
+  - `[ ]` use `common.checkDeviceTime(currentDeviceTime, timezone, cb)` to check against server time
 
 Device-specific? (Add any device-specific notes/additions here.)
 
@@ -223,3 +238,14 @@ Device-specific? (Add any device-specific notes/additions here.)
   - `[ ]` activity/exercise
   - `[ ]` food (e.g., from a food database built into the pump)
   - `[ ]` notes/other events
+
+### Tidepool ingestion API
+
+Choose one of the following:
+
+  - `[ ]` legacy "jellyfish" ingestion API
+  - `[ ]` platform ingestion API
+
+### Known implementation issues/TODOs
+
+*Use this space to describe device-specific known issues or implementation TODOs **not** contained in the above datatype-specific sections.*

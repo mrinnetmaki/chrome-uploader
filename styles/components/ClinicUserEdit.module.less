@@ -61,6 +61,8 @@
 
 .input {
   composes: form-control from '../core/forms.less';
+  /* 33px = 2 * 15px padding plus border width */ 
+  width: calc(100% - 33px);
 }
 
 .dateInput {
@@ -116,10 +118,14 @@
 
 .error {
   composes: flexRowWrap from '../core/layout.module.less';
-  color: white;
+  color: @red-error;
+  margin-top: 15px;
+  text-align: right;
+}
+
+.validationError {
+  color: @red-error;
   margin-top: 10px;
-  background-color: @red;
-  padding: 5px 10px;
 }
 
 .iconClose {

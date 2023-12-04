@@ -81,6 +81,7 @@ Device-specific? (Add any device-specific notes/additions here.)
     - `[ ]` internal timestamp or persistent log index (across device communication sessions) to order all pump events (regardless of type), independent of device display time OR
     - `[ ]` ephemeral log index (does not persist across device communication sessions) to order all pump events (regardless of type), independent of device display time
   - `[ ]` date & time settings changes
+  - `[ ]` use `common.checkDeviceTime(currentDeviceTime, timezone, cb)` to check against server time
 
 Device-specific? (Add any device-specific notes/additions here.)
 
@@ -91,3 +92,14 @@ Device-specific? (Add any device-specific notes/additions here.)
   - `[ ]` activity/exercise
   - `[ ]` food (e.g., Dexcom allows logging carb events)
   - `[ ]` notes/other events
+
+### Tidepool ingestion API
+
+Choose one of the following:
+
+  - `[ ]` legacy "jellyfish" ingestion API
+  - `[ ]` platform ingestion API
+
+### Known implementation issues/TODOs
+
+*Use this space to describe device-specific known issues or implementation TODOs **not** contained in the above datatype-specific sections.*

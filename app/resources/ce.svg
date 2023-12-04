@@ -1,0 +1,18 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 28 20">
+  <style>
+    circle, line {
+      fill: none;
+      stroke: black;
+      stroke-width: 3;
+      shape-rendering: geometricPrecision;
+    }
+  </style>
+  <defs>
+    <clipPath id="clip">
+      <rect x="-10" y="-10" width="11" height="20" />
+    </clipPath>
+  </defs>
+  <circle r="8.5" clip-path="url(#clip)" />
+  <circle r="8.5" transform="translate(17)" clip-path="url(#clip)" />
+  <line x1="10" x2="16" />
+</svg> 

@@ -6,7 +6,7 @@
 
 ### User-Related State
 
-All the state that is driven by user information and/or the login process is handled in the reducers in `lib/redux/reducers/users.js`.
+All the state that is driven by user information and/or the login process is handled in the reducers in `app/reducers/users.js`.
 
 #### `allUsers`
 
@@ -15,6 +15,10 @@ All the state that is driven by user information and/or the login process is han
 In essence, the `allUsers` object is where all user information accessible to the logged-in user is stored. Keeping all this information in one place keyed by `userId` allows us to only reference users by `userId` elsewhere in the state tree, thus maintaining a "normalized" state tree with a single source of truth for user-related information. (Cf. Dan Abramov's presentation of the "normalization" problem in the README for his [normalizr library](https://github.com/gaearon/normalizr#the-problem).) Whenever a component needs additional information (that is, beyond `userId`) about a user, that information can be retrieved via lookup under the `userId`.
 
 Examples of properties that may be encoded in `allUsers` for a particular user include `fullName`, `emails`, a `patient` object that itself includes the PWD's `birthday` and `diagnosisData`. Also see the [example state tree](./ExampleStateTree.md) for full examples.
+
+### `memberships`
+
+*The `memberships` property is an object keyed by the user IDs of the logged-in user as well as all the PWDs the logged-in user has some permissions on. Each entry contains a `permissions` object which in turn has keys representing various permissions, each of which will have an empty object and the existence of the key indicates the presence of that permission. Some permissions include `custodian`, `view` and `upload`.
 
 #### `loggedInUser`
 
@@ -78,11 +82,11 @@ The combination of `uploadTargetUser` and `uploadTargetDevice` provides the path
 
 ### (Current) Upload-Related State
 
-All the state that is driven by the current (i.e., in progress) or recent upload(s) is handled in the reducers in `lib/redux/reducers/uploads.js`.
+All the state that is driven by the current (i.e., in progress) or recent upload(s) is handled in the reducers in `app/reducers/uploads.js`.
 
 #### `uploadProgress`
 
-*The `uploadProgress` property is an object with two keys: `percentage` to record the percentage towards completion of the current upload in progress and `step` to encode the current step in the upload sequence (e.g., device detection, device read, POSTing data to the Tidepool data ingestion API).*
+*The `uploadProgress` property is an object with two keys: `percentage` to record the percentage towards completion of the current upload in progress and `step` to encode the current step in the upload sequence (e.g., device detection, device read, POSTing data to the Tidepool data ingestion API). Optionally a third key, `isFirstUpload`, can be used to indicate that the upload is the first upload from a device. This is useful for delta uploads, to display a message that the first upload will take longer than subsequent uploads.*
 
 When there is not an upload in progress, the value of `uploadProgress` is `null`.
 
@@ -102,7 +106,7 @@ When an upload is *not* in progress, the value of `uploadTargetDevice` is `null`
 
 ### All Other App State
 
-All other app state is handled in the reducers in `lib/redux/reducers/misc.js`.
+All other app state is handled in the reducers in `app/reducers/misc.js`.
 
 #### `blipUrls`
 
@@ -112,13 +116,13 @@ The `forgotPassword` and `signUp` links are built as part of the app initializat
 
 The `viewDataLink` is built every time the `uploadTargetUser` is chosen or changed.
 
-**NB:** Storing these URLs as state is not ideal. Both the forgot password and sign-up URLs are essentially *derived* state - derived from a combination of route paths (e.g., `/signup`), which are constants, and a single piece of state - the server environment. The `viewDataLink` is also derived state from a combination of route paths, the server environment, and the `uploadTargetUser`. For now, we are keeping these URLs in the state tree because we do *not* represent the server environment in the state tree. We don't represent the server environment in the state tree because we have code running separately from the main application (in the Chrome App's "background page") that provides a hidden interface (for internal Tidepool use) for changing the server environment.
+**NB:** Storing these URLs as state is not ideal. Both the forgot password and sign-up URLs are essentially *derived* state - derived from a combination of route paths (e.g., `/signup`), which are constants, and a single piece of state - the server environment. The `viewDataLink` is also derived state from a combination of route paths, the server environment, and the `uploadTargetUser`. For now, we are keeping these URLs in the state tree because we do *not* represent the server environment in the state tree.
 
 #### `devices`
 
 *The `devices` property on the state tree is an object keyed by the `id` of each device (or data source) supported by the Tidepool Uploader.*
 
- `devices` *almost* does not belong in the state tree at all, because it is *almost* a constant. However, it is subject to filtering based on operating system; this filtering happens as part of the app initialization step when a user launches the Tidepool Uploader. The property `enabled` - itself an object with `mac` and `win` as its keys - encodes the devices Tidepool currently support on each platform. Similarly, the property `showDriverLink` encodes, for each device, whether the [Tidepool USB driver](http://tidepool.org/downloads/) is required in order to upload the device on each platform.
+ `devices` *almost* does not belong in the state tree at all, because it is *almost* a constant. However, it is subject to filtering based on operating system; this filtering happens as part of the app initialization step when a user launches the Tidepool Uploader. The property `enabled` - itself an object with `mac` and `win` as its keys - encodes the devices Tidepool currently support on each platform.
 
 The properties of each "device" in `devices` should be fairly self-explanatory. For example, the `instructions` property stores the text that appears in the UI under each device name to give the user some indication of how to proceed (e.g., what type of cable is required to connect a particular device).
 
@@ -126,15 +130,9 @@ The properties of each "device" in `devices` should be fairly self-explanatory. 
 
 *The Tidepool Uploader inclues a dropdown menu, which is accessible after logging in by clicking on the area where the logged-in user's name is displayed in the upper-right corner. The property `dropdown` in the state tree encodes whether this menu is currently in its open (dropped-down) state (`true`) or closed and hidden (`false`).*
 
-#### `page`
-
-*The property `page` encodes the current "page" of the application that is active. Possible values are, for example, `SETTINGS` for the device selection "page" and `MAIN` for the main upload interface shown in [the app snapshot](./ExampleStateTree.md).*
-
-Since the Tidepool Uploader is a Chrome App that runs *outside* of the browser environment and thus does not have URL-based navigation, we use the simple `page` variable and nothing more to record the state that in a browser-based single-page app might be managed by a larger, more robust routing solution such as [React Router](https://github.com/rackt/react-router). As the functionality in the uploader grows - and especially if the addition of *back* and *forward* navigation buttons is planned - we may revisit this decision and bring in a more featureful single-page app routing solution.
-
 #### `unsupported`
 
-*The propery `unsupported` encodes whether the running version of the Tidepool Uploader is outdated from the perspective of Tidepool's data ingestion API. **This property defaults to true**; in other words, any instance of the uploader is assumed to be outdated and unsupported until it proves itself otherwise.*
+*The property `unsupported` encodes whether the running version of the Tidepool Uploader is outdated from the perspective of Tidepool's data ingestion API. **This property defaults to true**; in other words, any instance of the uploader is assumed to be outdated and unsupported until it proves itself otherwise.*
 
 To ensure the highest possible standards of data quality, it is very important for us at Tidepool to prevent uploaders that have been succeeded by newer versions from uploading to the Tidepool cloud. To this end, we have implemented an "info" endpoint on our data ingestion API that responds with (among other things) the minimum version of the Tidepool Uploader that the data ingestion API will accept data from.
 
@@ -142,8 +140,36 @@ To ensure the highest possible standards of data quality, it is very important f
 
 *The `working` property is an object with a small handful of keys that record the app's current state with respect to certain asynchronous actions.*
 
-The properties `initializingApp` (which defaults to `true`) and `checkingVersion` serve to prevent rendering the warning message about the Tidepool Uploader being unsupported before the application has finished checking against the Tidepool data ingestion API to determine whether it is outdated and unsupported. (See [unsupported](#-unsupported) above, taking care to note that `unsupported` defaults to `true`, so without some other indicator(s) of the app's state with respect to validation of the current version against the Tidepool data ingestion API, the "uploader unsupported" warning message would render immediately.)
+The properties `initializingApp.inProgress` (which defaults to `true`) and `checkingVersion.inProgress` serve to prevent rendering the warning message about the Tidepool Uploader being unsupported before the application has finished checking against the Tidepool data ingestion API to determine whether it is outdated and unsupported. (See [unsupported](#-unsupported) above, taking care to note that `unsupported` defaults to `true`, so without some other indicator(s) of the app's state with respect to validation of the current version against the Tidepool data ingestion API, the "uploader unsupported" warning message would render immediately.)
 
-The property `fetchingUserInfo` is used to render a "Logging in..." message after a user's credentials have been submitted but the uploader is still waiting for a (complete) response from the Tidepool platform with the logged-in user's information.
+The property `checkingElectronUpdate.inProgress` is used to indicate whether or not the Electron auto-update system is currently awating the message from the `main` Electron process indicating whether or not an update is currently available.
 
-Finally, the property `uploading` is used to disable certain UI features while an upload is in progress. When `uploading` is true, the dropdown menu for selecting the `uploadTargetUser` as well as the link to "Choose devices" in the dropdown menu are disabled until the current upload is completed, as changing the target user for upload and/or the devices chosen for upload while an upload is in progress for a particular user and device is not supported behavior.
+Finally, the property `uploading.inProgress` is used to disable certain UI features while an upload is in progress. When `uploading.inProgress` is true, the dropdown menu for selecting the `uploadTargetUser` as well as the link to "Choose devices" in the dropdown menu are disabled until the current upload is completed, as changing the target user for upload and/or the devices chosen for upload while an upload is in progress for a particular user and device is not supported behavior.
+
+* * *
+
+### State relating to application updates
+
+#### `electronUpdateManualChecked`
+
+*The property `electronUpdateManualChecked` encodes whether the current check for updates to the Electron application was initiated by a user or was done automatically*
+
+The update system needs to differentiate manually initiated update checks vs. update checks that happen automatically (like on application launch and periodic background checks) in order to provide proper messaging to the user in each situation.
+
+#### `electronUpdateAvailableDismissed`
+
+*The property `electronUpdateAvailableDismissed` encodes whether the current notification for an update to the Electron application was dismissed by a user*
+
+This property is used to ensure that users are not notified repeatedly that an update is available if they have already dismissed the notification once.
+
+#### `electronUpdateAvailable`
+
+*The property `electronUpdateAvailable` encodes whether there is an update to the currently running Electron application or not*
+
+This property is true when the update system check for updates has finished and there is an update available.
+
+#### `electronUpdateDownloaded`
+
+*The property `electronUpdateDownloaded` encodes whether an available update to the currently running Electron application has been downloaded and is ready to install*
+
+This property is true when the update system has finished downloading an available update.
