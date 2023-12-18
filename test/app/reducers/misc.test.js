@@ -654,6 +654,49 @@ describe('misc reducers', () => {
         expect(state.clinicId123.clinicians.clinicianId1234).to.eql(clinics[0].clinician);
         expect(state.clinicId456.clinicians.clinicianId4567).to.eql(clinics[1].clinician);
       });
+
+      describe('fetchClinicMRNSettingsSuccess', () => {
+        it('should add clinic MRN settings to state', () => {
+          let clinicId = 'clinicId123';
+          let mrnSettings = {
+            required: true,
+            unique: true,
+          };
+          let initialStateForTest = {
+            [clinicId]: {
+              id: clinicId,
+            },
+          };
+          let action = actions.sync.fetchClinicMRNSettingsSuccess(
+            clinicId,
+            mrnSettings
+          );
+          let state = misc.clinics(initialStateForTest, action);
+          expect(state.clinicId123.mrnSettings).to.eql(mrnSettings);
+        });
+      });
+
+      describe('fetchClinicEHRSettingsSuccess', () => {
+        it('should add clinic EHR settings to state', () => {
+          let clinicId = 'clinicId123';
+          let ehrSettings = {
+            enabled: true,
+            facility: 'facility',
+            sourceId: 'sourceId',
+          };
+          let initialStateForTest = {
+            [clinicId]: {
+              id: clinicId,
+            },
+          };
+          let action = actions.sync.fetchClinicEHRSettingsSuccess(
+            clinicId,
+            ehrSettings
+          );
+          let state = misc.clinics(initialStateForTest, action);
+          expect(state.clinicId123.ehrSettings).to.eql(ehrSettings);
+        });
+      });
     });
 
     describe('addTargetDevice', () => {
@@ -765,6 +808,14 @@ describe('misc reducers', () => {
         let state = misc.keycloakConfig(initialStateForTest, action);
         expect(state.initialized).to.be.true;
       });
+      it('should set the logoutUrl if provided', () => {
+        let initialStateForTest = {};
+
+        let action = actions.sync.keycloakReady('ready', null, 'someLogoutUrl');
+        let state = misc.keycloakConfig(initialStateForTest, action);
+        expect(state.initialized).to.be.true;
+        expect(state.logoutUrl).to.equal('someLogoutUrl');
+      });
     });
 
     describe('keycloakInstantiated', () => {
@@ -785,6 +836,16 @@ describe('misc reducers', () => {
         let action = actions.sync.setKeycloakRegistrationUrl(url);
         let state = misc.keycloakConfig(initialStateForTest, action);
         expect(state.registrationUrl).to.equal(url);
+      });
+    });
+
+    describe('keyckoakReset', () => {
+      it('should reset keycloak state', () => {
+        let initialStateForTest = {registrationUrl: 'some url', instantiated: true};
+
+        let action = actions.sync.keycloakReset();
+        let state = misc.keycloakConfig(initialStateForTest, action);
+        expect(state).to.deep.equal({});
       });
     });
   });

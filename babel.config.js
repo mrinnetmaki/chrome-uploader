@@ -31,7 +31,7 @@ module.exports = api => {
     plugins: [
       // Stage 0
       require('@babel/plugin-proposal-function-bind'),
-
+      "macros",
       // Stage 1
       require('@babel/plugin-proposal-export-default-from'),
       require('@babel/plugin-proposal-logical-assignment-operators'),
@@ -93,5 +93,6 @@ module.exports = api => {
         ]
       }
     }
+  
   };
 };

@@ -46,7 +46,8 @@ console.log('Crash logs can be found in:', app.getPath('crashDumps'));
 console.log('Last crash report:', crashReporter.getLastCrashReport());
 
 const PROTOCOL_PREFIX = 'warifauploader';
-const baseURL = `file://${__dirname}/app.html`;
+const fileURL = new URL(`file://${__dirname}/app.html`);
+const baseURL = fileURL.href;
 
 let menu;
 let template;
@@ -115,6 +116,11 @@ function addDataPeriodGlobalListener(menu) {
 };
 
 const openExternalUrl = (url) => {
+  // open keycloak in OS default browser
+  if (url.includes('keycloak')) {
+    open(url);
+    return { action: 'deny' };
+  }
   let platform = os.platform();
   let chromeInstalls = chromeFinder[platform]();
   if(chromeInstalls.length === 0){
@@ -147,26 +153,12 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false, // so that we can access process from app.html
-    }
+    },
+    acceptFirstMouse: true,
   });
 
   protocol.registerHttpProtocol(PROTOCOL_PREFIX, (request, cb) => {
-    const requestURL = new URL(request.url);
-    if (requestURL.pathname.includes('keycloak-redirect')) {
-      const requestHash = requestURL.hash;
-      const { webContents } = mainWindow;
-      // redirecting from the app html to app html with hash breaks devtools
-      // just send and append the hash if we're already in the app html
-      if (
-        webContents.getURL().includes(baseURL) ||
-        webContents.getURL().startsWith('warifauploader')
-      ) {
-        webContents.send('newHash', requestHash);
-      } else {
-        webContents.loadURL(`${baseURL}${requestHash}`);
-      }
-      return;
-    }
+    return handleIncomingUrl(request.url);
   });
 
   remoteMain.enable(mainWindow.webContents);
@@ -193,7 +185,7 @@ function createWindow() {
   });
 
   let setRequestFilter = () => {
-    let urls = ['http://localhost/keycloak-redirect*'];
+    let urls = ['http://localhost/keycloak-redirect*', '*://*/upload-redirect*'];
     if (keycloakUrl && keycloakRealm) {
       urls.push(
         `${keycloakUrl}/realms/${keycloakRealm}/login-actions/registration*`
@@ -203,17 +195,8 @@ function createWindow() {
       const requestURL = new URL(request.url);
 
       // capture keycloak sign-in redirect
-      if (requestURL.pathname.includes('keycloak-redirect')) {
-        const requestHash = requestURL.hash;
-        const { webContents } = mainWindow;
-        // redirecting from the app html to app html with hash breaks devtools
-        // just send and append the hash if we're already in the app html
-        if (webContents.getURL().includes(baseURL)) {
-          webContents.send('newHash', requestHash);
-        } else {
-          webContents.loadURL(`${baseURL}${requestHash}`);
-        }
-        return;
+      if (requestURL.pathname.includes('keycloak-redirect') || requestURL.pathname.includes('upload-redirect')) {
+        return handleIncomingUrl(request.url);
       }
       // capture keycloak registration navigation
       if (
@@ -266,8 +249,9 @@ operating system, as soon as possible.`),
     console.log('Device list:', deviceList);
     let [result] = deviceList;
     global.bluetoothDeviceId = result.deviceId;
-    if (!result) {
-      callback('');
+    if (!result || result.deviceName.startsWith('Unknown')) {
+      // The device wasn't found so we need to either wait longer (eg until the
+      // device is turned on and ready) or until timeout
     } else {
       callback(result.deviceId);
     }
@@ -469,7 +453,7 @@ operating system, as soon as possible.`),
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('https://sensotrend.warifa.cloud/connect/instructions/uploader');
+          shell.openExternal(i18n.t('https://sensotrend.warifa.cloud/connect/instructions/uploaders/?l=en'));
         }
       }, {
         label: i18n.t('Privacy Policy'),
@@ -550,7 +534,7 @@ operating system, as soon as possible.`),
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('https://sensotrend.warifa.cloud/connect/instructions/uploader');
+          shell.openExternal(i18n.t('https://www.sensotrend.fi/connect/instructions/uploaders/?l=en'));
         }
       }, {
         label: i18n.t('Check for Updates'),
@@ -694,6 +678,10 @@ if(!app.isDefaultProtocolClient('warifaupload')){
   app.setAsDefaultProtocolClient('warifaupload');
 }
 
+if(!app.isDefaultProtocolClient('warifauploader')){
+  app.setAsDefaultProtocolClient('warifauploader');
+}
+
 app.on('window-all-closed', () => {
   app.quit();
 });
@@ -704,6 +692,49 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+const handleIncomingUrl = (url) => {
+  const requestURL = new URL(url);
+  // capture keycloak sign-in redirect
+  if (requestURL.pathname.includes('keycloak-redirect') || requestURL.pathname.includes('upload-redirect')) {
+    const requestHash = requestURL.hash;
+    if(mainWindow){
+      const { webContents } = mainWindow;
+      // redirecting from the app html to app html with hash breaks devtools
+      // just send and append the hash if we're already in the app html
+      if (webContents.getURL().includes(baseURL)) {
+        webContents.send('newHash', requestHash);
+      } else {
+        webContents.loadURL(`${baseURL}${requestHash}`);
+      }
+      return;  
+    }
+    
+  }
+};
+
+const gotTheLock = app.requestSingleInstanceLock();
+
+if (!gotTheLock) {
+  app.quit();
+} else {
+  app.on('second-instance', (event, commandLine, workingDirectory) => {
+    // windows opens a second instance for custom protocol handling
+    if (mainWindow) {
+      if (mainWindow.isMinimized()) mainWindow.restore();
+      mainWindow.focus();
+
+      let url = getURLFromArgs(commandLine);
+      return handleIncomingUrl(url);
+    }
+  });
+  
+  // Protocol handler for osx
+  app.on('open-url', (event, url) => {
+    event.preventDefault();
+    return handleIncomingUrl(url);
+  });
+}
 
 function setLanguage() {
   if (process.env.I18N_ENABLED === 'true') {
@@ -725,4 +756,14 @@ function setLanguage() {
       createWindow();
     });
   }
+}
+
+function getURLFromArgs(args) {
+  if (Array.isArray(args) && args.length) {
+    const url = args[args.length - 1];
+    if (url && PROTOCOL_PREFIX && url.startsWith(PROTOCOL_PREFIX)) {
+      return url;
+    }
+  }
+  return undefined;
 }
