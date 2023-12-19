@@ -36,23 +36,27 @@ if ((!process.env.API_URL && !process.env.UPLOAD_URL && !process.env.DATA_URL &&
   console.log('BLIP_URL =', process.env.BLIP_URL);
 }
 
-export default merge.smart(baseConfig, {
+export default (env => merge.smart(baseConfig, {
   devtool: 'inline-source-map',//'#cheap-module-source-map',
 
   mode: 'development',
 
   target: 'electron-renderer',
 
-  entry: [
+  entry:{ 
+    renderer: [
     ...(process.env.PLAIN_HMR ? [] : ['react-hot-loader/patch']),
     `webpack-dev-server/client?http://localhost:${port}/`,
     'webpack/hot/only-dev-server',
-    require.resolve('./app/index')
+    require.resolve('./app/index'),
   ],
+    about: [require.resolve('./app/about.js')]
+
+},
 
   output: {
     publicPath: `http://localhost:${port}/dist/`,
-    filename: 'renderer.dev.js'
+    filename: '[name].dev.js'
   },
 
   module: {
@@ -263,7 +267,12 @@ export default merge.smart(baseConfig, {
     before() {
       if (process.env.START_HOT) {
         console.log('Starting Main Process...');
-        spawn('npm', ['run', 'start-main-dev'], {
+        let argv = null;
+        if (env && env.argv) {
+          argv = env.argv;
+        }
+
+        spawn('npm', ['run', 'start-main-dev', `"${argv}"`], {
           shell: true,
           env: process.env,
           stdio: 'inherit'
@@ -275,4 +284,4 @@ export default merge.smart(baseConfig, {
       }
     }
   }
-});
+}));
