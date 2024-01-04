@@ -22,9 +22,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ipcRenderer } from 'electron';
 import { Route, Switch } from 'react-router-dom';
-import dns from 'dns';
-
 import bows from 'bows';
+// import dns from 'dns';
+
+import i18nextOptions from '../utils/config.i18next';
+import localeNames from '../utils/locales.json';
 
 import config from '../../lib/config.js';
 import api from '../../lib/core/api';
@@ -33,8 +35,6 @@ import device from '../../lib/core/device.js';
 import localStore from '../../lib/core/localStore.js';
 
 import actions from '../actions/';
-const asyncActions = actions.async;
-const syncActions = actions.sync;
 
 import { urls, pagesMap, paths } from '../constants/otherConstants';
 import { checkVersion } from '../utils/drivers';
@@ -57,15 +57,17 @@ import UpdateDriverModal from '../components/UpdateDriverModal';
 import DeviceTimeModal from '../components/DeviceTimeModal';
 import AdHocModal from '../components/AdHocModal';
 import BluetoothModal from '../components/BluetoothModal';
+import LoggedOut from '../components/LoggedOut.js';
 
 import styles from '../../styles/components/App.module.less';
 
-const remote = require('@electron/remote');
+const asyncActions = actions.async;
+const syncActions = actions.sync;
 
+const remote = require('@electron/remote');
 const { getCurrentWindow, Menu } = remote;
 const i18n = remote.getGlobal( 'i18n' );
-import i18nextOptions from '../utils/config.i18next';
-import localeNames from '../utils/locales.json';
+
 
 const serverdata = {
   Local: {
@@ -191,6 +193,7 @@ export class App extends Component {
       api.setHosts(serverinfo);
       localStore.setItem('selectedEnv', JSON.stringify(serverinfo));
 
+      sync.keycloakReset();
       sync.setForgotPasswordUrl(api.makeBlipUrl(paths.FORGOT_PASSWORD));
       sync.setSignUpUrl(api.makeBlipUrl(paths.SIGNUP));
       sync.setNewPatientUrl(api.makeBlipUrl(paths.NEW_PATIENT));
@@ -224,6 +227,7 @@ export class App extends Component {
           <Route path="/clinic_user_edit" component={ClinicUserEditPage} />
           <Route path="/no_upload_targets" component={NoUploadTargetsPage} />
           <Route path="/workspace_switch" component={WorkspacePage} />
+          <Route path="/logged_out" component={LoggedOut} />
         </Switch>
         <Footer version={config.version} environment={this.state.server} />
         {/* VersionCheck as overlay */}

@@ -342,6 +342,26 @@ export const clinics = (state = initialState.clinics, action) => {
         },
       });
     }
+    case types.FETCH_CLINIC_EHR_SETTINGS_SUCCESS: {
+      const {
+        clinicId,
+        settings,
+      } = action.payload;
+
+      return update(state, {
+        [clinicId]: { ehrSettings: { $set: settings } },
+      });
+    }
+    case types.FETCH_CLINIC_MRN_SETTINGS_SUCCESS: {
+      const {
+        clinicId,
+        settings,
+      } = action.payload;
+
+      return update(state, {
+        [clinicId]: { mrnSettings: { $set: settings } },
+      });
+    }
     case types.LOGOUT_REQUEST:
       return initialState.clinics;
     default:
@@ -370,11 +390,14 @@ export const keycloakConfig = (state = initialState.keycloakConfig, action) => {
       return state;
     }
     case types.KEYCLOAK_READY:
-      return _.extend({}, state, { initialized: true });
+      let logoutUrl = _.get(action.payload, 'logoutUrl', false);
+      return _.extend({}, state, { initialized: true, logoutUrl });
     case types.SET_KEYCLOAK_REGISTRATION_URL:
       return _.extend({}, state, { registrationUrl: action.payload.url });
     case types.KEYCLOAK_INSTANTIATED:
       return _.extend({}, state, { instantiated: true });
+    case types.KEYCLOAK_RESET:
+      return _.extend({}, initialState.keycloakConfig);
     default:
       return state;
   }
